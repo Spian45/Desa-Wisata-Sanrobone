@@ -9,6 +9,21 @@
       content="Desa Wisata Sanrobone — destinasi wisata budaya, sejarah, dan religi di Kabupaten Takalar, Sulawesi Selatan. Jelajahi Balla Lompoa, makam kerajaan, masjid tua, homestay, dan souvenir khas."
     />
     <meta name="theme-color" content="#c86b85" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Social share preview (Open Graph + Twitter) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Desa Wisata Sanrobone" />
+    <meta property="og:title" content="Desa Wisata Sanrobone" />
+    <meta property="og:description" content="Destinasi wisata budaya, sejarah, dan religi di Kabupaten Takalar, Sulawesi Selatan — Balla Lompoa, makam kerajaan, masjid tua, homestay, dan souvenir khas." />
+    <meta property="og:image" content="https://spian45.github.io/Desa-Wisata-Sanrobone/asset/homestay-08.jpg" />
+    <meta property="og:url" content="https://spian45.github.io/Desa-Wisata-Sanrobone/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Desa Wisata Sanrobone" />
+    <meta name="twitter:description" content="Destinasi wisata budaya, sejarah, dan religi di Kabupaten Takalar, Sulawesi Selatan." />
+    <meta name="twitter:image" content="https://spian45.github.io/Desa-Wisata-Sanrobone/asset/homestay-08.jpg" />
+
     <title>Desa Wisata Sanrobone</title>
     <link rel="stylesheet" href="style.css" />
     <style>
@@ -92,14 +107,14 @@
       }
 
       /* Kartu Potensi Wisata: elevasi + animasi angkat. */
-      #potensi .support div {
+      #potensi .support > div {
         background-color: #fff;
         padding: 32px 22px;
         border-radius: 12px;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-      #potensi .support div:hover {
+      #potensi .support > div:hover {
         transform: translateY(-8px);
         box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
       }
@@ -116,7 +131,7 @@
         box-shadow: 0 10px 22px rgba(200, 107, 133, 0.32);
         transition: transform 0.3s ease;
       }
-      #potensi .support div:hover .potensi-ikon { transform: scale(1.08) rotate(-4deg); }
+      #potensi .support > div:hover .potensi-ikon { transform: scale(1.08) rotate(-4deg); }
       .potensi-ikon svg {
         width: 42px;
         height: 42px;
@@ -241,6 +256,38 @@
       }
       .ulasan-skor strong { color: #c86b85; font-style: normal; }
 
+      /* Ajakan menulis ulasan */
+      .ulasan-ajak {
+        max-width: 620px;
+        margin: 40px auto 0;
+        background: #fff;
+        border-radius: 16px;
+        padding: 36px 30px;
+        box-shadow: 0 8px 26px rgba(0, 0, 0, 0.07);
+      }
+      .ulasan-ajak-ikon {
+        width: 72px;
+        height: 72px;
+        margin: 0 auto 16px;
+        border-radius: 50%;
+        background: rgba(200, 107, 133, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ulasan-ajak p { color: #555; line-height: 1.7; margin: 0 0 24px; }
+      .ulasan-tombol { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+      .tombol-google { background-color: #4285f4; box-shadow: 0 6px 16px rgba(66, 133, 244, 0.3); }
+      .tombol-google:hover { background-color: #3574e0; box-shadow: 0 10px 22px rgba(66, 133, 244, 0.42); }
+
+      /* Tombol fallback email pada form */
+      .tombol-email {
+        background-color: #5a6570;
+        box-shadow: 0 6px 16px rgba(90, 101, 112, 0.3);
+        margin-top: 10px;
+      }
+      .tombol-email:hover { background-color: #474f58; box-shadow: 0 10px 22px rgba(90, 101, 112, 0.42); }
+
       /* ====== Kartu Reservasi ====== */
       .reservasi-kartu {
         display: grid;
@@ -307,6 +354,58 @@
         .reservasi-info { padding: 32px 24px; }
         .reservasi-qr { padding: 32px 24px; }
       }
+
+      /* ====== Peta Lokasi ====== */
+      .peta-wrap {
+        max-width: 900px;
+        margin: 35px auto 0;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+      }
+      .peta-wrap iframe { display: block; width: 100%; height: 360px; border: 0; }
+      .peta-aksi { margin-top: 22px; text-align: center; }
+
+      /* ====== Form Reservasi (WhatsApp) ====== */
+      .form-reservasi {
+        max-width: 560px;
+        margin: 35px auto 0;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        padding: 32px;
+        text-align: left;
+      }
+      .form-reservasi h4 { margin: 0 0 6px; font-size: 20px; color: #333; text-align: center; }
+      .form-reservasi .form-intro { text-align: center; color: #888; font-size: 14px; margin: 0 0 22px; }
+      .form-reservasi label { display: block; font-size: 13px; font-weight: 600; color: #555; margin-bottom: 6px; }
+      .form-reservasi .baris { margin-bottom: 16px; }
+      .form-reservasi input,
+      .form-reservasi select,
+      .form-reservasi textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+        font-family: inherit;
+        color: #333;
+        background: #fafafa;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      }
+      .form-reservasi input:focus,
+      .form-reservasi select:focus,
+      .form-reservasi textarea:focus {
+        outline: none;
+        border-color: #c86b85;
+        box-shadow: 0 0 0 3px rgba(200, 107, 133, 0.15);
+        background: #fff;
+      }
+      .form-reservasi .dua { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+      .form-reservasi button { width: 100%; border: none; cursor: pointer; margin-top: 8px; }
+      @media screen and (max-width: 480px) {
+        .form-reservasi .dua { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>
@@ -323,15 +422,16 @@
             <span class="garis"></span>
           </a>
           <ul>
-            <li><a href="#profil">Profil</a></li>
-            <li><a href="#sejarah">Sejarah</a></li>
-            <li><a href="#potensi">Potensi Wisata</a></li>
-            <li><a href="#akses">Aksesibilitas</a></li>
-            <li><a href="#akomodasi">Akomodasi</a></li>
-            <li><a href="#amenitas">Amenitas</a></li>
-            <li><a href="#souvenir">Souvenir</a></li>
-            <li><a href="#ulasan">Ulasan</a></li>
-            <li><a href="#reservasi">Reservasi</a></li>
+            <li><a href="#profil" data-en="Profile">Profil</a></li>
+            <li><a href="#sejarah" data-en="History">Sejarah</a></li>
+            <li><a href="#potensi" data-en="Tourism Potential">Potensi Wisata</a></li>
+            <li><a href="#akses" data-en="Accessibility">Aksesibilitas</a></li>
+            <li><a href="#akomodasi" data-en="Accommodation">Akomodasi</a></li>
+            <li><a href="#amenitas" data-en="Amenities">Amenitas</a></li>
+            <li><a href="#souvenir" data-en="Souvenirs">Souvenir</a></li>
+            <li><a href="#ulasan" data-en="Reviews">Ulasan</a></li>
+            <li><a href="#reservasi" data-en="Reservation">Reservasi</a></li>
+            <li class="lang-li"><button type="button" class="lang-toggle" id="lang-toggle" aria-label="Switch language / Ganti bahasa">EN</button></li>
           </ul>
         </div>
       </div>
@@ -344,12 +444,12 @@
           <source src="asset/video-indonesia.mp4" type="video/mp4" />
         </video>
         <div class="intro">
-          <h3>Wisata Sanrobone</h3>
-          <p>
+          <h3 data-en="Sanrobone Tourism">Wisata Sanrobone</h3>
+          <p data-en="Sanrobone Tourism Village is one of the cultural and historical tourism destinations located in Takalar Regency, South Sulawesi.">
             Desa Wisata Sanrobone merupakan salah satu destinasi wisata budaya dan sejarah yang berada di Kabupaten Takalar, Sulawesi Selatan.
           </p>
           <p>
-            <a href="#sejarah" class="tombol" style="margin-top: 15px;">JELAJAHI LEBIH LANJUT</a>
+            <a href="#sejarah" class="tombol" style="margin-top: 15px;" data-en="EXPLORE MORE">JELAJAHI LEBIH LANJUT</a>
           </p>
         </div>
         <a href="#sejarah" class="scroll-indikator" aria-label="Gulir ke bawah"></a>
@@ -359,60 +459,60 @@
         
         <section id="sejarah">
           <div class="layar-dalam">
-            <h3>Sejarah & Profil Wilayah</h3>
+            <h3 data-en="History &amp; Regional Profile">Sejarah & Profil Wilayah</h3>
             <div class="konten-isi">
-              <p>Desa Wisata Sanrobone merupakan salah satu destinasi wisata budaya dan sejarah yang berada di Kabupaten Takalar, Sulawesi Selatan. Desa ini memiliki nilai historis yang kuat karena merupakan bagian dari kawasan bekas Kerajaan Sanrobone yang pernah memiliki peranan penting dalam perkembangan budaya dan pemerintahan di wilayah tersebut. Meskipun baru ditetapkan sebagai desa wisata sekitar satu tahun yang lalu, Desa Sanrobone telah menunjukkan perkembangan yang sangat pesat. Dari ribuan desa wisata di Indonesia, Desa Sanrobone berhasil masuk dalam jajaran 300 besar desa wisata potensial, yang menunjukkan besarnya daya tarik dan peluang pengembangan wisata yang dimiliki.</p>
+              <p data-en="Sanrobone Tourism Village is one of the cultural and historical tourism destinations located in Takalar Regency, South Sulawesi. The village holds strong historical value as it is part of the former Kingdom of Sanrobone, which once played an important role in the cultural and governmental development of the region. Although it was only designated as a tourism village about a year ago, Sanrobone Village has shown very rapid progress. Out of thousands of tourism villages in Indonesia, Sanrobone ranked among the top 300 potential tourism villages, reflecting its great appeal and development opportunities.">Desa Wisata Sanrobone merupakan salah satu destinasi wisata budaya dan sejarah yang berada di Kabupaten Takalar, Sulawesi Selatan. Desa ini memiliki nilai historis yang kuat karena merupakan bagian dari kawasan bekas Kerajaan Sanrobone yang pernah memiliki peranan penting dalam perkembangan budaya dan pemerintahan di wilayah tersebut. Meskipun baru ditetapkan sebagai desa wisata sekitar satu tahun yang lalu, Desa Sanrobone telah menunjukkan perkembangan yang sangat pesat. Dari ribuan desa wisata di Indonesia, Desa Sanrobone berhasil masuk dalam jajaran 300 besar desa wisata potensial, yang menunjukkan besarnya daya tarik dan peluang pengembangan wisata yang dimiliki.</p>
 
-              <p>Secara administratif, Kecamatan Sanrobone sendiri merupakan kecamatan yang relatif baru, dibentuk pada tahun 2007. Desa Sanrobone terdiri dari enam desa dan memiliki lima dusun yang tersebar di dalam maupun di luar kawasan inti desa. Dusun Salekowa, Kasuarrang, dan Sanrobone berada di dalam kawasan desa, sedangkan Dusun Bontowa dan Dusun Lau berada di luar wilayah inti desa. Struktur wilayah ini mencerminkan kehidupan masyarakat yang masih sangat erat dengan nilai-nilai budaya dan tradisi lokal.</p>
+              <p data-en="Administratively, Sanrobone District itself is relatively new, established in 2007. Sanrobone Village consists of six villages and has five hamlets spread both inside and outside the village's core area. The hamlets of Salekowa, Kasuarrang, and Sanrobone lie within the village area, while the hamlets of Bontowa and Lau are located outside the core area. This territorial structure reflects a community life that remains closely tied to local cultural values and traditions.">Secara administratif, Kecamatan Sanrobone sendiri merupakan kecamatan yang relatif baru, dibentuk pada tahun 2007. Desa Sanrobone terdiri dari enam desa dan memiliki lima dusun yang tersebar di dalam maupun di luar kawasan inti desa. Dusun Salekowa, Kasuarrang, dan Sanrobone berada di dalam kawasan desa, sedangkan Dusun Bontowa dan Dusun Lau berada di luar wilayah inti desa. Struktur wilayah ini mencerminkan kehidupan masyarakat yang masih sangat erat dengan nilai-nilai budaya dan tradisi lokal.</p>
 
-              <p>Desa Wisata Sanrobone dibangun dengan tiga pilar utama, yaitu sejarah, budaya, dan agama. Ketiga pilar tersebut menjadi identitas utama desa dalam mengembangkan potensi wisata yang berkelanjutan. Berbagai situs bersejarah masih dapat ditemukan dan dijaga dengan baik oleh masyarakat setempat. Beberapa di antaranya adalah Benteng Sanrobone, Balla Lompoa atau rumah adat kerajaan, makam raja-raja, serta masjid tua yang memiliki nilai sejarah tinggi. Selain itu, Desa Sanrobone juga memiliki sekitar 14 hingga 18 situs bersejarah yang menjadi bukti kejayaan masa lampau kerajaan tersebut.</p>
+              <p data-en="Sanrobone Tourism Village is built upon three main pillars: history, culture, and religion. These three pillars form the village's core identity in developing sustainable tourism potential. Various historical sites can still be found and are well preserved by the local community. Among them are the Sanrobone Fort, Balla Lompoa (the royal traditional house), the tombs of the kings, and an old mosque of high historical value. In addition, Sanrobone Village has around 14 to 18 historical sites that stand as evidence of the kingdom's past glory.">Desa Wisata Sanrobone dibangun dengan tiga pilar utama, yaitu sejarah, budaya, dan agama. Ketiga pilar tersebut menjadi identitas utama desa dalam mengembangkan potensi wisata yang berkelanjutan. Berbagai situs bersejarah masih dapat ditemukan dan dijaga dengan baik oleh masyarakat setempat. Beberapa di antaranya adalah Benteng Sanrobone, Balla Lompoa atau rumah adat kerajaan, makam raja-raja, serta masjid tua yang memiliki nilai sejarah tinggi. Selain itu, Desa Sanrobone juga memiliki sekitar 14 hingga 18 situs bersejarah yang menjadi bukti kejayaan masa lampau kerajaan tersebut.</p>
 
-              <p>Keberadaan rumah adat Sanrobone menjadi salah satu daya tarik utama desa wisata ini. Rumah adat tersebut dibangun pada tahun 2008 dan pada tahun 2025 resmi ditetapkan sebagai cagar budaya. Penetapan ini menjadi langkah penting dalam upaya pelestarian warisan budaya lokal agar tetap terjaga dan dapat diwariskan kepada generasi mendatang. Selain itu, ditemukan pula dua meriam peninggalan sejarah yang semakin memperkuat nilai historis kawasan ini.</p>
+              <p data-en="The Sanrobone traditional house is one of the main attractions of this tourism village. It was built in 2008 and officially designated as a cultural heritage site in 2025. This designation is an important step in preserving local cultural heritage so it remains protected and can be passed on to future generations. In addition, two historical cannons were discovered, further strengthening the area's historical value.">Keberadaan rumah adat Sanrobone menjadi salah satu daya tarik utama desa wisata ini. Rumah adat tersebut dibangun pada tahun 2008 dan pada tahun 2025 resmi ditetapkan sebagai cagar budaya. Penetapan ini menjadi langkah penting dalam upaya pelestarian warisan budaya lokal agar tetap terjaga dan dapat diwariskan kepada generasi mendatang. Selain itu, ditemukan pula dua meriam peninggalan sejarah yang semakin memperkuat nilai historis kawasan ini.</p>
 
-              <p>Desa Sanrobone juga dikenal melalui kawasan makam kerajaan yang memiliki bentuk menyerupai piramida. Di area tersebut terdapat bedug tua yang hingga kini masih digunakan dalam kegiatan keagamaan dan adat masyarakat. Nilai spiritual dan budaya yang melekat pada situs-situs tersebut menjadikan Desa Sanrobone tidak hanya sebagai tempat wisata, tetapi juga sebagai ruang pembelajaran sejarah dan budaya masyarakat Sulawesi Selatan.</p>
+              <p data-en="Sanrobone Village is also known for its royal burial complex shaped like a pyramid. In this area stands an old bedug (drum) that is still used today in the community's religious and customary activities. The spiritual and cultural value attached to these sites makes Sanrobone not only a tourist destination but also a space for learning the history and culture of the people of South Sulawesi.">Desa Sanrobone juga dikenal melalui kawasan makam kerajaan yang memiliki bentuk menyerupai piramida. Di area tersebut terdapat bedug tua yang hingga kini masih digunakan dalam kegiatan keagamaan dan adat masyarakat. Nilai spiritual dan budaya yang melekat pada situs-situs tersebut menjadikan Desa Sanrobone tidak hanya sebagai tempat wisata, tetapi juga sebagai ruang pembelajaran sejarah dan budaya masyarakat Sulawesi Selatan.</p>
 
-              <p>Dalam pengembangannya, Desa Wisata Sanrobone menghadapi persaingan dengan beberapa destinasi budaya lainnya di Sulawesi Selatan, seperti Katangka dan Luwu Palopo. Namun demikian, keunikan sejarah Kerajaan Sanrobone, kekayaan situs budaya, serta keterlibatan masyarakat dalam menjaga tradisi menjadi kekuatan utama yang membedakan desa ini dari destinasi lainnya.</p>
+              <p data-en="In its development, Sanrobone Tourism Village competes with several other cultural destinations in South Sulawesi, such as Katangka and Luwu Palopo. Nevertheless, the unique history of the Kingdom of Sanrobone, the wealth of cultural sites, and the community's involvement in preserving traditions are the main strengths that set this village apart from other destinations.">Dalam pengembangannya, Desa Wisata Sanrobone menghadapi persaingan dengan beberapa destinasi budaya lainnya di Sulawesi Selatan, seperti Katangka dan Luwu Palopo. Namun demikian, keunikan sejarah Kerajaan Sanrobone, kekayaan situs budaya, serta keterlibatan masyarakat dalam menjaga tradisi menjadi kekuatan utama yang membedakan desa ini dari destinasi lainnya.</p>
 
-              <p>Dengan potensi sejarah, budaya, dan religi yang dimiliki, Desa Wisata Sanrobone memiliki peluang besar untuk terus berkembang menjadi destinasi wisata unggulan berbasis kearifan lokal. Keberadaan desa ini diharapkan tidak hanya mampu menarik wisatawan, tetapi juga dapat meningkatkan perekonomian masyarakat serta memperkuat pelestarian budaya daerah.</p>
+              <p data-en="With its historical, cultural, and religious potential, Sanrobone Tourism Village has great opportunities to keep growing into a leading destination based on local wisdom. The village is expected not only to attract tourists but also to improve the community's economy and strengthen the preservation of regional culture.">Dengan potensi sejarah, budaya, dan religi yang dimiliki, Desa Wisata Sanrobone memiliki peluang besar untuk terus berkembang menjadi destinasi wisata unggulan berbasis kearifan lokal. Keberadaan desa ini diharapkan tidak hanya mampu menarik wisatawan, tetapi juga dapat meningkatkan perekonomian masyarakat serta memperkuat pelestarian budaya daerah.</p>
             </div>
           </div>
         </section>
 
         <section class="statistik">
           <div class="layar-dalam">
-            <div class="stat"><span class="angka" data-target="300">0</span><span class="plus">+</span><p>Besar Desa Wisata Potensial Nasional</p></div>
-            <div class="stat"><span class="angka" data-target="18">0</span><p>Situs Bersejarah</p></div>
-            <div class="stat"><span class="angka" data-target="3">0</span><p>Pilar Utama: Sejarah, Budaya, Agama</p></div>
-            <div class="stat"><span class="angka" data-target="5">0</span><p>Dusun di Kawasan Desa</p></div>
+            <div class="stat"><span class="angka" data-target="300">0</span><span class="plus">+</span><p data-en="Top Potential Tourism Villages Nationwide">Besar Desa Wisata Potensial Nasional</p></div>
+            <div class="stat"><span class="angka" data-target="18">0</span><p data-en="Historical Sites">Situs Bersejarah</p></div>
+            <div class="stat"><span class="angka" data-target="3">0</span><p data-en="Main Pillars: History, Culture, Religion">Pilar Utama: Sejarah, Budaya, Agama</p></div>
+            <div class="stat"><span class="angka" data-target="5">0</span><p data-en="Hamlets in the Village Area">Dusun di Kawasan Desa</p></div>
           </div>
         </section>
 
         <section class="abuabu" id="sosbud">
           <div class="layar-dalam">
-            <h3>Ringkasan Sosial & Budaya</h3>
+            <h3 data-en="Social &amp; Cultural Summary">Ringkasan Sosial & Budaya</h3>
             <div class="konten-isi">
               <div style="background-color: #fff; padding: 30px; border-left: 5px solid #c86b85; border-radius: 5px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: left;">
                 
-                <strong style="font-size: 18px;">1. Filosofi Nama</strong>
+                <strong style="font-size: 18px;" data-en="1. Name Philosophy">1. Filosofi Nama</strong>
                 <ul style="margin-top: 10px; margin-bottom: 20px;">
-                  <li><strong>Arti Bahasa:</strong> Sanro (Tabib/Penyembuh) dan Bone (Orang Bone). Melambangkan tempat tabib asal Bone yang menyembuhkan dengan kearifan lokal.</li>
-                  <li><strong>Nilai Spiritual:</strong> Simbol batin pencari ketenangan jiwa dan keharmonisan hidup masyarakat Bugis-Makassar.</li>
+                  <li data-en="<strong>Language Meaning:</strong> Sanro (healer) and Bone (people of Bone). It symbolizes a place of a healer from Bone who cured people through local wisdom."><strong>Arti Bahasa:</strong> Sanro (Tabib/Penyembuh) dan Bone (Orang Bone). Melambangkan tempat tabib asal Bone yang menyembuhkan dengan kearifan lokal.</li>
+                  <li data-en="<strong>Spiritual Value:</strong> An inner symbol for seekers of peace of soul and harmony of life among the Bugis-Makassar people."><strong>Nilai Spiritual:</strong> Simbol batin pencari ketenangan jiwa dan keharmonisan hidup masyarakat Bugis-Makassar.</li>
                 </ul>
 
-                <strong style="font-size: 18px;">2. Kawasan Sejarah & Religi</strong>
+                <strong style="font-size: 18px;" data-en="2. Historical &amp; Religious Sites">2. Kawasan Sejarah & Religi</strong>
                 <ul style="margin-top: 10px; margin-bottom: 20px;">
-                  <li><strong>Piramid Makam Kerajaan:</strong> Situs makam raja kuno berbentuk piramida. Menyimpan Bedug Tua dari pohon cabai untuk acara adat, serta Sumur Adat yang tidak pernah kering sebagai simbol keberkahan dan lokasi mandi pernikahan.</li>
-                  <li><strong>Masjid Tua Baitul Maqdis:</strong> Bukti awal masuknya Islam di Sanrobone yang dibawa pedagang/ulama Arab (seperti figur Tuban atau Pagaruyun Arab), menggeser pengaruh ajaran Hindu-Buddha kuno.</li>
+                  <li data-en="<strong>Royal Pyramid Tombs:</strong> An ancient royal burial site shaped like a pyramid. It holds an Old Bedug (drum) made from a chili tree used for customary ceremonies, as well as a Customary Well that never runs dry — a symbol of blessing and a site for the pre-wedding ritual bath."><strong>Piramid Makam Kerajaan:</strong> Situs makam raja kuno berbentuk piramida. Menyimpan Bedug Tua dari pohon cabai untuk acara adat, serta Sumur Adat yang tidak pernah kering sebagai simbol keberkahan dan lokasi mandi pernikahan.</li>
+                  <li data-en="<strong>Baitul Maqdis Old Mosque:</strong> Evidence of the early arrival of Islam in Sanrobone, brought by Arab traders and scholars (such as figures from Tuban or Pagaruyung Arab), which shifted the influence of the older Hindu-Buddhist teachings."><strong>Masjid Tua Baitul Maqdis:</strong> Bukti awal masuknya Islam di Sanrobone yang dibawa pedagang/ulama Arab (seperti figur Tuban atau Pagaruyun Arab), menggeser pengaruh ajaran Hindu-Buddha kuno.</li>
                 </ul>
 
-                <strong style="font-size: 18px;">3. Balla Lompoa (Pusat Adat)</strong>
+                <strong style="font-size: 18px;" data-en="3. Balla Lompoa (Customary Center)">3. Balla Lompoa (Pusat Adat)</strong>
                 <ul style="margin-top: 10px; margin-bottom: 20px;">
-                  <li><strong>Fungsi Utama:</strong> Rumah adat panggung (didirikan 2016) yang menyimpan silsilah keturunan raja-raja Sanrobone.</li>
-                  <li><strong>Peninggalan & Kegiatan:</strong> Menyimpan peninggalan Tasbih Raksasa dan ruang pembakaran roti tradisional kerajaan. Menjadi kediaman pemangku adat serta pusat perayaan besar seperti Maulid Nabi.</li>
+                  <li data-en="<strong>Main Function:</strong> An elevated traditional house (built in 2016) that preserves the genealogy of the Sanrobone kings."><strong>Fungsi Utama:</strong> Rumah adat panggung (didirikan 2016) yang menyimpan silsilah keturunan raja-raja Sanrobone.</li>
+                  <li data-en="<strong>Relics &amp; Activities:</strong> It keeps a Giant Prayer Beads relic and a room for baking traditional royal bread. It serves as the residence of the customary leader and a center for major celebrations such as Maulid (the Prophet's birthday)."><strong>Peninggalan & Kegiatan:</strong> Menyimpan peninggalan Tasbih Raksasa dan ruang pembakaran roti tradisional kerajaan. Menjadi kediaman pemangku adat serta pusat perayaan besar seperti Maulid Nabi.</li>
                 </ul>
 
-                <strong style="font-size: 18px;">4. Esensi Destinasi</strong>
-                <p style="margin-top: 10px; margin-bottom: 20px;">Integrasi situs kerajaan, kearifan lokal, dan religi yang hidup menjadikan Sanrobone sebagai pusat edukasi sejarah sekaligus destinasi wisata budaya unggulan di Kabupaten Takalar, Sulawesi Selatan.</p>
+                <strong style="font-size: 18px;" data-en="4. Destination Essence">4. Esensi Destinasi</strong>
+                <p style="margin-top: 10px; margin-bottom: 20px;" data-en="The integration of royal sites, local wisdom, and living religious life makes Sanrobone a center for historical education as well as a leading cultural tourism destination in Takalar Regency, South Sulawesi.">Integrasi situs kerajaan, kearifan lokal, dan religi yang hidup menjadikan Sanrobone sebagai pusat edukasi sejarah sekaligus destinasi wisata budaya unggulan di Kabupaten Takalar, Sulawesi Selatan.</p>
 
               </div>
             </div>
@@ -421,8 +521,8 @@
 
         <section id="potensi">
           <div class="layar-dalam text-center">
-            <h3>Potensi Wisata Budaya</h3>
-            <p class="ringkasan">Warisan luhur yang menjadi daya tarik utama.</p>
+            <h3 data-en="Cultural Tourism Potential">Potensi Wisata Budaya</h3>
+            <p class="ringkasan" data-en="Noble heritage that is the main attraction.">Warisan luhur yang menjadi daya tarik utama.</p>
             <div class="support">
               <div>
                 <div class="potensi-ikon" aria-hidden="true">
@@ -434,7 +534,7 @@
                   </svg>
                 </div>
                 <h6>Balla Lompoa</h6>
-                <p>Rumah adat panggung yang merupakan pusat adat, penyimpan silsilah keturunan raja-raja Sanrobone, sekaligus kediaman pemangku adat.</p>
+                <p data-en="An elevated traditional house that serves as the customary center, keeper of the Sanrobone kings' genealogy, and residence of the customary leader.">Rumah adat panggung yang merupakan pusat adat, penyimpan silsilah keturunan raja-raja Sanrobone, sekaligus kediaman pemangku adat.</p>
               </div>
               <div>
                 <div class="potensi-ikon" aria-hidden="true">
@@ -444,8 +544,8 @@
                     <path d="M7.5 13h9" />
                   </svg>
                 </div>
-                <h6>Makam Kerajaan</h6>
-                <p>Kawasan makam raja berbentuk piramida. Di area ini terdapat bedug tua dari pohon cabai serta sumur adat yang airnya tidak pernah kering.</p>
+                <h6 data-en="Royal Tombs">Makam Kerajaan</h6>
+                <p data-en="A pyramid-shaped royal burial complex. Here you will find an old bedug (drum) made from a chili tree and a customary well whose water never runs dry.">Kawasan makam raja berbentuk piramida. Di area ini terdapat bedug tua dari pohon cabai serta sumur adat yang airnya tidak pernah kering.</p>
               </div>
               <div>
                 <div class="potensi-ikon" aria-hidden="true">
@@ -458,82 +558,92 @@
                     <path d="M12 21v-4" />
                   </svg>
                 </div>
-                <h6>Masjid Tua Baitul Maqdis</h6>
-                <p>Situs sejarah penting yang menjadi bukti awal masuknya Islam di Sanrobone, dibawa oleh pedagang atau ulama Arab.</p>
+                <h6 data-en="Baitul Maqdis Old Mosque">Masjid Tua Baitul Maqdis</h6>
+                <p data-en="An important historical site, evidence of the early arrival of Islam in Sanrobone, brought by Arab traders or scholars.">Situs sejarah penting yang menjadi bukti awal masuknya Islam di Sanrobone, dibawa oleh pedagang atau ulama Arab.</p>
               </div>
             </div>
             
             <div style="text-align: center; margin-top: 40px;">
-              <a href="detail-potensi.html" class="tombol">LIHAT SELURUH DETAIL POTENSI</a>
+              <a href="detail-potensi.html" class="tombol" data-en="SEE ALL POTENTIAL DETAILS">LIHAT SELURUH DETAIL POTENSI</a>
             </div>
           </div>
         </section>
 
         <section class="abuabu" id="akses">
           <div class="layar-dalam">
-              <h3>Aksesibilitas</h3>
+              <h3 data-en="Accessibility">Aksesibilitas</h3>
               <div class="konten-isi">
-                  <p style="text-align: center;">Aksesibilitas menuju Desa Sanrobone sudah cukup baik, di mana jalan menuju lokasi dapat dilalui oleh kendaraan roda dua maupun roda empat. Hal ini menjadi nilai tambah dalam mendukung mobilitas wisatawan. Namun demikian, penataan fasilitas pendukung seperti area parkir masih perlu ditingkatkan agar lebih tertib dan terorganisir.</p>
+                  <p style="text-align: center;" data-en="Access to Sanrobone Village is already quite good, where the road to the location can be used by both two-wheeled and four-wheeled vehicles. This adds value in supporting tourist mobility. However, supporting facilities such as the parking area still need improvement to be more orderly and organized.">Aksesibilitas menuju Desa Sanrobone sudah cukup baik, di mana jalan menuju lokasi dapat dilalui oleh kendaraan roda dua maupun roda empat. Hal ini menjadi nilai tambah dalam mendukung mobilitas wisatawan. Namun demikian, penataan fasilitas pendukung seperti area parkir masih perlu ditingkatkan agar lebih tertib dan terorganisir.</p>
+              </div>
+              <div class="peta-wrap">
+                <iframe
+                  src="https://www.google.com/maps?q=Desa%20Wisata%20Sanrobone%2C%20Takalar%2C%20Sulawesi%20Selatan&z=14&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  title="Peta Lokasi Desa Wisata Sanrobone"></iframe>
+              </div>
+              <div class="peta-aksi">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Desa+Wisata+Sanrobone,+Takalar,+Sulawesi+Selatan" target="_blank" rel="noopener" class="tombol" data-en="GET DIRECTIONS">PETUNJUK ARAH</a>
               </div>
           </div>
         </section>
 
         <section id="akomodasi">
           <div class="layar-dalam">
-            <h3>Akomodasi (Homestay)</h3>
-            <p class="ringkasan" style="text-align: center;">Rasakan pengalaman autentik kehidupan sosial dan budaya masyarakat lokal.</p>
+            <h3 data-en="Accommodation (Homestay)">Akomodasi (Homestay)</h3>
+            <p class="ringkasan" style="text-align: center;" data-en="Experience the authentic social and cultural life of the local community.">Rasakan pengalaman autentik kehidupan sosial dan budaya masyarakat lokal.</p>
             <div class="tim">
               <div>
                 <img src="asset/homestay-08.jpg" alt="Homestay Bersejarah 01" loading="lazy" decoding="async" />
                 <h6>Homestay Bersejarah 01</h6>
-                <span>Mulai Rp 200.000/malam</span>
+                <span data-en="From Rp 200,000/night">Mulai Rp 200.000/malam</span>
               </div>
               <div>
                 <img src="asset/homestay-05.jpg" alt="Homestay Berbudaya 01" loading="lazy" decoding="async" />
                 <h6>Homestay Berbudaya 01</h6>
-                <span>Mulai Rp 200.000/malam</span>
+                <span data-en="From Rp 200,000/night">Mulai Rp 200.000/malam</span>
               </div>
               <div>
                 <img src="asset/homestay-11.jpg" alt="Homestay Bersejarah 02" loading="lazy" decoding="async" />
                 <h6>Homestay Bersejarah 02</h6>
-                <span>Mulai Rp 250.000/malam</span>
+                <span data-en="From Rp 250,000/night">Mulai Rp 250.000/malam</span>
               </div>
             </div>
             
             <div class="konten-isi" style="text-align: center; margin-top: 30px;">
-              <p>Fasilitas yang tersedia umumnya meliputi: Kamar mandi bersama, perlengkapan mandi, kipas angin, televisi, dan sarapan pagi. Kesederhanaan ini justru memberikan suasana alami masyarakat pedesaan.</p>
+              <p data-en="Available facilities generally include: shared bathroom, toiletries, fan, television, and breakfast. This simplicity actually provides the natural atmosphere of rural community life.">Fasilitas yang tersedia umumnya meliputi: Kamar mandi bersama, perlengkapan mandi, kipas angin, televisi, dan sarapan pagi. Kesederhanaan ini justru memberikan suasana alami masyarakat pedesaan.</p>
               <br>
-              <a href="akomodasi-detail.html" class="tombol">PELAJARI DETAIL AKOMODASI</a>
+              <a href="akomodasi-detail.html" class="tombol" data-en="LEARN ACCOMMODATION DETAILS">PELAJARI DETAIL AKOMODASI</a>
             </div>
           </div>
         </section>
 
         <section class="abuabu" id="amenitas">
           <div class="layar-dalam">
-            <h3>Amenitas dan Fasilitas</h3>
-            <p class="ringkasan" style="text-align: center;">Fasilitas pendukung kenyamanan masyarakat lokal maupun wisatawan.</p>
+            <h3 data-en="Amenities and Facilities">Amenitas dan Fasilitas</h3>
+            <p class="ringkasan" style="text-align: center;" data-en="Supporting facilities for the comfort of both locals and tourists.">Fasilitas pendukung kenyamanan masyarakat lokal maupun wisatawan.</p>
             <div class="konten-isi" style="text-align: center;">
-              <p>Desa Sanrobone telah memiliki sejumlah fasilitas yang menunjang kebutuhan wisatawan, mulai dari warung makan lokal, toko kelontong, puskesmas, mesin ATM, hingga sarana ibadah masjid. Keberadaan fasilitas ini menunjukkan potensi desa untuk berkembang menjadi destinasi berbasis masyarakat yang optimal. Meskipun masih dalam kategori sederhana, pengembangan sarana ini sangat penting untuk menciptakan kenyamanan dan kepuasan pengunjung.</p>
+              <p data-en="Sanrobone Village already has a number of facilities supporting tourists' needs — from local food stalls, grocery shops, a community health center (puskesmas), and an ATM, to a mosque for worship. The presence of these facilities shows the village's potential to grow into an optimal community-based destination. Although still simple, developing these amenities is essential to create visitor comfort and satisfaction.">Desa Sanrobone telah memiliki sejumlah fasilitas yang menunjang kebutuhan wisatawan, mulai dari warung makan lokal, toko kelontong, puskesmas, mesin ATM, hingga sarana ibadah masjid. Keberadaan fasilitas ini menunjukkan potensi desa untuk berkembang menjadi destinasi berbasis masyarakat yang optimal. Meskipun masih dalam kategori sederhana, pengembangan sarana ini sangat penting untuk menciptakan kenyamanan dan kepuasan pengunjung.</p>
               
               <br>
-              <a href="amenitas-detail.html" class="tombol">PELAJARI DETAIL FASILITAS</a>
+              <a href="amenitas-detail.html" class="tombol" data-en="LEARN FACILITY DETAILS">PELAJARI DETAIL FASILITAS</a>
             </div>
           </div>
         </section>
 
         <section id="souvenir">
           <div class="layar-dalam" style="text-align: center;">
-            <h3>Souvenir & Oleh-oleh</h3>
-            <p class="ringkasan">Identitas budaya yang dikembangkan oleh Pokdarwis.</p>
+            <h3 data-en="Souvenirs &amp; Local Products">Souvenir & Oleh-oleh</h3>
+            <p class="ringkasan" data-en="Cultural identity developed by Pokdarwis (the tourism awareness group).">Identitas budaya yang dikembangkan oleh Pokdarwis.</p>
             <div class="konten-isi" style="text-align: center;">
               <ul style="text-align: left; display: inline-block;">
-                <li><b>Abon Ikan Bolu & Bandeng Tanpa Tulang:</b> Produk olahan kuliner khas desa seharga Rp. 20.000.</li>
-                <li><b>Kriya Gantungan Kunci:</b> Souvenir berbentuk rumah adat atau Balla Lompoa seharga Rp. 5.000.</li>
-                <li><b>Baju Kaos Desa Wisata:</b> Kaos dengan identitas Sanrobone seharga Rp. 85.000 - Rp. 90.000.</li>
-                <li><b>Aneka Kanrejawa Turiolo:</b> Aneka jajanan tradisional manis warisan leluhur mulai dari Rp. 2.500 - Rp. 25.000/pcs.</li>
+                <li data-en="<b>Milkfish &amp; Bandeng Boneless Floss (Abon):</b> A signature local culinary product priced at Rp 20,000."><b>Abon Ikan Bolu & Bandeng Tanpa Tulang:</b> Produk olahan kuliner khas desa seharga Rp. 20.000.</li>
+                <li data-en="<b>Keychain Crafts:</b> Souvenirs shaped like the traditional house or Balla Lompoa, priced at Rp 5,000."><b>Kriya Gantungan Kunci:</b> Souvenir berbentuk rumah adat atau Balla Lompoa seharga Rp. 5.000.</li>
+                <li data-en="<b>Tourism Village T-Shirt:</b> A shirt featuring the Sanrobone identity, priced at Rp 85,000 - Rp 90,000."><b>Baju Kaos Desa Wisata:</b> Kaos dengan identitas Sanrobone seharga Rp. 85.000 - Rp. 90.000.</li>
+                <li data-en="<b>Assorted Kanrejawa Turiolo:</b> A variety of sweet traditional snacks inherited from ancestors, starting from Rp 2,500 - Rp 25,000/pc."><b>Aneka Kanrejawa Turiolo:</b> Aneka jajanan tradisional manis warisan leluhur mulai dari Rp. 2.500 - Rp. 25.000/pcs.</li>
               </ul>
               <br><br>
-              <a href="souvenir-detail.html" class="tombol">PELAJARI DETAIL SOUVENIR</a>
+              <a href="souvenir-detail.html" class="tombol" data-en="LEARN SOUVENIR DETAILS">PELAJARI DETAIL SOUVENIR</a>
             </div>
           </div>
         </section>
@@ -551,117 +661,146 @@
 
         <section class="abuabu" id="ulasan">
           <div class="layar-dalam text-center">
-            <h3>Ulasan Pengunjung</h3>
-            <p class="ringkasan">Cerita mereka yang telah merasakan langsung pengalaman di Desa Wisata Sanrobone.</p>
+            <h3 data-en="Visitor Reviews">Ulasan Pengunjung</h3>
+            <p class="ringkasan" data-en="Stories from those who have experienced Sanrobone Tourism Village firsthand.">Cerita mereka yang telah merasakan langsung pengalaman di Desa Wisata Sanrobone.</p>
 
             <div class="ulasan-grid">
               <div class="ulasan-card">
                 <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p class="ulasan-teks">"Menginap di homestay-nya jadi pengalaman tak terlupakan. Warganya sangat ramah dan kami benar-benar merasakan kehidupan budaya Bugis-Makassar. Balla Lompoa megah sekali!"</p>
+                <p class="ulasan-teks" data-en="&quot;The place is beautiful and green... The people mingle warmly with one another, and the best part is the customs — simply the best.&quot;">"Tempatnya asri... Masyarakat nya saling berbaur, dan paling asyik adatnya paling ok"</p>
                 <div class="ulasan-profil">
-                  <span class="avatar">AP</span>
+                  <span class="avatar">HA</span>
                   <div>
-                    <div class="nama">Andi Pratama</div>
-                    <div class="asal">Makassar</div>
+                    <div class="nama">Hasni Ajha</div>
                   </div>
                 </div>
               </div>
 
               <div class="ulasan-card">
                 <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p class="ulasan-teks">"Wisata sejarahnya lengkap. Makam berbentuk piramida dan masjid tuanya punya nilai sejarah yang dalam. Anak-anak jadi belajar banyak tentang Kerajaan Sanrobone."</p>
+                <p class="ulasan-teks" data-en="&quot;Sanrobone Fort is one of the historic places, and the place where I was raised.&quot;">"Benteng sanrobonone, adalah sala satu tempat bersejarah, dan tempat tinggal saya di besarkan"</p>
                 <div class="ulasan-profil">
-                  <span class="avatar">SN</span>
+                  <span class="avatar">MK</span>
                   <div>
-                    <div class="nama">Siti Nurhaliza</div>
-                    <div class="asal">Takalar</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="ulasan-card">
-                <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
-                <p class="ulasan-teks">"Abon bandeng tanpa tulangnya enak banget buat oleh-oleh! Aksesnya mudah dilalui mobil. Semoga area parkirnya ke depan makin tertata rapi."</p>
-                <div class="ulasan-profil">
-                  <span class="avatar">BS</span>
-                  <div>
-                    <div class="nama">Budi Santoso</div>
-                    <div class="asal">Gowa</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="ulasan-card">
-                <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <p class="ulasan-teks">"Desa dengan tiga pilar yang dikemas autentik: sejarah, budaya, dan agama. Cocok untuk wisata edukasi keluarga dan salah satu desa wisata paling menjanjikan di Sulawesi Selatan."</p>
-                <div class="ulasan-profil">
-                  <span class="avatar">DW</span>
-                  <div>
-                    <div class="nama">Tim Desa Wisata</div>
-                    <div class="asal">Sanrobone</div>
+                    <div class="nama">Muntu Kadyer</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="ulasan-skor">
+            <div class="ulasan-ajak">
+              <div class="ulasan-ajak-ikon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#c86b85" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <p data-en="Have you visited Sanrobone Tourism Village? Share your experience and help other travelers discover this village.">Sudah berkunjung ke Desa Wisata Sanrobone? Bagikan pengalaman Anda dan bantu wisatawan lain mengenal desa ini.</p>
+              <div class="ulasan-tombol">
+                <a href="https://wa.me/6282347764426?text=Halo%20Desa%20Wisata%20Sanrobone%2C%20saya%20ingin%20memberikan%20ulasan%3A%20" target="_blank" rel="noopener" class="tombol" data-en="WRITE A REVIEW">TULIS ULASAN</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Desa+Wisata+Sanrobone+Takalar" target="_blank" rel="noopener" class="tombol tombol-google" data-en="REVIEW ON GOOGLE">ULAS DI GOOGLE</a>
+              </div>
+            </div>
+
+            <div class="ulasan-skor" data-en="Based on the official assessment, the accommodation in Sanrobone Tourism Village achieved a total score of <strong>40 out of 50 (Good Category)</strong>. The highest scores were in community service, local cultural ambiance, tourist appeal, and development potential.">
               Berdasarkan hasil penilaian resmi, akomodasi di Desa Wisata Sanrobone memperoleh skor total <strong>40 dari 50 (Kategori Baik)</strong>. Nilai tertinggi dicapai pada pelayanan masyarakat, nuansa budaya lokal, daya tarik wisata, dan potensi pengembangan.
             </div>
 
             <p style="margin-top: 30px;">
-              <a href="#reservasi" class="tombol">RENCANAKAN KUNJUNGAN ANDA</a>
+              <a href="#reservasi" class="tombol" data-en="PLAN YOUR VISIT">RENCANAKAN KUNJUNGAN ANDA</a>
             </p>
           </div>
         </section>
 
         <section id="reservasi">
           <div class="layar-dalam text-center">
-            <h3>Reservasi</h3>
-            <p class="ringkasan">Pesan homestay, cek ketersediaan akomodasi, atau pesan souvenir dengan mudah.</p>
+            <h3 data-en="Reservation">Reservasi</h3>
+            <p class="ringkasan" data-en="Book a homestay, check accommodation availability, or order souvenirs easily.">Pesan homestay, cek ketersediaan akomodasi, atau pesan souvenir dengan mudah.</p>
             <div class="reservasi-kartu">
               <div class="reservasi-info">
-                <h4>Hubungi Kami</h4>
+                <h4 data-en="Contact Us">Hubungi Kami</h4>
                 <ul class="kontak-list">
                   <li>
                     <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <span><strong>Telepon / WhatsApp</strong><br /><a href="tel:082347764426">082347764426</a></span>
+                    <span><strong data-en="Phone / WhatsApp">Telepon / WhatsApp</strong><br /><a href="tel:082347764426">082347764426</a></span>
                   </li>
                   <li>
                     <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    <span><strong>Email</strong><br /><a href="mailto:desasanrobone22@gmail.com">desasanrobone22@gmail.com</a></span>
+                    <span><strong data-en="Email">Email</strong><br /><a href="mailto:desasanrobone22@gmail.com">desasanrobone22@gmail.com</a></span>
                   </li>
                   <li>
                     <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span><strong>Alamat</strong><br />Dusun Sanrobone, Desa Sanrobone, Kec. Sanrobone, Kab. Takalar, Sulawesi Selatan</span>
+                    <span><strong data-en="Address">Alamat</strong><br />Dusun Sanrobone, Desa Sanrobone, Kec. Sanrobone, Kab. Takalar, Sulawesi Selatan</span>
                   </li>
                 </ul>
                 <a href="https://wa.me/6282347764426" target="_blank" rel="noopener" class="tombol tombol-wa">CHAT VIA WHATSAPP</a>
               </div>
               <div class="reservasi-qr">
                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://qr1.me-qr.com/text/bgf3tp8h" alt="QR Code Reservasi Desa Wisata Sanrobone" loading="lazy" />
-                <span>Scan untuk reservasi</span>
+                <span data-en="Scan to reserve">Scan untuk reservasi</span>
               </div>
             </div>
+
+            <form class="form-reservasi" id="form-reservasi">
+              <h4 data-en="Sanrobone Tourism Village Reservation">Reservasi Desa Wisata Sanrobone</h4>
+              <p class="form-intro" data-en="Information required for a reservation includes:">Data yang diperlukan dalam reservasi meliputi:</p>
+
+              <div class="baris">
+                <label for="r-nama" data-en="Booker Name">Nama Pemesan</label>
+                <input type="text" id="r-nama" placeholder="Nama lengkap Anda" data-en-ph="Your full name" required />
+              </div>
+              <div class="baris">
+                <label for="r-telepon" data-en="Phone / WhatsApp Number">Nomor Telepon/WhatsApp</label>
+                <input type="tel" id="r-telepon" placeholder="08xxxxxxxxxx" data-en-ph="08xxxxxxxxxx" required />
+              </div>
+              <div class="baris">
+                <label for="r-asal" data-en="Region / Institution of Origin">Asal Daerah/Instansi</label>
+                <input type="text" id="r-asal" placeholder="Kota, sekolah, atau instansi Anda" data-en-ph="Your city, school, or institution" />
+              </div>
+              <div class="baris dua">
+                <div>
+                  <label for="r-tanggal" data-en="Visit Date">Tanggal Kunjungan</label>
+                  <input type="date" id="r-tanggal" />
+                </div>
+                <div>
+                  <label for="r-peserta" data-en="Number of Participants">Jumlah Peserta</label>
+                  <input type="number" id="r-peserta" min="1" value="1" />
+                </div>
+              </div>
+              <div class="baris">
+                <label for="r-tujuan" data-en="Purpose of Visit">Tujuan Kunjungan</label>
+                <select id="r-tujuan">
+                  <option data-en="Tourism / Holiday">Wisata / Liburan</option>
+                  <option data-en="Education / Study">Edukasi / Studi</option>
+                  <option data-en="Research">Penelitian</option>
+                  <option data-en="Event / Activity">Acara / Kegiatan</option>
+                  <option data-en="Other">Lainnya</option>
+                </select>
+              </div>
+              <div class="baris">
+                <label for="r-layanan" data-en="Additional Service Needs">Kebutuhan Layanan Tambahan</label>
+                <textarea id="r-layanan" rows="2" placeholder="Homestay, pemandu wisata, paket kuliner, souvenir, dll." data-en-ph="Homestay, tour guide, culinary package, souvenirs, etc."></textarea>
+              </div>
+              <button type="submit" class="tombol tombol-wa" data-en="SEND VIA WHATSAPP">KIRIM VIA WHATSAPP</button>
+              <button type="button" class="tombol tombol-email" id="kirim-email" data-en="OR SEND VIA EMAIL">ATAU KIRIM VIA EMAIL</button>
+            </form>
           </div>
         </section>
       </main>
 
       <footer id="contact">
         <div class="layar-dalam">
-          <div>
+          <div data-en="<h5>Customary Center</h5> Visit Balla Lompoa, the heritage center of the Kingdom of Sanrobone.">
             <h5>Pusat Adat</h5>
             Kunjungi Balla Lompoa sebagai pusat peninggalan Kerajaan Sanrobone.
           </div>
-          <div>
+          <div data-en="<h5>Contact</h5> Phone: 082347764426<br>Email: desasanrobone22@gmail.com">
             <h5>Kontak</h5>
             Telepon: 082347764426<br>
             Email: desasanrobone22@gmail.com
           </div>
-          <div>
+          <div data-en="<h5>Location</h5> Sanrobone Hamlet, Sanrobone Village, Sanrobone District, Takalar Regency, South Sulawesi.">
             <h5>Lokasi</h5>
             Dusun Sanrobone, Desa Sanrobone, Kec. Sanrobone, Kab. Takalar, Sulawesi Selatan.
           </div>
-          <div>
+          <div data-en="<h5>Network</h5> Part of Jadesta (the Tourism Village Network) - Developing Tourism Village category.">
             <h5>Jejaring</h5>
             Bagian dari Jadesta (Jejaring Desa Wisata) - Kategori Desa Wisata Berkembang.
           </div>
@@ -672,7 +811,7 @@
             
             <a href="https://banyuanyara.desa.id/" target="_blank" class="tombol-website" style="color: #fff; text-decoration: none; border: 1px solid #fff; padding: 10px 20px; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; font-size: 14px;">
               <svg style="margin-right: 8px;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              Website Resmi Pemerintah Desa
+              <span data-en="Official Village Government Website">Website Resmi Pemerintah Desa</span>
             </a>
           </div>
         </div>

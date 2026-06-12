@@ -1,0 +1,20 @@
+{
+  "name": "Desa Wisata Sanrobone",
+  "short_name": "Sanrobone",
+  "description": "Destinasi wisata budaya, sejarah, dan religi di Kabupaten Takalar, Sulawesi Selatan.",
+  "lang": "id",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#c86b85",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
