@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap");
-
+/* Font dimuat via <link> di <head> tiap halaman untuk performa (bukan @import). */
 * {
   box-sizing: border-box;
   font-family: "Plus Jakarta Sans", "Segoe UI", Arial, Helvetica, sans-serif;
