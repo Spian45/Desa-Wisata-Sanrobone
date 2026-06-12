@@ -422,3 +422,78 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// ====== Animasi berbeda tiap section saat tab navigasi diklik ======
+document.addEventListener("DOMContentLoaded", function () {
+    var animMap = {
+        "#profil": "anim-fade",
+        "#sejarah": "anim-up",
+        "#potensi": "anim-zoom",
+        "#akses": "anim-left",
+        "#akomodasi": "anim-right",
+        "#amenitas": "anim-flip",
+        "#souvenir": "anim-rotate",
+        "#ulasan": "anim-bounce",
+        "#paket": "anim-up",
+        "#reservasi": "anim-blur",
+    };
+    var semuaAnim = [
+        "anim-fade", "anim-up", "anim-zoom", "anim-left", "anim-right",
+        "anim-flip", "anim-rotate", "anim-bounce", "anim-blur",
+    ];
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener("click", function (e) {
+            var id = a.getAttribute("href");
+            if (!id || id === "#") return;
+            var target = document.querySelector(id);
+            if (!target) return; // tautan lintas-halaman / target tak ada -> biarkan default
+
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            var cls = animMap[id] || "anim-fade";
+            semuaAnim.forEach(function (c) { target.classList.remove(c); });
+            void target.offsetWidth; // reset agar animasi bisa diputar ulang
+            target.classList.add(cls);
+            target.addEventListener("animationend", function handler() {
+                target.classList.remove(cls);
+                target.removeEventListener("animationend", handler);
+            });
+        });
+    });
+});
+
+// ====== Scroll-spy: sorot tab section yang sedang dilihat ======
+document.addEventListener("DOMContentLoaded", function () {
+    var links = Array.prototype.slice.call(
+        document.querySelectorAll('nav .menu ul li a[href^="#"]')
+    );
+    if (!links.length || !("IntersectionObserver" in window)) return;
+
+    var peta = {};
+    var sections = [];
+    links.forEach(function (a) {
+        var id = a.getAttribute("href").slice(1);
+        if (!id) return;
+        var sec = document.getElementById(id);
+        if (sec) {
+            peta[id] = a;
+            sections.push(sec);
+        }
+    });
+    if (!sections.length) return;
+
+    var obs = new IntersectionObserver(
+        function (entries) {
+            entries.forEach(function (en) {
+                if (!en.isIntersecting) return;
+                links.forEach(function (a) { a.classList.remove("aktif"); });
+                var a = peta[en.target.id];
+                if (a) a.classList.add("aktif");
+            });
+        },
+        { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+    sections.forEach(function (s) { obs.observe(s); });
+});
