@@ -1,9 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap");
 
 * {
+  box-sizing: border-box;
   font-family: "Plus Jakarta Sans", "Segoe UI", Arial, Helvetica, sans-serif;
   line-height: 20px;
   font-size: 15px;
+}
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+img, video {
+  max-width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", "Plus Jakarta Sans", Arial, sans-serif;
@@ -319,33 +327,24 @@ header .intro p { animation: munculAtas 1s ease 0.25s both; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Indikator scroll berdenyut di bawah hero */
+/* Indikator gulir ke bawah (panah berdenyut) — cocok untuk mouse & sentuh */
 header .scroll-indikator {
   position: absolute;
-  bottom: 28px;
+  bottom: 32px;
   left: 50%;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 44px;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  border-radius: 14px;
+  width: 22px;
+  height: 22px;
+  margin-left: -11px;
+  border-right: 3px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.85);
+  transform: rotate(45deg);
   z-index: 100;
+  animation: panahTurun 1.6s ease-in-out infinite;
 }
-header .scroll-indikator::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  width: 4px;
-  height: 8px;
-  margin-left: -2px;
-  background: #fff;
-  border-radius: 2px;
-  animation: roda 1.5s infinite;
-}
-@keyframes roda {
-  0% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(14px); }
+@keyframes panahTurun {
+  0% { transform: rotate(45deg) translate(0, 0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: rotate(45deg) translate(8px, 8px); opacity: 0; }
 }
 
 /* Bar progres baca di paling atas halaman */
@@ -447,7 +446,7 @@ section.cta-band {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   header .intro h3, header .intro p { animation: none; }
-  header .scroll-indikator::after { animation: none; }
+  header .scroll-indikator { animation: none; }
 }
 
 /* ====== Penyesuaian Mobile ====== */
