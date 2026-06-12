@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Mengenal Desa Wisata Sanrobone — profil wilayah, filosofi nama, enam desa pilar, serta ringkasan sosial & budaya peradaban Bugis-Makassar di Kabupaten Takalar, Sulawesi Selatan."
+    />
+    <meta name="theme-color" content="#c86b85" />
     <title>Informasi Lengkap - Desa Wisata Sanrobone</title>
     <link rel="stylesheet" href="style.css" />
     <style>
@@ -13,24 +18,129 @@
       nav.putih .logo .hitam { display: inline-block !important; }
       nav .menu { max-width: 850px !important; }
       nav ul li a { padding: 0px 10px !important; font-size: 13.5px !important; }
-      
+
       header video { width: 100% !important; height: 100% !important; object-fit: cover !important; }
       header .intro { max-width: 800px; margin: 0 auto; transform: translateY(-50%); padding: 0 20px; }
-      
-      /* Gaya Khusus untuk Halaman Artikel Detail */
-      .artikel-detail { max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 16px; color: #444; text-align: justify; }
+      header .intro h3 {
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+      }
+      header .intro p { text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
+
+      section { scroll-margin-top: 70px; }
+      nav.putih { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
+      .tombol {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      }
+      .tombol:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(200, 107, 133, 0.35);
+      }
+
+      /* Gaya Artikel */
+      .artikel-detail { max-width: 850px; margin: 0 auto; line-height: 1.8; font-size: 16px; color: #444; text-align: justify; }
       .artikel-detail p { margin-bottom: 20px; }
       .artikel-detail h4 { color: #c86b85; font-size: 24px; margin-top: 40px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-      .artikel-detail ul { margin-bottom: 20px; padding-left: 20px; }
-      .artikel-detail li { margin-bottom: 10px; }
+
+      /* Strip galeri */
+      .galeri-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 40px auto;
+        max-width: 850px;
+      }
+      .galeri-strip img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Kartu enam desa pilar */
+      .pilar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        max-width: 850px;
+        margin: 30px auto 0;
+      }
+      .pilar-item {
+        background: #fff;
+        border-radius: 10px;
+        padding: 18px 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: left;
+      }
+      .pilar-item .nomor {
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: #c86b85;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      /* Kartu ringkasan sosial budaya */
+      .sosbud-box {
+        background-color: #fff;
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 30px;
+        border-left: 5px solid #c86b85;
+        border-radius: 5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+      .sosbud-box strong.judul { display: block; font-size: 18px; color: #333; margin: 22px 0 8px; }
+      .sosbud-box strong.judul:first-child { margin-top: 0; }
+      .sosbud-box ul { margin: 0 0 8px; padding-left: 20px; }
+      .sosbud-box li { margin-bottom: 10px; line-height: 1.7; }
+
+      .esensi-box {
+        background-color: #f9f7f3;
+        max-width: 850px;
+        margin: 30px auto 0;
+        padding: 28px 30px;
+        border-radius: 10px;
+        border: 1px dashed #d8b08c;
+        font-style: italic;
+        color: #6b5b4a;
+        line-height: 1.8;
+        text-align: center;
+      }
+
+      .sumber-box {
+        max-width: 850px;
+        margin: 40px auto 0;
+        font-size: 14px;
+        color: #888;
+        text-align: left;
+      }
+      .sumber-box h5 { color: #333; margin-bottom: 10px; letter-spacing: 1px; }
+      .sumber-box a { color: #c86b85; }
+
+      @media screen and (max-width: 768px) {
+        header .intro h3 { font-size: 32px !important; }
+        .galeri-strip { grid-template-columns: 1fr; }
+      }
     </style>
   </head>
   <body>
     <nav>
       <div class="layar-dalam">
         <div class="logo">
-          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sandrobone</a>
-          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sandrobone</a>
+          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sanrobone</a>
+          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sanrobone</a>
         </div>
         <div class="menu">
           <a href="#" class="tombol-menu"><span class="garis"></span><span class="garis"></span><span class="garis"></span></a>
@@ -42,6 +152,7 @@
             <li><a href="index.html#akomodasi">Akomodasi</a></li>
             <li><a href="index.html#amenitas">Amenitas</a></li>
             <li><a href="index.html#souvenir">Souvenir</a></li>
+            <li><a href="index.html#ulasan">Ulasan</a></li>
             <li><a href="index.html#reservasi">Reservasi</a></li>
           </ul>
         </div>
@@ -60,21 +171,95 @@
           <p><a href="index.html" class="tombol" style="background-color: transparent; border: 2px solid #fff;">KEMBALI KE BERANDA</a></p>
         </div>
       </header>
-      
+
       <main>
+        <!-- Profil Wilayah -->
         <section style="padding: 60px 0;">
           <div class="layar-dalam artikel-detail">
-            <h3>Jejak Langkah dan Profil Wilayah</h3>
-            <p>Desa Wisata Sanrobone merupakan destinasi wisata budaya dan sejarah unggulan yang terletak di Kabupaten Takalar, Sulawesi Selatan[cite: 22]. Wilayah ini bukanlah desa biasa, melainkan pusat peradaban yang mewarisi nilai-nilai kebesaran bekas Kerajaan Sanrobone[cite: 22]. Meskipun baru mendapatkan penetapan resmi sebagai desa wisata sekitar satu tahun yang lalu, perkembangannya sangat progresif hingga berhasil menduduki jajaran 300 besar desa wisata potensial di seluruh Indonesia[cite: 22].</p>
-            <p>Secara administratif, Kecamatan Sanrobone adalah wilayah yang relatif baru karena dibentuk pada tahun 2007[cite: 22]. Kawasan intinya mencakup struktur masyarakat yang erat dengan budaya lokal, terbagi menjadi lima dusun, di mana Dusun Salekowa, Kasuarrang, dan Sanrobone berada di area inti desa, sementara Dusun Bontowa dan Lau berada di wilayah luar[cite: 22].</p>
+            <h3 style="text-align: center;">Profil Wilayah Desa Sanrobone</h3>
+            <p>Desa Wisata Sanrobone merupakan salah satu destinasi wisata budaya dan sejarah yang berada di Kabupaten Takalar, Sulawesi Selatan. Desa ini memiliki nilai historis yang kuat karena merupakan bagian dari kawasan bekas Kerajaan Sanrobone yang pernah memiliki peranan penting dalam perkembangan budaya dan pemerintahan di wilayah tersebut. Meskipun baru ditetapkan sebagai desa wisata sekitar satu tahun yang lalu, Desa Sanrobone telah menunjukkan perkembangan yang sangat pesat. Dari ribuan desa wisata di Indonesia, Desa Sanrobone berhasil masuk dalam jajaran 300 besar desa wisata potensial, yang menunjukkan besarnya daya tarik dan peluang pengembangan wisata yang dimiliki.</p>
 
-            <h4>Filosofi Nama dan Asal-Usul</h4>
-            <p>Nama "Sanrobone" mengandung makna batin dan harfiah yang sangat kuat. Kata ini terlahir dari gabungan dua unsur: <i>"Sanro"</i> yang bermakna Tabib atau Penyembuh, dan <i>"Bone"</i> yang berarti Orang Bone[cite: 22]. Gabungan ini memanifestasikan daerah tersebut sebagai tempat bermukimnya seorang tabib asal Bone yang menggunakan kearifan lokalnya untuk menyembuhkan masyarakat[cite: 22]. Lebih jauh, nama ini menjadi simbol spiritual bagi para pencari ketenangan jiwa dan keharmonisan hidup dalam budaya masyarakat Bugis-Makassar[cite: 22].</p>
-            <p>Berdasarkan sejarah pembentukannya, Sanrobone diyakini bersumber dari enam desa pilar yang menjadi fondasi utama, di antaranya adalah wilayah Katangka, Lagaligo, Palopo, Kasuarrang, dan Salekowa[cite: 22]. Karena kekayaan ini, Desa Sanrobone bahkan bersaing dengan destinasi budaya bersejarah lainnya di Sulawesi Selatan seperti Katangka dan Luwu Palopo[cite: 22].</p>
+            <p>Secara administratif, Kecamatan Sanrobone sendiri merupakan kecamatan yang relatif baru, dibentuk pada tahun 2007. Desa Sanrobone terdiri dari enam desa dan memiliki lima dusun yang tersebar di dalam maupun di luar kawasan inti desa. Dusun Salekowa, Kasuarrang, dan Sanrobone berada di dalam kawasan desa, sedangkan Dusun Bontowa dan Dusun Lau berada di luar wilayah inti desa. Struktur wilayah ini mencerminkan kehidupan masyarakat yang masih sangat erat dengan nilai-nilai budaya dan tradisi lokal.</p>
 
-            <h4>Tiga Pilar Desa: Sejarah, Budaya, dan Agama</h4>
-            <p>Pembangunan pariwisata di Desa Sanrobone tidak semata-mata untuk rekreasi komersial, melainkan berlandaskan pada tiga pilar utama: Sejarah, Budaya, dan Agama[cite: 22]. Saat menjelajahi kawasan ini, wisatawan akan disambut oleh sekitar 14 hingga 18 situs bersejarah peninggalan kejayaan kerajaan masa lalu[cite: 22].</p>
-            <p>Salah satu ikon mahakarya masyarakat setempat adalah <b>Balla Lompoa</b> atau rumah adat panggung Kerajaan Sanrobone[cite: 22]. Bangunan megah ini didirikan pada tahun 2008 dan telah mendapatkan pengakuan resmi sebagai Cagar Budaya pada tahun 2025[cite: 22]. Kehadiran Balla Lompoa bukan hanya sebagai monumen mati, melainkan sebagai wadah hidupnya tradisi, tempat kediaman pemangku adat, penjaga silsilah keturunan raja-raja, hingga pusat pelaksanaan perayaan agama dan budaya akbar, seperti peringatan Maulid Nabi[cite: 22].</p>
+            <div class="galeri-strip">
+              <img src="asset/foto1.jpg" alt="Suasana Desa Wisata Sanrobone" loading="lazy" decoding="async" />
+              <img src="asset/foto2.jpg" alt="Situs budaya Desa Sanrobone" loading="lazy" decoding="async" />
+              <img src="asset/foto3.jpg" alt="Kegiatan masyarakat Desa Sanrobone" loading="lazy" decoding="async" />
+            </div>
+
+            <p>Desa Wisata Sanrobone dibangun dengan tiga pilar utama, yaitu sejarah, budaya, dan agama. Ketiga pilar tersebut menjadi identitas utama desa dalam mengembangkan potensi wisata yang berkelanjutan. Berbagai situs bersejarah masih dapat ditemukan dan dijaga dengan baik oleh masyarakat setempat. Beberapa di antaranya adalah Benteng Sanrobone, Balla Lompoa atau rumah adat kerajaan, makam raja-raja, serta masjid tua yang memiliki nilai sejarah tinggi. Selain itu, Desa Sanrobone juga memiliki sekitar 14 hingga 18 situs bersejarah yang menjadi bukti kejayaan masa lampau kerajaan tersebut.</p>
+
+            <p>Keberadaan rumah adat Sanrobone menjadi salah satu daya tarik utama desa wisata ini. Rumah adat tersebut dibangun pada tahun 2008 dan pada tahun 2025 resmi ditetapkan sebagai cagar budaya. Penetapan ini menjadi langkah penting dalam upaya pelestarian warisan budaya lokal agar tetap terjaga dan dapat diwariskan kepada generasi mendatang. Selain itu, ditemukan pula dua meriam peninggalan sejarah yang semakin memperkuat nilai historis kawasan ini.</p>
+
+            <p>Desa Sanrobone juga dikenal melalui kawasan makam kerajaan yang memiliki bentuk menyerupai piramida. Di area tersebut terdapat bedug tua yang hingga kini masih digunakan dalam kegiatan keagamaan dan adat masyarakat. Nilai spiritual dan budaya yang melekat pada situs-situs tersebut menjadikan Desa Sanrobone tidak hanya sebagai tempat wisata, tetapi juga sebagai ruang pembelajaran sejarah dan budaya masyarakat Sulawesi Selatan.</p>
+
+            <p>Dalam pengembangannya, Desa Wisata Sanrobone menghadapi persaingan dengan beberapa destinasi budaya lainnya di Sulawesi Selatan, seperti Katangka dan Luwu Palopo. Namun demikian, keunikan sejarah Kerajaan Sanrobone, kekayaan situs budaya, serta keterlibatan masyarakat dalam menjaga tradisi menjadi kekuatan utama yang membedakan desa ini dari destinasi lainnya.</p>
+
+            <p>Dengan potensi sejarah, budaya, dan religi yang dimiliki, Desa Wisata Sanrobone memiliki peluang besar untuk terus berkembang menjadi destinasi wisata unggulan berbasis kearifan lokal. Keberadaan desa ini diharapkan tidak hanya mampu menarik wisatawan, tetapi juga dapat meningkatkan perekonomian masyarakat serta memperkuat pelestarian budaya daerah.</p>
+          </div>
+        </section>
+
+        <!-- Enam Desa Pilar -->
+        <section class="abuabu">
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Enam Desa Pilar</h3>
+            <p class="ringkasan">Fondasi utama yang membentuk identitas dan kekuatan bersama Sanrobone.</p>
+            <div class="pilar-grid">
+              <div class="pilar-item"><span class="nomor">1</span> Katangka</div>
+              <div class="pilar-item"><span class="nomor">2</span> Lagaligo</div>
+              <div class="pilar-item"><span class="nomor">3</span> Palopo</div>
+              <div class="pilar-item"><span class="nomor">4</span> Sanrobone</div>
+              <div class="pilar-item"><span class="nomor">5</span> Salekowa</div>
+              <div class="pilar-item"><span class="nomor">6</span> Kasuarranga</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ringkasan Sosial & Budaya -->
+        <section>
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Ringkasan Sosial &amp; Budaya</h3>
+            <div class="sosbud-box">
+              <strong class="judul">1. Filosofi Nama</strong>
+              <ul>
+                <li><strong>Arti Bahasa:</strong> <i>Sanro</i> (Tabib/Penyembuh) dan <i>Bone</i> (Orang Bone). Melambangkan tempat tabib asal Bone yang menyembuhkan dengan kearifan lokal.</li>
+                <li><strong>Nilai Spiritual:</strong> Simbol batin pencari ketenangan jiwa dan keharmonisan hidup masyarakat Bugis-Makassar.</li>
+              </ul>
+
+              <strong class="judul">2. Kawasan Sejarah &amp; Religi</strong>
+              <ul>
+                <li><strong>Piramid Makam Kerajaan:</strong> Situs makam raja kuno berbentuk piramida. Menyimpan Bedug Tua dari pohon cabai untuk acara adat, serta Sumur Adat yang tidak pernah kering sebagai simbol keberkahan dan lokasi mandi pernikahan.</li>
+                <li><strong>Masjid Tua Baitul Maqdis:</strong> Bukti awal masuknya Islam di Sanrobone yang dibawa pedagang/ulama Arab (seperti figur Tuban atau Pagaruyun Arab), menggeser pengaruh ajaran Hindu-Buddha kuno.</li>
+              </ul>
+
+              <strong class="judul">3. Balla Lompoa (Pusat Adat)</strong>
+              <ul>
+                <li><strong>Fungsi Utama:</strong> Rumah adat panggung (didirikan 2016) yang menyimpan silsilah keturunan raja-raja Sanrobone.</li>
+                <li><strong>Peninggalan &amp; Kegiatan:</strong> Menyimpan peninggalan Tasbih Raksasa dan ruang pembakaran roti tradisional kerajaan. Menjadi kediaman pemangku adat serta pusat perayaan besar seperti Maulid Nabi.</li>
+              </ul>
+
+              <strong class="judul">4. Esensi Destinasi</strong>
+              <p style="margin: 0; line-height: 1.7;">Integrasi situs kerajaan, kearifan lokal, dan religi yang hidup menjadikan Sanrobone sebagai pusat edukasi sejarah sekaligus destinasi wisata budaya unggulan di Kabupaten Takalar, Sulawesi Selatan.</p>
+            </div>
+
+            <div class="esensi-box">
+              "Desa Sanrobone adalah desa yang menjunjung tinggi nilai-nilai sejarah, agama, dan budaya. Dengan semangat gotong royong, masyarakat terus bersinergi membangun desa yang maju dan berdaya."
+            </div>
+
+            <div class="sumber-box">
+              <h5>SUMBER RESMI</h5>
+              <ul style="padding-left: 20px;">
+                <li>Website Resmi Pemerintah Desa Banyuanyara, Kecamatan Sanrobone — <a href="https://banyuanyara.desa.id/" target="_blank" rel="noopener">banyuanyara.desa.id</a></li>
+                <li>Sistem Informasi Desa Kecamatan Sanrobone, Kabupaten Takalar.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="cta-band">
+          <div class="layar-dalam">
+            <h3>Kunjungi Desa Wisata Sanrobone</h3>
+            <p>Saksikan langsung warisan tiga pilar &mdash; sejarah, budaya, dan agama &mdash; yang hidup di tengah masyarakat Sanrobone.</p>
+            <a href="index.html#reservasi" class="tombol">RESERVASI SEKARANG</a>
           </div>
         </section>
       </main>

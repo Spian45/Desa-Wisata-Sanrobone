@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta
+      name="description"
+      content="Souvenir & oleh-oleh khas Desa Wisata Sanrobone — abon ikan tanpa tulang, gantungan kunci kriya, kaos desa wisata, dan aneka kanrejawa turiolo (kue tradisional Bugis-Makassar)."
+    />
+    <meta name="theme-color" content="#c86b85" />
     <title>Detail Souvenir - Sanrobone</title>
-    
+
     <link rel="stylesheet" href="style.css" />
     <style>
       .logo .hitam { display: none !important; }
@@ -15,22 +19,38 @@
       nav.putih .logo .hitam { display: inline-block !important; }
       nav .menu { max-width: 850px !important; }
       nav ul li a { padding: 0px 10px !important; font-size: 13.5px !important; }
-      
+
       header video { width: 100% !important; height: 100% !important; object-fit: cover !important; }
       header .intro { max-width: 800px; margin: 0 auto; transform: translateY(-50%); padding: 0 20px; }
-      header .intro h3 { line-height: 1.3 !important; margin-bottom: 15px !important; }
-      
-      /* GAYA KHUSUS KATALOG SOUVENIR */
-      .artikel-detail { 
-        max-width: 850px; 
-        margin: 0 auto; 
-        line-height: 1.8; 
-        font-size: 16px; 
-        color: #444; 
+      header .intro h3 {
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+      }
+      header .intro p { text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
+
+      section { scroll-margin-top: 70px; }
+      nav.putih { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
+
+      .tombol {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      }
+      .tombol:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(200, 107, 133, 0.35);
+      }
+
+      /* GAYA KATALOG SOUVENIR */
+      .artikel-detail {
+        max-width: 850px;
+        margin: 0 auto;
+        line-height: 1.8;
+        font-size: 16px;
+        color: #444;
         text-align: justify;
       }
       .artikel-detail p { margin-bottom: 20px; }
-      
+
       .produk-item {
         display: flex;
         flex-wrap: wrap;
@@ -40,20 +60,21 @@
         border-bottom: 1px solid #ddd;
         align-items: flex-start;
       }
-      .produk-item:last-child {
-        border-bottom: none;
-      }
+      .produk-item:last-child { border-bottom: none; }
       .produk-item img {
         width: 100%;
         max-width: 300px;
+        height: 220px;
         border-radius: 8px;
         object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-      .produk-item .deskripsi {
-        flex: 1;
-        min-width: 300px;
+      .produk-item img:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
       }
+      .produk-item .deskripsi { flex: 1; min-width: 300px; }
       .produk-item h4 {
         color: #c86b85;
         font-size: 22px;
@@ -71,13 +92,8 @@
         font-size: 14px;
         margin-bottom: 15px;
       }
-      .kue-list {
-        padding-left: 20px;
-        margin-top: 10px;
-      }
-      .kue-list li {
-        margin-bottom: 10px;
-      }
+      .kue-list { padding-left: 20px; margin-top: 10px; }
+      .kue-list li { margin-bottom: 10px; }
       .kontak-pemesanan {
         background-color: #f9f9f9;
         padding: 30px;
@@ -85,14 +101,19 @@
         border-radius: 5px;
         margin-top: 50px;
       }
+
+      @media screen and (max-width: 768px) {
+        header .intro h3 { font-size: 32px !important; }
+        .produk-item img { max-width: 100%; height: 240px; }
+      }
     </style>
   </head>
   <body>
     <nav>
       <div class="layar-dalam">
         <div class="logo">
-          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sandrobone</a>
-          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sandrobone</a>
+          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sanrobone</a>
+          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sanrobone</a>
         </div>
         <div class="menu">
           <a href="#" class="tombol-menu"><span class="garis"></span><span class="garis"></span><span class="garis"></span></a>
@@ -104,6 +125,7 @@
             <li><a href="index.html#akomodasi">Akomodasi</a></li>
             <li><a href="index.html#amenitas">Amenitas</a></li>
             <li><a href="index.html#souvenir">Souvenir</a></li>
+            <li><a href="index.html#ulasan">Ulasan</a></li>
             <li><a href="index.html#reservasi">Reservasi</a></li>
           </ul>
         </div>
@@ -117,83 +139,78 @@
           <source src="asset/video-indonesia.mp4" type="video/mp4" />
         </video>
         <div class="intro">
-          
-          <h3>Souvenir & Oleh-oleh Desa Sanrobone</h3>
-          <p>Membawa pulang sepotong memori dari Sanrobone melalui karya kriya dan cita rasa kuliner warisan leluhur. <!--[cite: 11] --></p>
-          
+          <h3>Souvenir &amp; Oleh-oleh Desa Sanrobone</h3>
+          <p>Membawa pulang sepotong memori dari Sanrobone melalui karya kriya dan cita rasa kuliner warisan leluhur.</p>
           <p><a href="index.html" class="tombol" style="background-color: transparent; border: 2px solid #fff; margin-top: 10px;">KEMBALI KE BERANDA</a></p>
         </div>
       </header>
-      
+
       <main>
         <section style="padding: 60px 0;">
           <div class="layar-dalam">
-            
             <div class="artikel-detail">
-              <p style="text-align: center; font-size: 18px; margin-bottom: 50px;">Souvenir yang dikembangkan oleh Pokdarwis Desa Wisata Sanrobone merupakan bagian dari upaya pemberdayaan ekonomi masyarakat dan promosi destinasi. <!--[cite: 11] --> Produk yang tersedia meliputi abon ikan tanpa tulang sebagai oleh-oleh kuliner khas, gantungan kunci berbentuk ikon budaya lokal, kue-kue tradisional serta kaos bertema Desa Wisata Sanrobone. <!--[cite: 11] --> Kehadiran souvenir tersebut tidak hanya memberikan nilai ekonomi bagi masyarakat, tetapi juga menjadi media untuk memperkenalkan identitas budaya, sejarah, dan religi Sanrobone kepada wisatawan. <!--[cite: 11] --></p>
+              <p style="text-align: center; font-size: 18px; margin-bottom: 50px;">Souvenir yang dikembangkan oleh Pokdarwis Desa Wisata Sanrobone merupakan bagian dari upaya pemberdayaan ekonomi masyarakat dan promosi destinasi. Produk yang tersedia meliputi abon ikan tanpa tulang sebagai oleh-oleh kuliner khas, gantungan kunci berbentuk ikon budaya lokal, kue-kue tradisional serta kaos bertema Desa Wisata Sanrobone. Kehadiran souvenir tersebut tidak hanya memberikan nilai ekonomi bagi masyarakat, tetapi juga menjadi media untuk memperkenalkan identitas budaya, sejarah, dan religi Sanrobone kepada wisatawan.</p>
 
               <!-- PRODUK 1 -->
               <div class="produk-item">
-                <img src="asset/souvenir1.jpg" alt="Abon Ikan Bolu & Bandeng" />
+                <img src="asset/souvenir1.jpg" alt="Abon Ikan Bolu & Bandeng Tanpa Tulang" loading="lazy" decoding="async" />
                 <div class="deskripsi">
-                  <h4>Abon Ikan Bolu & Bandeng Tanpa Tulang Sanrobone</h4>
-                  <div class="harga-tag">Rp 20.000 <!--[cite: 11] --></div>
-                  <p>Produk olahan ikan khas Sanrobone yang dapat dijadikan oleh-oleh kuliner. <!--[cite: 11] --> Abon ini diolah secara khusus tanpa tulang (tanpa duri) sehingga aman dan nikmat dikonsumsi oleh seluruh kalangan sebagai pelengkap hidangan.</p>
+                  <h4>Abon Ikan Bolu &amp; Bandeng Tanpa Tulang Sanrobone</h4>
+                  <div class="harga-tag">Rp 20.000</div>
+                  <p>Produk olahan ikan khas Sanrobone yang dapat dijadikan oleh-oleh kuliner. Abon ini diolah secara khusus tanpa tulang (tanpa duri) sehingga aman dan nikmat dikonsumsi oleh seluruh kalangan sebagai pelengkap hidangan.</p>
                 </div>
               </div>
 
               <!-- PRODUK 2 -->
               <div class="produk-item">
-                <img src="asset/souvenir2.jpg" alt="Gantungan Kunci Sanrobone" />
+                <img src="asset/Picture2.jpg" alt="Kriya Gantungan Kunci Rumah Adat Sanrobone" loading="lazy" decoding="async" />
                 <div class="deskripsi">
                   <h4>Kriya Gantungan Kunci Sanrobone</h4>
-                  <div class="harga-tag">Rp 5.000 <!--[cite: 11] --></div>
-                  <p>Souvenir kerajinan tangan yang mengangkat identitas dan ikon budaya Sanrobone. <!--[cite: 11] --> Beberapa pengembangan souvenir ini berbentuk rumah adat dan Balla Lompoa sebagai media promosi wisata desa. <!--[cite: 11] --> Sangat cocok dijadikan buah tangan praktis nan bermakna.</p>
+                  <div class="harga-tag">Rp 5.000</div>
+                  <p>Souvenir kerajinan tangan yang mengangkat identitas dan ikon budaya Sanrobone. Beberapa pengembangan souvenir ini berbentuk rumah adat dan Balla Lompoa sebagai media promosi wisata desa. Sangat cocok dijadikan buah tangan praktis nan bermakna.</p>
                 </div>
               </div>
 
               <!-- PRODUK 3 -->
               <div class="produk-item">
-                <img src="asset/souvenir3.jpg" alt="Baju Kaos Desa Wisata" />
+                <img src="asset/souvenir3.jpg" alt="Baju Kaos Desa Wisata Sanrobone" loading="lazy" decoding="async" />
                 <div class="deskripsi">
                   <h4>Baju Kaos Desa Wisata Sanrobone</h4>
-                  <div class="harga-tag">Rp 85.000 - Rp 90.000 <!--[cite: 11] --></div>
-                  <p>Kaos dengan desain yang memperkenalkan identitas Desa Wisata Sanrobone sebagai destinasi budaya, sejarah, dan religi. <!--[cite: 11] --> Produk ini didesain dan dibuat oleh Pokdarwis sebagai oleh-oleh khas desa wisata. <!--[cite: 11] --> Varian kaos yang mengangkat tema budaya lokal Sanrobone sebagai ciri khas destinasi wisata. <!--[cite: 11] --></p>
+                  <div class="harga-tag">Rp 85.000 - Rp 90.000</div>
+                  <p>Kaos dengan desain yang memperkenalkan identitas Desa Wisata Sanrobone sebagai destinasi budaya, sejarah, dan religi. Produk ini didesain dan dibuat oleh Pokdarwis sebagai oleh-oleh khas desa wisata. Varian kaos yang mengangkat tema budaya lokal Sanrobone sebagai ciri khas destinasi wisata.</p>
                 </div>
               </div>
 
               <!-- PRODUK 4 -->
               <div class="produk-item">
-                <img src="asset/souvenir4.jpg" alt="Aneka Kanrejawa Turiolo" />
+                <img src="asset/souvenir4.jpg" alt="Aneka Kanrejawa Turiolo" loading="lazy" decoding="async" />
                 <div class="deskripsi">
                   <h4>Aneka Kanrejawa Turiolo</h4>
-                  <div class="harga-tag">Mulai Rp 2.500 - Rp 25.000 /pcs <!--[cite: 11] --></div>
-                  <p>Aneka kanrejawa turiolo, istilah ini bermakna beraneka ragam kue atau jajanan manis tradisional warisan leluhur. <!--[cite: 11] --> Kuliner ini sering diolah dalam kegiatan memasak massal budaya lokal makassar dan menjadi produk kuliner khas di kawasan wisata sejarah desa wisata sandrobone. <!--[cite: 11] --> Beberapa kue tradisional yang dijadikan oleh-oleh antara lain:</p>
-                  
+                  <div class="harga-tag">Mulai Rp 2.500 - Rp 25.000 /pcs</div>
+                  <p>Aneka kanrejawa turiolo, istilah ini bermakna beraneka ragam kue atau jajanan manis tradisional warisan leluhur. Kuliner ini sering diolah dalam kegiatan memasak massal budaya lokal Makassar dan menjadi produk kuliner khas di kawasan wisata sejarah Desa Wisata Sanrobone. Beberapa kue tradisional yang dijadikan oleh-oleh antara lain:</p>
+
                   <ul class="kue-list">
-                    <li><b>Barongko:</b> Kue berbahan pisang yang dibungkus daun pisang dan dikukus. <!--[cite: 11] --></li>
-                    <li><b>Bolu Cukke:</b> Kue tradisional khas Bugis-Makassar yang memiliki cita rasa manis dengan aroma rempah. <!--[cite: 11] --></li>
-                    <li><b>Kue Tumbu (Bolu Peca'):</b> Kue berbahan dasar gula merah dan tepung yang dimasak dalam cetakan bambu. <!--[cite: 11] --></li>
-                    <li><b>Doko-Doko Cangkuling:</b> Kue tradisional dari tepung beras ketan dengan parutan kelapa. <!--[cite: 11] --></li>
-                    <li><b>Onde-Onde Ubi Ungu:</b> Variasi kue tradisional yang banyak disukai wisatawan. <!--[cite: 11] --></li>
-                    <li><b>Bannang-Bannang:</b> Kue khas Bugis-Makassar berbentuk seperti benang yang digoreng dan diberi lapisan gula merah. <!--[cite: 11] --></li>
-                    <li><b>Kue Baje:</b> Makanan tradisional berbahan ketan dan gula merah yang cukup tahan lama sehingga cocok sebagai oleh-oleh. <!--[cite: 11] --></li>
-                    <li><b>Kue Cucuru' Bayao:</b> Kue khas Makassar yang terbuat dari telur, tepung, dan gula merah. <!--[cite: 11] --></li>
-                    <li><b>Puding Es Doger:</b> Puding Es Doger merupakan inovasi kuliner yang menggabungkan cita rasa es doger tradisional dengan tekstur puding yang lembut. <!--[cite: 11] --> Produk ini umumnya dibuat dari santan, susu, agar-agar, gula, serta tambahan topping seperti kelapa muda, tape, dan potongan buah. <!--[cite: 11] --></li>
+                    <li><b>Barongko:</b> Kue berbahan pisang yang dibungkus daun pisang dan dikukus.</li>
+                    <li><b>Bolu Cukke:</b> Kue tradisional khas Bugis-Makassar yang memiliki cita rasa manis dengan aroma rempah.</li>
+                    <li><b>Kue Tumbu (Bolu Peca'):</b> Kue berbahan dasar gula merah dan tepung yang dimasak dalam cetakan bambu.</li>
+                    <li><b>Doko-Doko Cangkuling:</b> Kue tradisional dari tepung beras ketan dengan parutan kelapa.</li>
+                    <li><b>Onde-Onde Ubi Ungu:</b> Variasi kue tradisional yang banyak disukai wisatawan.</li>
+                    <li><b>Bannang-Bannang:</b> Kue khas Bugis-Makassar berbentuk seperti benang yang digoreng dan diberi lapisan gula merah.</li>
+                    <li><b>Kue Baje:</b> Makanan tradisional berbahan ketan dan gula merah yang cukup tahan lama sehingga cocok sebagai oleh-oleh.</li>
+                    <li><b>Kue Cucuru' Bayao:</b> Kue khas Makassar yang terbuat dari telur, tepung, dan gula merah.</li>
+                    <li><b>Puding Es Doger:</b> Inovasi kuliner yang menggabungkan cita rasa es doger tradisional dengan tekstur puding yang lembut. Produk ini umumnya dibuat dari santan, susu, agar-agar, gula, serta tambahan topping seperti kelapa muda, tape, dan potongan buah.</li>
                   </ul>
                 </div>
               </div>
 
               <!-- KONTAK PEMESANAN -->
               <div class="kontak-pemesanan">
-                <h4 style="color: #333; font-size: 20px;">Informasi & Kontak Pemesanan</h4>
+                <h4 style="color: #333; font-size: 20px;">Informasi &amp; Kontak Pemesanan</h4>
                 <p style="margin-bottom: 5px;">Bagi pengunjung yang tertarik untuk membeli atau memesan produk souvenir dan kuliner dalam jumlah besar, silakan hubungi Pokdarwis Desa Sanrobone melalui kontak berikut:</p>
-                <div style="font-size: 26px; font-weight: bold; color: #c86b85; margin: 15px 0;">082347764426 <!--[cite: 11] --></div>
-                <p style="margin-bottom: 0;"><b>Alamat:</b> Dusun Sanrobone Desa Sanrobone Kecamatan Sanrobone Kabupaten Takalar Provinsi Sulawesi Selatan. <!--[cite: 11] --></p>
+                <div style="font-size: 26px; font-weight: bold; color: #c86b85; margin: 15px 0;">082347764426</div>
+                <p style="margin-bottom: 0;"><b>Alamat:</b> Dusun Sanrobone, Desa Sanrobone, Kecamatan Sanrobone, Kabupaten Takalar, Provinsi Sulawesi Selatan.</p>
               </div>
-
             </div>
-
           </div>
         </section>
       </main>

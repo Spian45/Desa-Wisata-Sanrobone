@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta
+      name="description"
+      content="Akomodasi homestay berbasis masyarakat di Desa Wisata Sanrobone, Kabupaten Takalar — pengalaman menginap autentik dengan nuansa budaya dan sejarah Kerajaan Sanrobone."
+    />
+    <meta name="theme-color" content="#c86b85" />
     <title>Detail Akomodasi - Sanrobone</title>
-    
+
     <link rel="stylesheet" href="style.css" />
     <style>
       .logo .hitam { display: none !important; }
@@ -15,26 +19,186 @@
       nav.putih .logo .hitam { display: inline-block !important; }
       nav .menu { max-width: 850px !important; }
       nav ul li a { padding: 0px 10px !important; font-size: 13.5px !important; }
-      
+
       header video { width: 100% !important; height: 100% !important; object-fit: cover !important; }
-      
+
       header .intro { max-width: 800px; margin: 0 auto; transform: translateY(-50%); padding: 0 20px; }
-      
-      /* --- PERBAIKAN TEKS JUDUL YANG BERTUMPUK --- */
-      header .intro h3 { 
-        line-height: 1.3 !important; /* Mengatur jarak baris agar tidak bertabrakkan saat turun ke bawah */
-        margin-bottom: 15px !important; /* Memberi jarak sedikit dengan teks deskripsi di bawahnya */
+
+      header .intro h3 {
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
       }
-      
-      /* GAYA KHUSUS AGAR BISA LANGSUNG PASTE DARI WORD */
-      .tempat-paste { 
-        max-width: 800px; 
-        margin: 0 auto; 
-        line-height: 1.8; 
-        font-size: 16px; 
-        color: #444; 
+      header .intro p { text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
+
+      /* Memberi jarak agar judul section tidak tertutup navbar fixed. */
+      section { scroll-margin-top: 70px; }
+
+      nav.putih { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
+
+      /* Isi teks artikel */
+      .konten-isi { max-width: 900px; margin: 0 auto; }
+      .konten-isi p {
+        margin-bottom: 16px;
+        line-height: 1.85;
+        color: #444;
         text-align: justify;
-        white-space: pre-line; /* Ini yang membuat spasi dan paragraf otomatis terbaca */
+      }
+
+      /* Tombol dengan umpan balik hover */
+      .tombol {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      }
+      .tombol:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(200, 107, 133, 0.35);
+      }
+
+      /* Kartu Homestay */
+      .homestay-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        margin-top: 35px;
+      }
+      .homestay-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .homestay-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
+      }
+      .homestay-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+      }
+      .homestay-card .info { padding: 18px; text-align: center; }
+      .homestay-card h6 { margin: 0 0 6px; font-size: 16px; font-weight: bold; }
+      .homestay-card .harga { color: #c86b85; font-weight: bold; }
+
+      /* Daftar Fasilitas */
+      .fasilitas-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+        max-width: 780px;
+        margin: 35px auto 0;
+      }
+      .fasilitas-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: #fff;
+        padding: 16px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+      .fasilitas-item .ceklis {
+        flex: 0 0 auto;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #c86b85;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      /* Kotak Skor Penilaian */
+      .skor-box {
+        background: #fff;
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 40px 36px;
+        border-radius: 12px;
+        border-top: 5px solid #c86b85;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        text-align: center;
+      }
+      .skor-angka { font-size: 56px; font-weight: bold; color: #c86b85; line-height: 1; }
+      .skor-angka small { font-size: 24px; color: #999; }
+      .skor-label {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 6px 18px;
+        background: #c86b85;
+        color: #fff;
+        border-radius: 20px;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .skor-box p { margin-top: 22px; color: #444; line-height: 1.8; }
+
+      /* Kotak kontak reservasi */
+      .kontak-box {
+        background: #fff;
+        max-width: 520px;
+        margin: 30px auto 0;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        text-align: center;
+      }
+
+      /* Galeri foto homestay */
+      .galeri-homestay {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: 35px;
+      }
+      .galeri-homestay figure {
+        position: relative;
+        margin: 0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+        aspect-ratio: 4 / 3;
+        background: #ece7e3;
+      }
+      .galeri-homestay img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.45s ease;
+      }
+      .galeri-homestay figure:hover img { transform: scale(1.08); }
+      .galeri-homestay figcaption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 22px 14px 12px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: left;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .galeri-homestay figure:hover figcaption { opacity: 1; transform: translateY(0); }
+
+      @media screen and (max-width: 991.98px) {
+        .homestay-grid { grid-template-columns: repeat(2, 1fr); }
+        .galeri-homestay { grid-template-columns: repeat(3, 1fr); }
+      }
+      @media screen and (max-width: 768px) {
+        .homestay-grid { grid-template-columns: 1fr; }
+        .galeri-homestay { grid-template-columns: repeat(2, 1fr); }
+        header .intro h3 { font-size: 34px !important; }
       }
     </style>
   </head>
@@ -42,8 +206,8 @@
     <nav>
       <div class="layar-dalam">
         <div class="logo">
-          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sandrobone</a>
-          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sandrobone</a>
+          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sanrobone</a>
+          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sanrobone</a>
         </div>
         <div class="menu">
           <a href="#" class="tombol-menu"><span class="garis"></span><span class="garis"></span><span class="garis"></span></a>
@@ -55,6 +219,7 @@
             <li><a href="index.html#akomodasi">Akomodasi</a></li>
             <li><a href="index.html#amenitas">Amenitas</a></li>
             <li><a href="index.html#souvenir">Souvenir</a></li>
+            <li><a href="index.html#ulasan">Ulasan</a></li>
             <li><a href="index.html#reservasi">Reservasi</a></li>
           </ul>
         </div>
@@ -68,43 +233,200 @@
           <source src="asset/video-indonesia.mp4" type="video/mp4" />
         </video>
         <div class="intro">
-          
           <h3>Akomodasi Desa Wisata Sanrobone</h3>
           <p>Melalui akomodasi berbasis masyarakat, wisatawan dapat memperoleh pengalaman yang lebih autentik terkait kehidupan sosial, budaya, adat istiadat, serta aktivitas keseharian masyarakat setempat.</p>
-          
           <p><a href="index.html" class="tombol" style="background-color: transparent; border: 2px solid #fff; margin-top: 10px;">KEMBALI KE BERANDA</a></p>
         </div>
       </header>
-      
+
       <main>
-        <section style="padding: 60px 0;">
-          <div class="layar-dalam">
-            
-            <div class="tempat-paste">
+        <!-- Pengantar -->
+        <section>
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Tentang Akomodasi</h3>
+            <div class="konten-isi">
+              <p>Akomodasi merupakan salah satu komponen penting dalam sistem kepariwisataan yang berfungsi sebagai sarana penunjang bagi wisatawan selama melakukan perjalanan dan kunjungan ke suatu destinasi. Keberadaan akomodasi yang memadai tidak hanya memberikan tempat beristirahat bagi wisatawan, tetapi juga menjadi faktor yang memengaruhi tingkat kepuasan pengunjung terhadap suatu objek wisata. Dalam konsep desa wisata, akomodasi memiliki peran yang lebih luas karena tidak hanya berfungsi sebagai tempat menginap, melainkan juga sebagai media interaksi antara wisatawan dengan masyarakat lokal. Melalui akomodasi berbasis masyarakat, wisatawan dapat memperoleh pengalaman yang lebih autentik terkait kehidupan sosial, budaya, adat istiadat, serta aktivitas keseharian masyarakat setempat.</p>
 
-            Akomodasi Desa Wisata Sanrobone
-            Akomodasi merupakan salah satu komponen penting dalam sistem kepariwisataan yang berfungsi sebagai sarana penunjang bagi wisatawan selama melakukan perjalanan dan kunjungan ke suatu destinasi. Keberadaan akomodasi yang memadai tidak hanya memberikan tempat beristirahat bagi wisatawan, tetapi juga menjadi faktor yang memengaruhi tingkat kepuasan pengunjung terhadap suatu objek wisata. Dalam konsep desa wisata, akomodasi memiliki peran yang lebih luas karena tidak hanya berfungsi sebagai tempat menginap, melainkan juga sebagai media interaksi antara wisatawan dengan masyarakat lokal. Melalui akomodasi berbasis masyarakat, wisatawan dapat memperoleh pengalaman yang lebih autentik terkait kehidupan sosial, budaya, adat istiadat, serta aktivitas keseharian masyarakat setempat.
-            Desa Wisata Sanrobone yang terletak di Kabupaten Takalar merupakan salah satu desa wisata yang berkembang dengan mengusung konsep wisata sejarah, budaya, dan religi. Keberadaan berbagai situs peninggalan Kerajaan Sanrobone menjadikan desa ini memiliki daya tarik yang unik dibandingkan dengan destinasi wisata lainnya. Berbagai objek wisata seperti Benteng Sanrobone, Balla Lompoa, makam raja-raja, masjid tua, serta berbagai situs sejarah lainnya menjadi alasan utama wisatawan berkunjung ke kawasan ini. Seiring dengan meningkatnya kunjungan wisatawan, kebutuhan terhadap sarana akomodasi menjadi aspek yang semakin penting untuk diperhatikan dalam mendukung pengembangan desa wisata.
-            Secara umum, kondisi homestay yang terdapat di Desa Wisata Sanrobone masih tergolong sederhana. Bangunan yang digunakan sebagian besar merupakan rumah tinggal masyarakat yang telah disesuaikan untuk menerima tamu. Fasilitas yang tersedia umumnya meliputi kamar tidur, kamar mandi, ruang tamu, serta area makan yang digunakan bersama dengan pemilik rumah. Meskipun fasilitas yang tersedia belum sepenuhnya setara dengan hotel atau penginapan komersial, kondisi tersebut tidak mengurangi nilai pengalaman yang diperoleh wisatawan. 
-
-            justru kesederhanaan tersebut menjadi salah satu daya tarik karena memberikan suasana yang lebih alami dan mencerminkan kehidupan masyarakat pedesaan yang sesungguhnya.
-            Salah satu keunggulan utama akomodasi di Desa Wisata Sanrobone adalah suasana lingkungan yang nyaman, aman, dan masih sangat kental dengan nuansa budaya lokal. Wisatawan yang menginap dapat merasakan kehidupan masyarakat secara langsung, mulai dari aktivitas sehari-hari, pola interaksi sosial, hingga berbagai tradisi yang masih dijalankan oleh masyarakat. Pengalaman tersebut menjadi nilai tambah yang tidak selalu dapat diperoleh pada jenis akomodasi modern. Melalui homestay, wisatawan tidak hanya menjadi pengunjung, tetapi juga menjadi bagian dari kehidupan masyarakat selama masa kunjungannya.
-            Selain memberikan pengalaman budaya yang autentik, homestay di Desa Wisata Sanrobone juga memungkinkan wisatawan untuk mengenal lebih dekat berbagai nilai sejarah yang dimiliki oleh desa tersebut. Lokasi akomodasi yang berada di sekitar kawasan wisata memudahkan wisatawan untuk mengakses berbagai situs sejarah dan budaya yang ada. Wisatawan dapat mengunjungi Balla Lompoa sebagai pusat adat dan peninggalan Kerajaan Sanrobone, melihat kawasan makam kerajaan yang memiliki nilai historis tinggi, serta mengunjungi masjid tua yang menjadi bukti perkembangan agama Islam di kawasan tersebut. Kedekatan antara akomodasi dan objek wisata menjadi salah satu faktor yang mendukung kenyamanan wisatawan selama berada di Desa Wisata Sanrobone.
-            
-            Meskipun demikian, kondisi kebersihan lingkungan secara umum cukup baik. Masyarakat masih menjaga kebersihan kawasan permukiman dan lingkungan sekitar objek wisata. Lingkungan desa yang asri, udara yang relatif bersih, serta suasana yang tenang menjadi faktor yang mendukung kenyamanan wisatawan selama menginap. Kebersihan dan keamanan lingkungan merupakan aspek penting yang harus dipertahankan karena menjadi salah satu indikator kualitas destinasi wisata yang berkelanjutan.
-            Keberadaan akomodasi juga memberikan dampak ekonomi yang cukup signifikan bagi masyarakat setempat. Melalui pengelolaan homestay, masyarakat memperoleh tambahan pendapatan yang dapat membantu meningkatkan kesejahteraan keluarga. Selain itu, kehadiran wisatawan juga memberikan manfaat bagi pelaku usaha lainnya, seperti penjual makanan dan minuman, pengrajin lokal, penyedia jasa transportasi, serta berbagai 
-
-            usaha kecil yang berkembang di sekitar kawasan wisata. Dengan demikian, pengembangan akomodasi tidak hanya berdampak pada sektor pariwisata, tetapi juga berkontribusi terhadap peningkatan aktivitas ekonomi masyarakat secara keseluruhan.
-            Berdasarkan hasil penilaian terhadap berbagai aspek akomodasi yang meliputi ketersediaan kamar, kebersihan, fasilitas pendukung, pelayanan masyarakat, nuansa budaya lokal, aksesibilitas, kenyamanan, keamanan, daya tarik wisata sekitar, dan potensi pengembangan, diperoleh skor total sebesar 40 dari 50. Hasil tersebut menunjukkan bahwa akomodasi di Desa Wisata Sanrobone berada dalam kategori baik. Nilai tersebut mencerminkan bahwa akomodasi yang tersedia telah mampu mendukung kebutuhan dasar wisatawan meskipun masih terdapat beberapa aspek yang perlu ditingkatkan.
-            Aspek yang memperoleh nilai tertinggi adalah pelayanan masyarakat, nuansa budaya lokal, daya tarik wisata sekitar, dan potensi pengembangan. Hal ini menunjukkan bahwa kekuatan utama akomodasi di Desa Wisata Sanrobone terletak pada pengalaman wisata berbasis budaya dan sejarah yang ditawarkan kepada wisatawan. Sebaliknya, aspek fasilitas pendukung memperoleh nilai yang lebih rendah karena masih membutuhkan peningkatan agar dapat memenuhi standar pelayanan wisata yang lebih baik.
-            Melihat potensi yang dimiliki, pengembangan homestay berbasis budaya menjadi salah satu strategi yang dapat diterapkan di Desa Wisata Sanrobone. Pengembangan tersebut dapat dilakukan melalui peningkatan kualitas fasilitas, pelatihan pengelolaan homestay bagi masyarakat, penyediaan sarana informasi wisata, serta penguatan promosi destinasi melalui media digital. Selain itu, konsep homestay yang mengintegrasikan unsur budaya lokal dapat menjadi daya tarik tersendiri yang membedakan Desa Wisata Sanrobone dari destinasi lainnya di Sulawesi Selatan.
-            Dalam jangka panjang, pengembangan akomodasi yang terencana dan berkelanjutan diharapkan mampu meningkatkan daya saing Desa Wisata Sanrobone sebagai destinasi wisata unggulan berbasis sejarah, budaya, 
-
-            dan religi. Keberadaan homestay yang dikelola oleh masyarakat dapat menjadi sarana pemberdayaan ekonomi sekaligus media pelestarian budaya lokal. Melalui keterlibatan aktif masyarakat dalam pengelolaan akomodasi, manfaat pembangunan pariwisata dapat dirasakan secara langsung oleh masyarakat setempat.
-            Secara keseluruhan, akomodasi di Desa Wisata Sanrobone memiliki potensi yang cukup besar untuk terus berkembang seiring dengan meningkatnya kunjungan wisatawan dan perhatian pemerintah terhadap pengembangan desa wisata. Meskipun masih menghadapi berbagai keterbatasan, keberadaan homestay yang berbasis masyarakat telah menunjukkan peran yang penting dalam mendukung aktivitas pariwisata di kawasan tersebut. Dengan peningkatan kualitas fasilitas, penguatan kapasitas sumber daya manusia, serta dukungan berbagai pihak, akomodasi di Desa Wisata Sanrobone berpeluang menjadi salah satu faktor utama yang mendukung terwujudnya desa wisata yang maju, berdaya saing, dan berkelanjutan.
-
+              <p>Desa Wisata Sanrobone yang terletak di Kabupaten Takalar merupakan salah satu desa wisata yang berkembang dengan mengusung konsep wisata sejarah, budaya, dan religi. Keberadaan berbagai situs peninggalan Kerajaan Sanrobone menjadikan desa ini memiliki daya tarik yang unik dibandingkan dengan destinasi wisata lainnya. Berbagai objek wisata seperti Benteng Sanrobone, Balla Lompoa, makam raja-raja, masjid tua, serta berbagai situs sejarah lainnya menjadi alasan utama wisatawan berkunjung ke kawasan ini. Seiring dengan meningkatnya kunjungan wisatawan, kebutuhan terhadap sarana akomodasi menjadi aspek yang semakin penting untuk diperhatikan dalam mendukung pengembangan desa wisata.</p>
             </div>
+          </div>
+        </section>
 
+        <!-- Pilihan Homestay -->
+        <section class="abuabu" id="homestay">
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Pilihan Homestay</h3>
+            <p class="ringkasan">Tinggal bersama masyarakat dan rasakan kehidupan desa secara langsung.</p>
+            <div class="homestay-grid">
+              <div class="homestay-card">
+                <img src="asset/homestay-08.jpg" alt="Homestay Bersejarah 01" loading="lazy" decoding="async" />
+                <div class="info">
+                  <h6>Homestay Bersejarah 01</h6>
+                  <span class="harga">Mulai Rp 200.000/malam</span>
+                </div>
+              </div>
+              <div class="homestay-card">
+                <img src="asset/homestay-05.jpg" alt="Homestay Berbudaya 01" loading="lazy" decoding="async" />
+                <div class="info">
+                  <h6>Homestay Berbudaya 01</h6>
+                  <span class="harga">Mulai Rp 200.000/malam</span>
+                </div>
+              </div>
+              <div class="homestay-card">
+                <img src="asset/homestay-11.jpg" alt="Homestay Bersejarah 02" loading="lazy" decoding="async" />
+                <div class="info">
+                  <h6>Homestay Bersejarah 02</h6>
+                  <span class="harga">Mulai Rp 250.000/malam</span>
+                </div>
+              </div>
+              <div class="homestay-card">
+                <img src="asset/homestay-09.jpg" alt="Homestay Berbudaya 02" loading="lazy" decoding="async" />
+                <div class="info">
+                  <h6>Homestay Berbudaya 02</h6>
+                  <span class="harga">Mulai Rp 250.000/malam</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Galeri Foto Homestay -->
+        <section id="galeri-homestay">
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Galeri Homestay</h3>
+            <p class="ringkasan">Suasana asli rumah adat panggung yang menjadi tempat menginap wisatawan.</p>
+            <div class="galeri-homestay">
+              <figure>
+                <img src="asset/homestay-01.jpg" alt="Ruang makan homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Ruang Makan</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-02.jpg" alt="Kamar mandi homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Kamar Mandi</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-03.jpg" alt="Teras dan balkon homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Teras &amp; Balkon</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-04.jpg" alt="Dapur homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Dapur</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-05.jpg" alt="Ruang tamu homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Ruang Tamu</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-06.jpg" alt="Kamar mandi homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Kamar Mandi</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-07.jpg" alt="Ruang tamu homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Ruang Tamu</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-08.jpg" alt="Tampak depan rumah adat homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Tampak Depan Rumah Adat</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-09.jpg" alt="Teras dan balkon homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Teras &amp; Balkon</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-10.jpg" alt="Ruang keluarga homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Ruang Keluarga</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-11.jpg" alt="Kamar tidur homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Kamar Tidur</figcaption>
+              </figure>
+              <figure>
+                <img src="asset/homestay-12.jpg" alt="Ruang makan homestay Sanrobone" loading="lazy" decoding="async" />
+                <figcaption>Ruang Makan</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- Kondisi & Keunggulan -->
+        <section>
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Kondisi &amp; Keunggulan Homestay</h3>
+            <div class="konten-isi">
+              <p>Secara umum, kondisi homestay yang terdapat di Desa Wisata Sanrobone masih tergolong sederhana. Bangunan yang digunakan sebagian besar merupakan rumah tinggal masyarakat yang telah disesuaikan untuk menerima tamu. Fasilitas yang tersedia umumnya meliputi kamar tidur, kamar mandi, ruang tamu, serta area makan yang digunakan bersama dengan pemilik rumah. Meskipun fasilitas yang tersedia belum sepenuhnya setara dengan hotel atau penginapan komersial, kondisi tersebut tidak mengurangi nilai pengalaman yang diperoleh wisatawan. Justru kesederhanaan tersebut menjadi salah satu daya tarik karena memberikan suasana yang lebih alami dan mencerminkan kehidupan masyarakat pedesaan yang sesungguhnya.</p>
+
+              <p>Salah satu keunggulan utama akomodasi di Desa Wisata Sanrobone adalah suasana lingkungan yang nyaman, aman, dan masih sangat kental dengan nuansa budaya lokal. Wisatawan yang menginap dapat merasakan kehidupan masyarakat secara langsung, mulai dari aktivitas sehari-hari, pola interaksi sosial, hingga berbagai tradisi yang masih dijalankan oleh masyarakat. Pengalaman tersebut menjadi nilai tambah yang tidak selalu dapat diperoleh pada jenis akomodasi modern. Melalui homestay, wisatawan tidak hanya menjadi pengunjung, tetapi juga menjadi bagian dari kehidupan masyarakat selama masa kunjungannya.</p>
+
+              <p>Selain memberikan pengalaman budaya yang autentik, homestay di Desa Wisata Sanrobone juga memungkinkan wisatawan untuk mengenal lebih dekat berbagai nilai sejarah yang dimiliki oleh desa tersebut. Lokasi akomodasi yang berada di sekitar kawasan wisata memudahkan wisatawan untuk mengakses berbagai situs sejarah dan budaya yang ada. Wisatawan dapat mengunjungi Balla Lompoa sebagai pusat adat dan peninggalan Kerajaan Sanrobone, melihat kawasan makam kerajaan yang memiliki nilai historis tinggi, serta mengunjungi masjid tua yang menjadi bukti perkembangan agama Islam di kawasan tersebut. Kedekatan antara akomodasi dan objek wisata menjadi salah satu faktor yang mendukung kenyamanan wisatawan selama berada di Desa Wisata Sanrobone.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Fasilitas -->
+        <section class="abuabu">
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Fasilitas Homestay</h3>
+            <p class="ringkasan">Kebutuhan dasar yang umumnya tersedia di setiap homestay.</p>
+            <div class="fasilitas-grid">
+              <div class="fasilitas-item"><span class="ceklis">&#10003;</span> Kamar Mandi Bersama</div>
+              <div class="fasilitas-item"><span class="ceklis">&#10003;</span> Perlengkapan Mandi</div>
+              <div class="fasilitas-item"><span class="ceklis">&#10003;</span> Sarapan Pagi</div>
+              <div class="fasilitas-item"><span class="ceklis">&#10003;</span> Kipas Angin</div>
+              <div class="fasilitas-item"><span class="ceklis">&#10003;</span> Televisi</div>
+              <div class="fasilitas-item"><span class="ceklis">&#10003;</span> Ruang Tamu &amp; Area Makan Bersama</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Kebersihan & Dampak Ekonomi -->
+        <section>
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Lingkungan &amp; Dampak Ekonomi</h3>
+            <div class="konten-isi">
+              <p>Kondisi kebersihan lingkungan secara umum cukup baik. Masyarakat masih menjaga kebersihan kawasan permukiman dan lingkungan sekitar objek wisata. Lingkungan desa yang asri, udara yang relatif bersih, serta suasana yang tenang menjadi faktor yang mendukung kenyamanan wisatawan selama menginap. Kebersihan dan keamanan lingkungan merupakan aspek penting yang harus dipertahankan karena menjadi salah satu indikator kualitas destinasi wisata yang berkelanjutan.</p>
+
+              <p>Keberadaan akomodasi juga memberikan dampak ekonomi yang cukup signifikan bagi masyarakat setempat. Melalui pengelolaan homestay, masyarakat memperoleh tambahan pendapatan yang dapat membantu meningkatkan kesejahteraan keluarga. Selain itu, kehadiran wisatawan juga memberikan manfaat bagi pelaku usaha lainnya, seperti penjual makanan dan minuman, pengrajin lokal, penyedia jasa transportasi, serta berbagai usaha kecil yang berkembang di sekitar kawasan wisata. Dengan demikian, pengembangan akomodasi tidak hanya berdampak pada sektor pariwisata, tetapi juga berkontribusi terhadap peningkatan aktivitas ekonomi masyarakat secara keseluruhan.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skor Penilaian -->
+        <section class="abuabu">
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Hasil Penilaian Akomodasi</h3>
+            <div class="skor-box">
+              <div class="skor-angka">40<small> / 50</small></div>
+              <span class="skor-label">Kategori Baik</span>
+              <p>Berdasarkan hasil penilaian terhadap berbagai aspek akomodasi yang meliputi ketersediaan kamar, kebersihan, fasilitas pendukung, pelayanan masyarakat, nuansa budaya lokal, aksesibilitas, kenyamanan, keamanan, daya tarik wisata sekitar, dan potensi pengembangan, diperoleh skor total sebesar 40 dari 50. Hasil tersebut menunjukkan bahwa akomodasi di Desa Wisata Sanrobone berada dalam kategori baik. Nilai tersebut mencerminkan bahwa akomodasi yang tersedia telah mampu mendukung kebutuhan dasar wisatawan meskipun masih terdapat beberapa aspek yang perlu ditingkatkan.</p>
+              <p>Aspek yang memperoleh nilai tertinggi adalah pelayanan masyarakat, nuansa budaya lokal, daya tarik wisata sekitar, dan potensi pengembangan. Hal ini menunjukkan bahwa kekuatan utama akomodasi di Desa Wisata Sanrobone terletak pada pengalaman wisata berbasis budaya dan sejarah yang ditawarkan kepada wisatawan. Sebaliknya, aspek fasilitas pendukung memperoleh nilai yang lebih rendah karena masih membutuhkan peningkatan agar dapat memenuhi standar pelayanan wisata yang lebih baik.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Strategi Pengembangan & Kesimpulan -->
+        <section>
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Strategi Pengembangan</h3>
+            <div class="konten-isi">
+              <p>Melihat potensi yang dimiliki, pengembangan homestay berbasis budaya menjadi salah satu strategi yang dapat diterapkan di Desa Wisata Sanrobone. Pengembangan tersebut dapat dilakukan melalui peningkatan kualitas fasilitas, pelatihan pengelolaan homestay bagi masyarakat, penyediaan sarana informasi wisata, serta penguatan promosi destinasi melalui media digital. Selain itu, konsep homestay yang mengintegrasikan unsur budaya lokal dapat menjadi daya tarik tersendiri yang membedakan Desa Wisata Sanrobone dari destinasi lainnya di Sulawesi Selatan.</p>
+
+              <p>Dalam jangka panjang, pengembangan akomodasi yang terencana dan berkelanjutan diharapkan mampu meningkatkan daya saing Desa Wisata Sanrobone sebagai destinasi wisata unggulan berbasis sejarah, budaya, dan religi. Keberadaan homestay yang dikelola oleh masyarakat dapat menjadi sarana pemberdayaan ekonomi sekaligus media pelestarian budaya lokal. Melalui keterlibatan aktif masyarakat dalam pengelolaan akomodasi, manfaat pembangunan pariwisata dapat dirasakan secara langsung oleh masyarakat setempat.</p>
+
+              <p>Secara keseluruhan, akomodasi di Desa Wisata Sanrobone memiliki potensi yang cukup besar untuk terus berkembang seiring dengan meningkatnya kunjungan wisatawan dan perhatian pemerintah terhadap pengembangan desa wisata. Meskipun masih menghadapi berbagai keterbatasan, keberadaan homestay yang berbasis masyarakat telah menunjukkan peran yang penting dalam mendukung aktivitas pariwisata di kawasan tersebut. Dengan peningkatan kualitas fasilitas, penguatan kapasitas sumber daya manusia, serta dukungan berbagai pihak, akomodasi di Desa Wisata Sanrobone berpeluang menjadi salah satu faktor utama yang mendukung terwujudnya desa wisata yang maju, berdaya saing, dan berkelanjutan.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reservasi -->
+        <section class="abuabu" id="reservasi">
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <h3>Reservasi Homestay</h3>
+            <p class="ringkasan">Hubungi kontak resmi untuk memesan homestay dan mengecek ketersediaan.</p>
+            <div class="kontak-box">
+              <p style="font-size: 26px; font-weight: bold; color: #c86b85; margin: 0 0 10px;">082347764426</p>
+              <p style="margin: 0 0 18px;">Email: desasanrobone22@gmail.com</p>
+              <a href="index.html#reservasi" class="tombol">LIHAT QR CODE RESERVASI</a>
+            </div>
           </div>
         </section>
       </main>

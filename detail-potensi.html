@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Eksplorasi detail potensi wisata Desa Sanrobone — situs sejarah dan religi (makam piramida, Masjid Tua Baitul Maqdis, Balla Lompoa), akomodasi homestay, amenitas, serta souvenir dan kuliner khas."
+    />
+    <meta name="theme-color" content="#c86b85" />
     <title>Potensi dan Detail Daya Tarik - Sanrobone</title>
     <link rel="stylesheet" href="style.css" />
     <style>
@@ -13,10 +18,22 @@
       nav.putih .logo .hitam { display: inline-block !important; }
       nav .menu { max-width: 850px !important; }
       nav ul li a { padding: 0px 10px !important; font-size: 13.5px !important; }
-      
+
       header video { width: 100% !important; height: 100% !important; object-fit: cover !important; }
       header .intro { max-width: 800px; margin: 0 auto; transform: translateY(-50%); padding: 0 20px; }
-      
+      header .intro h3 { text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45); }
+      header .intro p { text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
+
+      section { scroll-margin-top: 70px; }
+      nav.putih { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08); }
+      .tombol {
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+      }
+      .tombol:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(200, 107, 133, 0.35);
+      }
+
       /* Gaya Khusus untuk Halaman Artikel Detail */
       .artikel-detail { max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 16px; color: #444; text-align: justify; }
       .artikel-detail p { margin-bottom: 20px; }
@@ -30,8 +47,8 @@
     <nav>
       <div class="layar-dalam">
         <div class="logo">
-          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sandrobone</a>
-          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sandrobone</a>
+          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sanrobone</a>
+          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sanrobone</a>
         </div>
         <div class="menu">
           <a href="#" class="tombol-menu"><span class="garis"></span><span class="garis"></span><span class="garis"></span></a>
@@ -43,6 +60,7 @@
             <li><a href="index.html#akomodasi">Akomodasi</a></li>
             <li><a href="index.html#amenitas">Amenitas</a></li>
             <li><a href="index.html#souvenir">Souvenir</a></li>
+            <li><a href="index.html#ulasan">Ulasan</a></li>
             <li><a href="index.html#reservasi">Reservasi</a></li>
           </ul>
         </div>
@@ -83,6 +101,13 @@
               <li><b>Kriya Gantungan Kunci & Baju Kaos:</b> Souvenir miniatur rumah adat seharga Rp 5.000, dan Baju Kaos beridentitas Sanrobone dengan varian harga Rp 85.000 hingga Rp 90.000.</li>
               <li><b>Aneka Kanrejawa Turiolo:</b> Merupakan istilah lokal untuk beraneka ragam kue jajanan manis tradisional warisan leluhur. Dengan harga bervariasi mulai dari Rp 2.500 hingga Rp 25.000, pengunjung bisa menikmati kelezatan <i>Barongko</i> (pisang kukus dalam daun), <i>Bolu Cukke</i> yang kaya aroma rempah, <i>Kue Tumbu (Bolu Peca')</i> berbahan gula merah, <i>Doko-Doko Cangkuling</i>, <i>Bannang-Bannang</i>, <i>Cucuru Bayao</i>, hingga kreasi unik berupa perpaduan lembutnya puding dengan santan dan tape dalam <i>Puding Es Doger</i>.</li>
             </ul>
+          </div>
+        </section>
+        <section class="cta-band">
+          <div class="layar-dalam">
+            <h3>Jelajahi Langsung Pesona Sanrobone</h3>
+            <p>Dari situs sejarah kerajaan hingga kuliner khas warisan leluhur — rasakan seluruh pengalamannya secara langsung di Desa Wisata Sanrobone.</p>
+            <a href="index.html#reservasi" class="tombol">RESERVASI KUNJUNGAN</a>
           </div>
         </section>
       </main>

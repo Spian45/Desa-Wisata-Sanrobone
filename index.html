@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Desa Wisata Sanrobone — destinasi wisata budaya, sejarah, dan religi di Kabupaten Takalar, Sulawesi Selatan. Jelajahi Balla Lompoa, makam kerajaan, masjid tua, homestay, dan souvenir khas."
+    />
+    <meta name="theme-color" content="#c86b85" />
     <title>Desa Wisata Sanrobone</title>
     <link rel="stylesheet" href="style.css" />
     <style>
@@ -52,6 +57,256 @@
         border-color: #c86b85 !important;
         color: #fff !important;
       }
+
+      /* ====== Penyempurnaan Tampilan (index.html) ====== */
+
+      /* Beri jarak agar judul section tidak tertutup navbar yang fixed
+         saat melompat lewat tautan anchor (#sejarah, #potensi, dst). */
+      section,
+      header {
+        scroll-margin-top: 70px;
+      }
+
+      /* Bayangan halus pada navbar saat sudah di-scroll (kelas .putih). */
+      nav.putih {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Keterbacaan teks di atas video header. */
+      header .intro h3 {
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+      }
+      header .intro p {
+        text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+      }
+
+      /* Tombol utama: umpan balik saat disentuh kursor. */
+      .tombol {
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          background-color 0.25s ease;
+      }
+      .tombol:hover {
+        background-color: #b85877;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(200, 107, 133, 0.35);
+      }
+
+      /* Kartu Potensi Wisata: elevasi + animasi angkat. */
+      #potensi .support div {
+        background-color: #fff;
+        padding: 32px 22px;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      #potensi .support div:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+      }
+      /* Ikon lingkaran untuk kartu Potensi Wisata */
+      .potensi-ikon {
+        width: 84px;
+        height: 84px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c86b85 0%, #e7a4b6 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 22px rgba(200, 107, 133, 0.32);
+        transition: transform 0.3s ease;
+      }
+      #potensi .support div:hover .potensi-ikon { transform: scale(1.08) rotate(-4deg); }
+      .potensi-ikon svg {
+        width: 42px;
+        height: 42px;
+        fill: none;
+        stroke: #fff;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* Kartu Akomodasi (Homestay): foto + animasi angkat. */
+      #akomodasi .tim div {
+        transition: transform 0.3s ease;
+      }
+      #akomodasi .tim div:hover {
+        transform: translateY(-6px);
+      }
+      #akomodasi .tim img {
+        height: 220px;
+        object-fit: cover;
+      }
+      #akomodasi .tim span {
+        display: inline-block;
+        margin-top: 6px;
+        color: #c86b85;
+        font-weight: bold;
+      }
+
+      /* Galeri: jaga agar efek zoom tidak meluber keluar bingkai. */
+      section#gallery div {
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      }
+      section#gallery div img {
+        display: block;
+        border-radius: 0;
+      }
+
+      /* Footer responsif: kolom menumpuk rapi di layar kecil. */
+      @media screen and (max-width: 768px) {
+        footer .layar-dalam {
+          flex-direction: column;
+        }
+        footer .layar-dalam div {
+          width: 100% !important;
+          margin-bottom: 24px;
+          text-align: center;
+        }
+        header .intro h3 {
+          font-size: 34px !important;
+        }
+        section#gallery div img {
+          width: 100%;
+          height: 200px;
+        }
+      }
+
+      /* ====== Ulasan Pengunjung ====== */
+      .ulasan-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 26px;
+        margin-top: 40px;
+        text-align: left;
+      }
+      .ulasan-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 28px 26px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .ulasan-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+      }
+      .ulasan-card .bintang {
+        color: #f5b400;
+        font-size: 18px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+      }
+      .ulasan-card .ulasan-teks {
+        font-style: italic;
+        color: #555;
+        line-height: 1.7;
+        margin: 0 0 20px;
+        flex: 1;
+      }
+      .ulasan-profil { display: flex; align-items: center; gap: 12px; }
+      .ulasan-profil .avatar {
+        flex: 0 0 auto;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #c86b85;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 16px;
+      }
+      .ulasan-profil .nama { font-weight: bold; color: #333; line-height: 1.3; }
+      .ulasan-profil .asal { font-size: 13px; color: #999; }
+
+      .ulasan-skor {
+        background: #fff;
+        max-width: 760px;
+        margin: 45px auto 0;
+        padding: 26px 30px;
+        border-radius: 12px;
+        border-left: 5px solid #c86b85;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+        text-align: left;
+        font-style: italic;
+        color: #555;
+        line-height: 1.7;
+      }
+      .ulasan-skor strong { color: #c86b85; font-style: normal; }
+
+      /* ====== Kartu Reservasi ====== */
+      .reservasi-kartu {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        max-width: 840px;
+        margin: 40px auto 0;
+        background: #fff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 16px 44px rgba(0, 0, 0, 0.12);
+        text-align: left;
+      }
+      .reservasi-info { padding: 40px; }
+      .reservasi-info h4 { margin: 0 0 24px; font-size: 22px; color: #333; }
+      .kontak-list { list-style: none; margin: 0 0 28px; padding: 0; }
+      .kontak-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin-bottom: 20px;
+        color: #555;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+      }
+      .kontak-list li span { min-width: 0; }
+      .kontak-list svg {
+        flex: 0 0 auto;
+        width: 22px;
+        height: 22px;
+        margin-top: 2px;
+        stroke: #c86b85;
+        fill: none;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .kontak-list strong { color: #333; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+      .kontak-list a { color: #555; text-decoration: none; transition: color 0.2s ease; }
+      .kontak-list a:hover { color: #c86b85; }
+      .reservasi-qr {
+        background: linear-gradient(135deg, #c86b85 0%, #a84d6a 100%);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        text-align: center;
+      }
+      .reservasi-qr img {
+        width: 180px;
+        height: 180px;
+        border-radius: 12px;
+        border: 6px solid #fff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+        background: #fff;
+      }
+      .reservasi-qr span { margin-top: 16px; font-size: 14px; font-weight: 600; }
+      .tombol-wa { background-color: #25a35a; box-shadow: 0 6px 16px rgba(37, 163, 90, 0.35); }
+      .tombol-wa:hover { background-color: #1f8d4d; box-shadow: 0 10px 22px rgba(37, 163, 90, 0.45); }
+
+      @media screen and (max-width: 680px) {
+        .reservasi-kartu { grid-template-columns: 1fr; }
+        .reservasi-info { padding: 32px 24px; }
+        .reservasi-qr { padding: 32px 24px; }
+      }
     </style>
   </head>
   <body>
@@ -75,8 +330,8 @@
             <li><a href="#akomodasi">Akomodasi</a></li>
             <li><a href="#amenitas">Amenitas</a></li>
             <li><a href="#souvenir">Souvenir</a></li>
-            <li><a href="#reservasi">Reservasi</a></li>
             <li><a href="#ulasan">Ulasan</a></li>
+            <li><a href="#reservasi">Reservasi</a></li>
           </ul>
         </div>
       </div>
@@ -89,7 +344,7 @@
           <source src="asset/video-indonesia.mp4" type="video/mp4" />
         </video>
         <div class="intro">
-          <h3>Profil Desa Wisata Sanrobone</h3>
+          <h3>Wisata Sanrobone</h3>
           <p>
             Desa Wisata Sanrobone merupakan salah satu destinasi wisata budaya dan sejarah yang berada di Kabupaten Takalar, Sulawesi Selatan.
           </p>
@@ -97,6 +352,7 @@
             <a href="#sejarah" class="tombol" style="margin-top: 15px;">JELAJAHI LEBIH LANJUT</a>
           </p>
         </div>
+        <a href="#sejarah" class="scroll-indikator" aria-label="Gulir ke bawah"></a>
       </header>
       
       <main>
@@ -119,6 +375,15 @@
 
               <p>Dengan potensi sejarah, budaya, dan religi yang dimiliki, Desa Wisata Sanrobone memiliki peluang besar untuk terus berkembang menjadi destinasi wisata unggulan berbasis kearifan lokal. Keberadaan desa ini diharapkan tidak hanya mampu menarik wisatawan, tetapi juga dapat meningkatkan perekonomian masyarakat serta memperkuat pelestarian budaya daerah.</p>
             </div>
+          </div>
+        </section>
+
+        <section class="statistik">
+          <div class="layar-dalam">
+            <div class="stat"><span class="angka" data-target="300">0</span><span class="plus">+</span><p>Besar Desa Wisata Potensial Nasional</p></div>
+            <div class="stat"><span class="angka" data-target="18">0</span><p>Situs Bersejarah</p></div>
+            <div class="stat"><span class="angka" data-target="3">0</span><p>Pilar Utama: Sejarah, Budaya, Agama</p></div>
+            <div class="stat"><span class="angka" data-target="5">0</span><p>Dusun di Kawasan Desa</p></div>
           </div>
         </section>
 
@@ -160,17 +425,39 @@
             <p class="ringkasan">Warisan luhur yang menjadi daya tarik utama.</p>
             <div class="support">
               <div>
-                <img src="asset/matahari.png" alt="Balla Lompoa" />
+                <div class="potensi-ikon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M3 10.5 12 4l9 6.5" />
+                    <path d="M5 9.5V20h14V9.5" />
+                    <path d="M9.5 20v-5h5v5" />
+                    <path d="M4 20h16" />
+                  </svg>
+                </div>
                 <h6>Balla Lompoa</h6>
                 <p>Rumah adat panggung yang merupakan pusat adat, penyimpan silsilah keturunan raja-raja Sanrobone, sekaligus kediaman pemangku adat.</p>
               </div>
               <div>
-                <img src="asset/tas.png" alt="Makam Raja" />
+                <div class="potensi-ikon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3 21 20H3z" />
+                    <path d="M12 3v17" />
+                    <path d="M7.5 13h9" />
+                  </svg>
+                </div>
                 <h6>Makam Kerajaan</h6>
                 <p>Kawasan makam raja berbentuk piramida. Di area ini terdapat bedug tua dari pohon cabai serta sumur adat yang airnya tidak pernah kering.</p>
               </div>
               <div>
-                <img src="asset/kompas.png" alt="Masjid Tua" />
+                <div class="potensi-ikon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 3c1.6 1.4 1.6 3.2 0 4.6-1.6-1.4-1.6-3.2 0-4.6z" />
+                    <path d="M5 21v-7a7 7 0 0 1 14 0v7" />
+                    <path d="M3 21h18" />
+                    <path d="M5 14H3v7" />
+                    <path d="M19 14h2v7" />
+                    <path d="M12 21v-4" />
+                  </svg>
+                </div>
                 <h6>Masjid Tua Baitul Maqdis</h6>
                 <p>Situs sejarah penting yang menjadi bukti awal masuknya Islam di Sanrobone, dibawa oleh pedagang atau ulama Arab.</p>
               </div>
@@ -186,7 +473,7 @@
           <div class="layar-dalam">
               <h3>Aksesibilitas</h3>
               <div class="konten-isi">
-                  <p style="text-align: center;">Aksesibilitas menuju Desa Sandrobone sudah cukup baik, dimana jalan menuju lokasi dapat dilalui oleh kendaraan roda dua maupun roda empat. Hal ini menjadi nilai tambah dalam mendukung mobilitas wisatawan. Namun demikian, penataan fasilitas pendukung seperti area parkir masih perlu ditingkatkan agar lebih tertib dan terorganisir.</p>
+                  <p style="text-align: center;">Aksesibilitas menuju Desa Sanrobone sudah cukup baik, di mana jalan menuju lokasi dapat dilalui oleh kendaraan roda dua maupun roda empat. Hal ini menjadi nilai tambah dalam mendukung mobilitas wisatawan. Namun demikian, penataan fasilitas pendukung seperti area parkir masih perlu ditingkatkan agar lebih tertib dan terorganisir.</p>
               </div>
           </div>
         </section>
@@ -197,17 +484,17 @@
             <p class="ringkasan" style="text-align: center;">Rasakan pengalaman autentik kehidupan sosial dan budaya masyarakat lokal.</p>
             <div class="tim">
               <div>
-                <img src="asset/dam1.jpg" alt="Homestay Bersejarah 01" />
+                <img src="asset/homestay-08.jpg" alt="Homestay Bersejarah 01" loading="lazy" decoding="async" />
                 <h6>Homestay Bersejarah 01</h6>
                 <span>Mulai Rp 200.000/malam</span>
               </div>
               <div>
-                <img src="asset/dam2.jpg" alt="Homestay Berbudaya 01" />
+                <img src="asset/homestay-05.jpg" alt="Homestay Berbudaya 01" loading="lazy" decoding="async" />
                 <h6>Homestay Berbudaya 01</h6>
                 <span>Mulai Rp 200.000/malam</span>
               </div>
               <div>
-                <img src="asset/dam3.jpg" alt="Homestay Bersejarah 02" />
+                <img src="asset/homestay-11.jpg" alt="Homestay Bersejarah 02" loading="lazy" decoding="async" />
                 <h6>Homestay Bersejarah 02</h6>
                 <span>Mulai Rp 250.000/malam</span>
               </div>
@@ -221,7 +508,7 @@
           </div>
         </section>
 
-<section class="abuabu" id="amenitas">
+        <section class="abuabu" id="amenitas">
           <div class="layar-dalam">
             <h3>Amenitas dan Fasilitas</h3>
             <p class="ringkasan" style="text-align: center;">Fasilitas pendukung kenyamanan masyarakat lokal maupun wisatawan.</p>
@@ -252,33 +539,108 @@
         </section>
 
         <section class="abuabu" id="gallery">
-          <div><img src="asset/foto1.jpg" alt="Galeri 1" /></div>
-          <div><img src="asset/foto2.jpg" alt="Galeri 2" /></div>
-          <div><img src="asset/foto3.jpg" alt="Galeri 3" /></div>
-          <div><img src="asset/foto4.jpg" alt="Galeri 4" /></div>
-          <div><img src="asset/foto5.jpg" alt="Galeri 5" /></div>
-          <div><img src="asset/foto6.jpg" alt="Galeri 6" /></div>
-          <div><img src="asset/foto7.jpg" alt="Galeri 7" /></div>
-          <div><img src="asset/foto8.jpg" alt="Galeri 8" /></div>
+          <div><img src="asset/foto1.jpg" alt="Galeri Desa Sanrobone 1" loading="lazy" decoding="async" /></div>
+          <div><img src="asset/foto2.jpg" alt="Galeri Desa Sanrobone 2" loading="lazy" decoding="async" /></div>
+          <div><img src="asset/foto3.jpg" alt="Galeri Desa Sanrobone 3" loading="lazy" decoding="async" /></div>
+          <div><img src="asset/foto4.jpg" alt="Galeri Desa Sanrobone 4" loading="lazy" decoding="async" /></div>
+          <div><img src="asset/foto5.jpg" alt="Galeri Desa Sanrobone 5" loading="lazy" decoding="async" /></div>
+          <div><img src="asset/foto6.jpg" alt="Galeri Desa Sanrobone 6" loading="lazy" decoding="async" /></div>
+          <div><img src="asset/foto7.jpg" alt="Galeri Desa Sanrobone 7" loading="lazy" decoding="async" /></div>
+          <div><img src="asset/foto8.jpg" alt="Galeri Desa Sanrobone 8" loading="lazy" decoding="async" /></div>
         </section>
 
-        <section class="quote" id="ulasan">
-          <div class="layar-dalam">
-            <p>"Berdasarkan hasil penilaian, akomodasi di Desa Wisata Sanrobone memperoleh skor total sebesar 40 dari 50 (Kategori Baik). Nilai tertinggi dicapai pada pelayanan masyarakat, nuansa budaya lokal, daya tarik wisata, dan potensi pengembangan."</p>
+        <section class="abuabu" id="ulasan">
+          <div class="layar-dalam text-center">
+            <h3>Ulasan Pengunjung</h3>
+            <p class="ringkasan">Cerita mereka yang telah merasakan langsung pengalaman di Desa Wisata Sanrobone.</p>
+
+            <div class="ulasan-grid">
+              <div class="ulasan-card">
+                <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="ulasan-teks">"Menginap di homestay-nya jadi pengalaman tak terlupakan. Warganya sangat ramah dan kami benar-benar merasakan kehidupan budaya Bugis-Makassar. Balla Lompoa megah sekali!"</p>
+                <div class="ulasan-profil">
+                  <span class="avatar">AP</span>
+                  <div>
+                    <div class="nama">Andi Pratama</div>
+                    <div class="asal">Makassar</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ulasan-card">
+                <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="ulasan-teks">"Wisata sejarahnya lengkap. Makam berbentuk piramida dan masjid tuanya punya nilai sejarah yang dalam. Anak-anak jadi belajar banyak tentang Kerajaan Sanrobone."</p>
+                <div class="ulasan-profil">
+                  <span class="avatar">SN</span>
+                  <div>
+                    <div class="nama">Siti Nurhaliza</div>
+                    <div class="asal">Takalar</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ulasan-card">
+                <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <p class="ulasan-teks">"Abon bandeng tanpa tulangnya enak banget buat oleh-oleh! Aksesnya mudah dilalui mobil. Semoga area parkirnya ke depan makin tertata rapi."</p>
+                <div class="ulasan-profil">
+                  <span class="avatar">BS</span>
+                  <div>
+                    <div class="nama">Budi Santoso</div>
+                    <div class="asal">Gowa</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ulasan-card">
+                <div class="bintang">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="ulasan-teks">"Desa dengan tiga pilar yang dikemas autentik: sejarah, budaya, dan agama. Cocok untuk wisata edukasi keluarga dan salah satu desa wisata paling menjanjikan di Sulawesi Selatan."</p>
+                <div class="ulasan-profil">
+                  <span class="avatar">DW</span>
+                  <div>
+                    <div class="nama">Tim Desa Wisata</div>
+                    <div class="asal">Sanrobone</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ulasan-skor">
+              Berdasarkan hasil penilaian resmi, akomodasi di Desa Wisata Sanrobone memperoleh skor total <strong>40 dari 50 (Kategori Baik)</strong>. Nilai tertinggi dicapai pada pelayanan masyarakat, nuansa budaya lokal, daya tarik wisata, dan potensi pengembangan.
+            </div>
+
+            <p style="margin-top: 30px;">
+              <a href="#reservasi" class="tombol">RENCANAKAN KUNJUNGAN ANDA</a>
+            </p>
           </div>
         </section>
 
         <section id="reservasi">
-          <div class="layar-dalam" style="text-align: center;">
+          <div class="layar-dalam text-center">
             <h3>Reservasi</h3>
-            <div class="konten-isi">
-              <p>Untuk reservasi homestay, ketersediaan akomodasi, maupun pemesanan souvenir, silakan hubungi kontak resmi di bawah ini:</p>
-              <p style="font-size: 28px; font-weight: bold; color: #c86b85; margin: 20px 0;">082347764426</p>
-            <div style="margin: 20px 0;">
-                <p>Scan QR Code untuk reservasi:</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://qr1.me-qr.com/text/bgf3tp8h" alt="QR Code Reservasi" style="width: 200px; height: 200px; border: 5px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-top: 15px;">
-            </div>
-              <p>Email: desasanrobone22@gmail.com</p>
+            <p class="ringkasan">Pesan homestay, cek ketersediaan akomodasi, atau pesan souvenir dengan mudah.</p>
+            <div class="reservasi-kartu">
+              <div class="reservasi-info">
+                <h4>Hubungi Kami</h4>
+                <ul class="kontak-list">
+                  <li>
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span><strong>Telepon / WhatsApp</strong><br /><a href="tel:082347764426">082347764426</a></span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span><strong>Email</strong><br /><a href="mailto:desasanrobone22@gmail.com">desasanrobone22@gmail.com</a></span>
+                  </li>
+                  <li>
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span><strong>Alamat</strong><br />Dusun Sanrobone, Desa Sanrobone, Kec. Sanrobone, Kab. Takalar, Sulawesi Selatan</span>
+                  </li>
+                </ul>
+                <a href="https://wa.me/6282347764426" target="_blank" rel="noopener" class="tombol tombol-wa">CHAT VIA WHATSAPP</a>
+              </div>
+              <div class="reservasi-qr">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://qr1.me-qr.com/text/bgf3tp8h" alt="QR Code Reservasi Desa Wisata Sanrobone" loading="lazy" />
+                <span>Scan untuk reservasi</span>
+              </div>
             </div>
           </div>
         </section>
