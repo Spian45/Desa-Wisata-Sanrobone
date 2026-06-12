@@ -40,13 +40,13 @@ nav {
   color: #fff;
   text-align: center;
   position: fixed;
-  border-bottom: 1px solid #b1b1b1;
   line-height: 60px;
   width: 100%;
-  transition: background-color 0.5s ease;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+  transition: background 0.4s ease;
 }
 nav.putih {
-  background-color: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
 }
@@ -170,6 +170,7 @@ section {
 }
 section h3 {
   font-size: 30px;
+  text-align: center;
 }
 section h3::after {
   content: "";
@@ -670,6 +671,46 @@ body nav ul li a {
 }
 @media (prefers-reduced-motion: reduce) {
   .emoji-jatuh, #toast-egg .joget, .logo-goyang { animation: none; }
+}
+
+/* ====== Animasi unik tiap section saat tab navigasi diklik ====== */
+.anim-fade { animation: aFade 0.7s ease both; }
+.anim-up { animation: aUp 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.anim-zoom { animation: aZoom 0.6s ease both; }
+.anim-left { animation: aLeft 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.anim-right { animation: aRight 0.75s cubic-bezier(0.22, 0.61, 0.36, 1) both; }
+.anim-flip { animation: aFlip 0.75s ease both; transform-origin: top center; }
+.anim-rotate { animation: aRotate 0.7s ease both; }
+.anim-bounce { animation: aBounce 0.85s ease both; }
+.anim-blur { animation: aBlur 0.7s ease both; }
+
+@keyframes aFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes aUp { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
+@keyframes aZoom { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: none; } }
+@keyframes aLeft { from { opacity: 0; transform: translateX(-90px); } to { opacity: 1; transform: none; } }
+@keyframes aRight { from { opacity: 0; transform: translateX(90px); } to { opacity: 1; transform: none; } }
+@keyframes aFlip { from { opacity: 0; transform: perspective(900px) rotateX(40deg); } to { opacity: 1; transform: perspective(900px) rotateX(0); } }
+@keyframes aRotate { from { opacity: 0; transform: rotate(-5deg) scale(0.94); } to { opacity: 1; transform: none; } }
+@keyframes aBounce {
+  0% { opacity: 0; transform: translateY(50px); }
+  60% { opacity: 1; transform: translateY(-14px); }
+  80% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+@keyframes aBlur { from { opacity: 0; filter: blur(14px); } to { opacity: 1; filter: blur(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade, .anim-up, .anim-zoom, .anim-left, .anim-right,
+  .anim-flip, .anim-rotate, .anim-bounce, .anim-blur { animation: none; }
+}
+
+/* ====== Scroll-spy: sorot tab section yang sedang aktif ====== */
+nav .menu ul li a.aktif { color: #b44446 !important; font-weight: 700; }
+@media screen and (max-width: 1199.98px) {
+  nav .menu ul li a.aktif {
+    border-left-color: #b44446;
+    background-color: rgba(180, 68, 70, 0.12);
+  }
 }
 
 /* ====== Efek riak (ripple) pada tombol ====== */

@@ -11,6 +11,7 @@
     <meta name="theme-color" content="#b44446" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="manifest.json" />
+    <link rel="canonical" href="https://spian45.github.io/Desa-Wisata-Sanrobone/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -26,6 +27,26 @@
     <meta name="twitter:title" content="Desa Wisata Sanrobone" />
     <meta name="twitter:description" content="Destinasi wisata budaya, sejarah, dan religi di Kabupaten Takalar, Sulawesi Selatan." />
     <meta name="twitter:image" content="https://spian45.github.io/Desa-Wisata-Sanrobone/asset/homestay-08.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Desa Wisata Sanrobone",
+        "description": "Destinasi wisata budaya, sejarah, dan religi di Kabupaten Takalar, Sulawesi Selatan.",
+        "url": "https://spian45.github.io/Desa-Wisata-Sanrobone/",
+        "image": "https://spian45.github.io/Desa-Wisata-Sanrobone/asset/homestay-08.jpg",
+        "telephone": "+62-823-4776-4426",
+        "touristType": ["Wisata budaya", "Wisata sejarah", "Wisata religi"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Dusun Sanrobone, Desa Sanrobone, Kecamatan Sanrobone",
+          "addressLocality": "Takalar",
+          "addressRegion": "Sulawesi Selatan",
+          "addressCountry": "ID"
+        }
+      }
+    </script>
 
     <title>Desa Wisata Sanrobone</title>
     <link rel="stylesheet" href="style.css" />
@@ -291,6 +312,33 @@
       }
       .tombol-email:hover { background-color: #474f58; box-shadow: 0 10px 22px rgba(90, 101, 112, 0.42); }
 
+      /* ====== Paket Wisata / Itinerary ====== */
+      .paket-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+        text-align: left;
+      }
+      .paket-kartu {
+        background: #fff;
+        border-radius: 14px;
+        padding: 30px 26px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        border-top: 4px solid #b44446;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .paket-kartu:hover { transform: translateY(-8px); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12); }
+      .paket-kartu h4 { margin: 0 0 4px; font-size: 20px; color: #333; }
+      .paket-durasi { color: #b44446; font-weight: 700; font-size: 14px; margin-bottom: 16px; }
+      .paket-kartu ul { list-style: none; padding: 0; margin: 0 0 18px; flex: 1; }
+      .paket-kartu li { position: relative; padding-left: 24px; margin-bottom: 10px; color: #555; line-height: 1.5; }
+      .paket-kartu li::before { content: "\2713"; position: absolute; left: 0; color: #b44446; font-weight: bold; }
+      .paket-harga { font-size: 13px; color: #888; font-style: italic; margin-bottom: 16px; }
+      .paket-kartu .tombol { text-align: center; }
+
       /* ====== Kartu Reservasi ====== */
       .reservasi-kartu {
         display: grid;
@@ -433,6 +481,7 @@
             <li><a href="#amenitas" data-en="Amenities">Amenitas</a></li>
             <li><a href="#souvenir" data-en="Souvenirs">Souvenir</a></li>
             <li><a href="#ulasan" data-en="Reviews">Ulasan</a></li>
+            <li><a href="#paket" data-en="Packages">Paket</a></li>
             <li><a href="#reservasi" data-en="Reservation">Reservasi</a></li>
             <li class="lang-li"><button type="button" class="lang-toggle" id="lang-toggle" aria-label="Switch language / Ganti bahasa">EN</button></li>
           </ul>
@@ -709,6 +758,53 @@
             <p style="margin-top: 30px;">
               <a href="#reservasi" class="tombol" data-en="PLAN YOUR VISIT">RENCANAKAN KUNJUNGAN ANDA</a>
             </p>
+          </div>
+        </section>
+
+        <section id="paket">
+          <div class="layar-dalam text-center">
+            <h3 data-en="Tour Packages">Paket Wisata</h3>
+            <p class="ringkasan" data-en="Suggested itineraries to explore Sanrobone — choose what fits your time.">Rekomendasi rangkaian kunjungan untuk menjelajahi Sanrobone — pilih sesuai waktu Anda.</p>
+            <div class="paket-grid">
+              <div class="paket-kartu">
+                <h4 data-en="Heritage Half-Day">Jelajah Setengah Hari</h4>
+                <div class="paket-durasi" data-en="Approx. 3–4 hours">Sekitar 3–4 jam</div>
+                <ul>
+                  <li data-en="Balla Lompoa (royal traditional house)">Balla Lompoa (rumah adat kerajaan)</li>
+                  <li data-en="Pyramid-shaped royal tombs">Makam kerajaan berbentuk piramida</li>
+                  <li data-en="Baitul Maqdis Old Mosque">Masjid Tua Baitul Maqdis</li>
+                  <li data-en="Local guide from the community">Pemandu dari masyarakat lokal</li>
+                </ul>
+                <div class="paket-harga" data-en="Contact us for package pricing">Hubungi kami untuk harga paket</div>
+                <a href="#reservasi" class="tombol" data-en="BOOK THIS PACKAGE">PESAN PAKET</a>
+              </div>
+
+              <div class="paket-kartu">
+                <h4 data-en="Full-Day Culture">Budaya Sehari Penuh</h4>
+                <div class="paket-durasi" data-en="About 1 day (07.00–17.00)">Sekitar 1 hari (07.00–17.00)</div>
+                <ul>
+                  <li data-en="All heritage &amp; religious sites">Seluruh situs sejarah &amp; religi</li>
+                  <li data-en="Kanrejawa Turiolo culinary tasting">Cicip kuliner Kanrejawa Turiolo</li>
+                  <li data-en="Souvenir shopping (Pokdarwis)">Belanja souvenir khas (Pokdarwis)</li>
+                  <li data-en="Interaction with the local community">Interaksi dengan masyarakat lokal</li>
+                </ul>
+                <div class="paket-harga" data-en="Contact us for package pricing">Hubungi kami untuk harga paket</div>
+                <a href="#reservasi" class="tombol" data-en="BOOK THIS PACKAGE">PESAN PAKET</a>
+              </div>
+
+              <div class="paket-kartu">
+                <h4 data-en="Homestay Overnight">Menginap di Homestay</h4>
+                <div class="paket-durasi" data-en="2 days 1 night">2 hari 1 malam</div>
+                <ul>
+                  <li data-en="Everything in the Full-Day Culture package">Semua isi paket Sehari Penuh</li>
+                  <li data-en="Overnight stay at a community homestay">Menginap di homestay masyarakat</li>
+                  <li data-en="Breakfast &amp; the village morning atmosphere">Sarapan &amp; suasana pagi desa</li>
+                  <li data-en="Authentic life with the community">Pengalaman hidup autentik bersama warga</li>
+                </ul>
+                <div class="paket-harga" data-en="Homestay from Rp 200,000/night + package price">Homestay mulai Rp 200.000/malam + harga paket</div>
+                <a href="#reservasi" class="tombol" data-en="BOOK THIS PACKAGE">PESAN PAKET</a>
+              </div>
+            </div>
           </div>
         </section>
 
