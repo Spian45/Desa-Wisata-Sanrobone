@@ -119,7 +119,7 @@ header .intro h3 {
   padding: 0;
 }
 .tombol {
-  background-color: #c86b85;
+  background-color: #b44446;
   height: 40px;
   line-height: 42px;
   color: #fff;
@@ -130,13 +130,13 @@ header .intro h3 {
   font-weight: 600;
   letter-spacing: 0.5px;
   border-radius: 30px;
-  box-shadow: 0 6px 16px rgba(200, 107, 133, 0.3);
+  box-shadow: 0 6px 16px rgba(180, 68, 70, 0.3);
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 .tombol:hover {
-  background-color: #b85877;
+  background-color: #93383a;
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(200, 107, 133, 0.42);
+  box-shadow: 0 10px 22px rgba(180, 68, 70, 0.42);
 }
 header .overlay {
   position: absolute;
@@ -148,7 +148,7 @@ header .overlay {
     180deg,
     rgba(20, 12, 16, 0.55) 0%,
     rgba(20, 12, 16, 0.35) 45%,
-    rgba(168, 77, 106, 0.55) 100%
+    rgba(100, 36, 47, 0.55) 100%
   );
   z-index: -1;
 }
@@ -175,7 +175,7 @@ section h3::after {
   content: "";
   height: 4px;
   width: 60px;
-  background: linear-gradient(90deg, #c86b85, #e7a4b6);
+  background: linear-gradient(90deg, #b44446, #fc8f8f);
   border-radius: 3px;
   display: block;
   margin: 18px auto;
@@ -198,7 +198,7 @@ nav .logo img.hitam {
   display: none;
 }
 section.abuabu {
-  background-color: #f5f6f6;
+  background-color: #dfd9d8;
 }
 .support,
 .tim {
@@ -247,7 +247,7 @@ section#gallery div img:hover {
 }
 footer {
   padding: 50px 0px 50px 0px;
-  background-color: #343a40;
+  background-color: #3d1a20;
   color: #fff;
 }
 footer .layar-dalam {
@@ -311,8 +311,8 @@ footer .layar-dalam .copyright {
   }
   nav .menu ul li a:hover,
   nav .menu ul li a:active {
-    background-color: rgba(200, 107, 133, 0.22);
-    border-left-color: #c86b85;
+    background-color: rgba(180, 68, 70, 0.22);
+    border-left-color: #b44446;
     padding-left: 34px !important;
     text-decoration: none;
   }
@@ -325,7 +325,7 @@ footer .layar-dalam .copyright {
   nav.putih .menu ul li a { color: #333 !important; }
   nav.putih .menu ul li a:hover,
   nav.putih .menu ul li a:active {
-    background-color: rgba(200, 107, 133, 0.14);
+    background-color: rgba(180, 68, 70, 0.14);
   }
   .tombol-menu {
     display: flex;
@@ -389,7 +389,7 @@ header .scroll-indikator {
   left: 0;
   height: 4px;
   width: 0;
-  background: linear-gradient(90deg, #c86b85, #e7a4b6);
+  background: linear-gradient(90deg, #b44446, #fc8f8f);
   z-index: 300;
   transition: width 0.1s ease-out;
 }
@@ -404,7 +404,7 @@ header .scroll-indikator {
   height: 48px;
   border: none;
   border-radius: 50%;
-  background: #c86b85;
+  background: #b44446;
   color: #fff;
   font-size: 22px;
   line-height: 48px;
@@ -417,11 +417,11 @@ header .scroll-indikator {
   transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 #ke-atas.tampil { opacity: 1; visibility: visible; transform: translateY(0); }
-#ke-atas:hover { background: #b85877; transform: translateY(-3px); }
+#ke-atas:hover { background: #93383a; transform: translateY(-3px); }
 
 /* Band statistik dengan angka beranimasi */
 section.statistik {
-  background: linear-gradient(135deg, #c86b85 0%, #a84d6a 100%);
+  background: linear-gradient(135deg, #b44446 0%, #64242f 100%);
   color: #fff;
   padding: 55px 0;
 }
@@ -455,7 +455,7 @@ section.statistik h3 { display: none; }
 
 /* Band ajakan (call-to-action) di akhir halaman */
 section.cta-band {
-  background: linear-gradient(135deg, #c86b85 0%, #a84d6a 100%);
+  background: linear-gradient(135deg, #b44446 0%, #64242f 100%);
   color: #fff;
   text-align: center;
   padding: 60px 20px;
@@ -470,11 +470,11 @@ section.cta-band {
 }
 .cta-band .tombol {
   background-color: #fff;
-  color: #a84d6a;
+  color: #64242f;
 }
 .cta-band .tombol:hover {
   background-color: #fff;
-  color: #8e3d57;
+  color: #4a1a22;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
 }
 
@@ -507,7 +507,7 @@ section.cta-band {
   width: 24px;
   height: 24px;
   margin: -12px 0 0 -12px;
-  border: 2px solid rgba(200, 107, 133, 0.85);
+  border: 2px solid rgba(180, 68, 70, 0.85);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -521,7 +521,7 @@ section.cta-band {
   width: 48px;
   height: 48px;
   margin: -24px 0 0 -24px;
-  background-color: rgba(200, 107, 133, 0.18);
+  background-color: rgba(180, 68, 70, 0.18);
 }
 /* Saat kursor kustom aktif, sembunyikan kursor bawaan (kelas diaktifkan oleh JS). */
 html.kursor-on,
@@ -603,9 +603,9 @@ html.kursor-on .tombol { cursor: none; }
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-.lang-toggle:hover { background: #c86b85; border-color: #c86b85; color: #fff; }
+.lang-toggle:hover { background: #b44446; border-color: #b44446; color: #fff; }
 nav.putih .lang-toggle { color: #333; border-color: rgba(0, 0, 0, 0.4); }
-nav.putih .lang-toggle:hover { color: #fff; border-color: #c86b85; }
+nav.putih .lang-toggle:hover { color: #fff; border-color: #b44446; }
 @media screen and (max-width: 1199.98px) {
   .lang-li { padding: 12px 26px; }
 }
@@ -647,7 +647,7 @@ body nav ul li a {
   left: 50%;
   bottom: 30px;
   transform: translateX(-50%) translateY(20px);
-  background: linear-gradient(135deg, #c86b85, #a84d6a);
+  background: linear-gradient(135deg, #b44446, #64242f);
   color: #fff;
   padding: 14px 26px;
   border-radius: 30px;
