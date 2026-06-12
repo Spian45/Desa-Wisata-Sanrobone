@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap");
+
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Plus Jakarta Sans", "Segoe UI", Arial, Helvetica, sans-serif;
   line-height: 20px;
   font-size: 15px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", "Plus Jakarta Sans", Arial, sans-serif;
+  letter-spacing: -0.3px;
 }
 html {
   margin: 0;
@@ -11,6 +17,9 @@ html {
 body {
   margin: 0px;
   padding: 0px;
+}
+.text-center {
+  text-align: center;
 }
 .layar-dalam {
   width: 1000px;
@@ -30,7 +39,9 @@ nav {
   transition: background-color 0.5s ease;
 }
 nav.putih {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
 }
 nav .logo {
   float: left;
@@ -107,9 +118,18 @@ header .intro h3 {
   color: #fff;
   text-decoration: none;
   display: inline-block;
-  padding: 0px 20px 0px 20px;
-  font-size: 15px;
-  border-radius: 4px;
+  padding: 0px 26px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 30px;
+  box-shadow: 0 6px 16px rgba(200, 107, 133, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.tombol:hover {
+  background-color: #b85877;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(200, 107, 133, 0.42);
 }
 header .overlay {
   position: absolute;
@@ -117,8 +137,12 @@ header .overlay {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #000;
-  opacity: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 12, 16, 0.55) 0%,
+    rgba(20, 12, 16, 0.35) 45%,
+    rgba(168, 77, 106, 0.55) 100%
+  );
   z-index: -1;
 }
 .tombol-menu {
@@ -142,15 +166,12 @@ section h3 {
 }
 section h3::after {
   content: "";
-  border-bottom: 5px solid #c86b85;
-  width: 52px;
+  height: 4px;
+  width: 60px;
+  background: linear-gradient(90deg, #c86b85, #e7a4b6);
+  border-radius: 3px;
   display: block;
-  margin: 20px auto;
-}
-#aboutus,
-#team,
-#blog {
-  text-align: center;
+  margin: 18px auto;
 }
 section p.ringkasan {
   font-style: italic;
@@ -159,9 +180,6 @@ section p.ringkasan {
 }
 section .konten-isi p {
   font-style: normal;
-}
-nav.putih {
-  background-color: #fff;
 }
 nav.putih .tombol-menu .garis {
   background-color: #333;
@@ -176,8 +194,7 @@ section.abuabu {
   background-color: #f5f6f6;
 }
 .support,
-.tim,
-.blog {
+.tim {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -189,9 +206,6 @@ section.abuabu {
   padding: 0px;
   font-size: 18px;
   font-weight: bold;
-}
-.support img {
-  width: 50px;
 }
 .support div,
 .tim div {
@@ -219,58 +233,10 @@ section#gallery div img:hover {
   transition: all 0.2s ease-in-out;
   transform: scale(1.1);
 }
-section.quote {
-  background: url("asset/background-bromo.jpg") no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-  font-style: italic;
-  padding: 100px;
-}
-section.quote .layar-dalam p {
-  display: inline;
-  background: url("asset/quote-icon.png") no-repeat;
-  padding: 40px;
-}
 .tim img {
   width: 100%;
   box-shadow: 0px -10px 30px #ccc;
   border-radius: 5px;
-}
-.blog .area {
-  width: 47%;
-  box-shadow: 0px -10px 30px #ccc;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.blog div.area div {
-  width: 50%;
-}
-.blog .area .gambar {
-  border-radius: 5px 0px 0px 5px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-}
-.blog .area .text article {
-  padding: 40px;
-}
-.blog .area .text article h4 {
-  margin: 0px;
-}
-.blog .area .text article a {
-  color: #333;
-  text-decoration: none;
-  transition: color 0.5s ease;
-}
-.blog .area .text article a:hover {
-  color: #ccc;
 }
 footer {
   padding: 50px 0px 50px 0px;
@@ -321,16 +287,6 @@ footer .layar-dalam .copyright {
   .tombol-menu {
     display: flex;
   }
-  .blog .area {
-    display: block;
-  }
-  .blog div.area div {
-    width: 100%;
-  }
-  .blog .area .gambar {
-    border-radius: 5px 5px 0px 0px;
-    height: 200px;
-  }
   .support {
     display: block;
   }
@@ -338,4 +294,219 @@ footer .layar-dalam .copyright {
     width: 100%;
     padding-bottom: 30px;
   }
+}
+
+/* ====== Penyempurnaan Tampilan Global ====== */
+
+/* Animasi muncul saat di-scroll (class .reveal ditambahkan oleh JS,
+   sehingga konten tetap tampil meskipun JavaScript gagal dimuat). */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: opacity, transform;
+}
+.reveal.tampil {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animasi masuk untuk teks hero */
+header .intro h3 { animation: munculAtas 1s ease both; }
+header .intro p { animation: munculAtas 1s ease 0.25s both; }
+@keyframes munculAtas {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Indikator scroll berdenyut di bawah hero */
+header .scroll-indikator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 14px;
+  z-index: 100;
+}
+header .scroll-indikator::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  background: #fff;
+  border-radius: 2px;
+  animation: roda 1.5s infinite;
+}
+@keyframes roda {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(14px); }
+}
+
+/* Bar progres baca di paling atas halaman */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, #c86b85, #e7a4b6);
+  z-index: 300;
+  transition: width 0.1s ease-out;
+}
+
+/* Tombol kembali ke atas */
+#ke-atas {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 200;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #c86b85;
+  color: #fff;
+  font-size: 22px;
+  line-height: 48px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+#ke-atas.tampil { opacity: 1; visibility: visible; transform: translateY(0); }
+#ke-atas:hover { background: #b85877; transform: translateY(-3px); }
+
+/* Band statistik dengan angka beranimasi */
+section.statistik {
+  background: linear-gradient(135deg, #c86b85 0%, #a84d6a 100%);
+  color: #fff;
+  padding: 55px 0;
+}
+section.statistik h3 { display: none; }
+.statistik .layar-dalam {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+  text-align: center;
+}
+.statistik .stat { flex: 1; min-width: 140px; }
+.statistik .angka {
+  font-family: "Poppins", sans-serif;
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+}
+.statistik .plus { font-size: 38px; font-weight: 700; vertical-align: top; line-height: 1; }
+.statistik .stat p {
+  margin: 12px 0 0;
+  font-size: 14px;
+  opacity: 0.92;
+  letter-spacing: 0.3px;
+}
+@media screen and (max-width: 600px) {
+  .statistik .stat { flex: 1 1 40%; }
+  .statistik .angka { font-size: 44px; }
+}
+
+/* Band ajakan (call-to-action) di akhir halaman */
+section.cta-band {
+  background: linear-gradient(135deg, #c86b85 0%, #a84d6a 100%);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+.cta-band h3 { color: #fff; margin: 0 0 14px; font-size: 28px; }
+.cta-band h3::after { display: none; }
+.cta-band p {
+  margin: 0 auto 26px;
+  max-width: 620px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+.cta-band .tombol {
+  background-color: #fff;
+  color: #a84d6a;
+}
+.cta-band .tombol:hover {
+  background-color: #fff;
+  color: #8e3d57;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  header .intro h3, header .intro p { animation: none; }
+  header .scroll-indikator::after { animation: none; }
+}
+
+/* ====== Penyesuaian Mobile ====== */
+@media screen and (max-width: 768px) {
+  header .intro h3 { font-size: 32px; }
+  header .intro p { font-size: 15px; }
+  section { padding: 45px 0; }
+  section h3 { font-size: 24px; }
+  .tombol { font-size: 13px; padding: 0 22px; }
+  #ke-atas { width: 44px; height: 44px; line-height: 44px; bottom: 18px; right: 18px; }
+}
+@media screen and (max-width: 480px) {
+  header .intro h3 { font-size: 27px; }
+  section h3 { font-size: 22px; }
+  section p.ringkasan { font-size: 16px; }
+}
+
+/* ====== Kursor kustom (desktop) + deteksi perangkat sentuh ====== */
+#kursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border: 2px solid rgba(200, 107, 133, 0.85);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease,
+    background-color 0.25s ease, opacity 0.25s ease;
+  will-change: transform;
+}
+#kursor.aktif { opacity: 1; }
+#kursor.besar {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  background-color: rgba(200, 107, 133, 0.18);
+}
+/* Saat kursor kustom aktif, sembunyikan kursor bawaan (kelas diaktifkan oleh JS). */
+html.kursor-on,
+html.kursor-on a,
+html.kursor-on button,
+html.kursor-on .tombol { cursor: none; }
+/* Tidak ada kursor kustom di perangkat sentuh. */
+.is-touch #kursor { display: none !important; }
+
+/* ====== Efek riak (ripple) pada tombol ====== */
+.tombol { position: relative; overflow: hidden; }
+.riak {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: riakAnim 0.6s ease-out;
+  pointer-events: none;
+}
+@keyframes riakAnim {
+  to { transform: scale(4); opacity: 0; }
 }
