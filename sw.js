@@ -1,5 +1,5 @@
 // Service worker sederhana untuk Desa Wisata Sanrobone (PWA installable + offline dasar)
-const CACHE = "sanrobone-v1";
+const CACHE = "sanrobone-v2";
 const ASET_INTI = [
   "index.html",
   "style.css",

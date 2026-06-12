@@ -11,6 +11,9 @@
     <meta name="theme-color" content="#c86b85" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Desa Wisata Sanrobone" />
@@ -147,7 +150,7 @@
     <div class="layar-penuh">
       <header>
         <div class="overlay"></div>
-        <video autoplay muted loop>
+        <video autoplay muted loop playsinline>
           <source src="asset/video-indonesia.mp4" type="video/mp4" />
         </video>
         <div class="intro">
@@ -233,7 +236,6 @@
         </div>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
   </body>
 </html>

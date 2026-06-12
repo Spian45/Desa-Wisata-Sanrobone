@@ -1,55 +1,43 @@
-//menu
-var tombolMenu = $(".tombol-menu");
-var menu = $("nav .menu ul");
+// ====== Menu mobile (hamburger) — vanilla JS, tanpa jQuery ======
+var tombolMenu = document.querySelector(".tombol-menu");
+var menuUl = document.querySelector("nav .menu ul");
 var BATAS_MOBILE = 1200; // di bawah lebar ini, navbar memakai menu hamburger
 
-function aktifkanMenuMobile() {
+function modeMobile() {
+    return window.innerWidth < BATAS_MOBILE;
+}
+
+if (tombolMenu && menuUl) {
     // buka/tutup lewat tombol hamburger
-    tombolMenu.off("click.menu").on("click.menu", function (e) {
+    tombolMenu.addEventListener("click", function (e) {
         e.preventDefault();
-        menu.toggle();
+        if (!modeMobile()) return;
+        menuUl.style.display = menuUl.style.display === "block" ? "none" : "block";
     });
-    // tutup menu HANYA saat sebuah tautan diklik (bukan tombol bahasa)
-    menu.off("click.menu").on("click.menu", "a", function () {
-        menu.hide();
+    // tutup menu saat sebuah tautan diklik (bukan tombol bahasa)
+    menuUl.addEventListener("click", function (e) {
+        if (modeMobile() && e.target.closest("a")) menuUl.style.display = "none";
     });
+
+    var aturMenu = function () {
+        // desktop: kembali ke layout CSS (flex); mobile: tertutup
+        menuUl.style.display = modeMobile() ? "none" : "";
+    };
+    aturMenu();
+    window.addEventListener("resize", aturMenu);
 }
 
-function nonaktifkanMenuMobile() {
-    // di desktop: lepas handler & kembalikan layout CSS (flex) penuh
-    tombolMenu.off("click.menu");
-    menu.off("click.menu");
-    menu.css("display", "");
-}
-
-function aturMenu() {
-    if ($(window).width() >= BATAS_MOBILE) {
-        nonaktifkanMenuMobile();
-    } else {
-        menu.css("display", "none");
-        aktifkanMenuMobile();
-    }
-}
-
-$(document).ready(aturMenu);
-$(window).resize(aturMenu);
-
-//efek scroll
-$(document).ready(function () {
-    var scroll_pos = 0;
-    $(document).scroll(function () {
-        scroll_pos = $(this).scrollTop();
-        if (scroll_pos > 0) {
-            $("nav").addClass("putih");
-            $("nav img.hitam").show();
-            $("nav img.putih").hide();
-        } else {
-            $("nav").removeClass("putih");
-            $("nav img.hitam").hide();
-            $("nav img.putih").show();
-        }
-    })
-});
+// ====== Efek warna navbar saat di-scroll ======
+window.addEventListener(
+    "scroll",
+    function () {
+        var nav = document.querySelector("nav");
+        if (!nav) return;
+        if (window.pageYOffset > 0) nav.classList.add("putih");
+        else nav.classList.remove("putih");
+    },
+    { passive: true }
+);
 
 // ====== Penyempurnaan Tampilan ======
 document.addEventListener("DOMContentLoaded", function () {
