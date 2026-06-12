@@ -153,26 +153,107 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.appendChild(kursor);
             root.classList.add("kursor-on");
 
-            document.addEventListener("mousemove", function (e) {
-                kursor.style.transform =
-                    "translate(" + e.clientX + "px," + e.clientY + "px)";
-                kursor.classList.add("aktif");
-            });
-            document.addEventListener("mouseleave", function () {
-                kursor.classList.remove("aktif");
+            // ---- Mode geser (autoscroll buatan sendiri + pointer lock) ----
+            var modeGulir = false;
+            var gulirX = 0, gulirY = 0; // titik jangkar (origin)
+            var gulirOffset = 0;        // simpangan vertikal dari jangkar
+            var gulirKecepatan = 0;     // px per frame
+            var gulirRAF = null;
+
+            function loopGulir() {
+                if (!modeGulir) return;
+                // behavior "instant" mengabaikan scroll-behavior:smooth (yang bikin lambat).
+                if (gulirKecepatan !== 0)
+                    window.scrollBy({ top: gulirKecepatan, behavior: "instant" });
+                gulirRAF = requestAnimationFrame(loopGulir);
+            }
+            function hitungKecepatan(d) {
+                // Zona mati kecil; di luar itu makin jauh makin cepat (dibatasi).
+                if (Math.abs(d) < 14) return 0;
+                var v = (d - (d > 0 ? 14 : -14)) / 2.2;
+                return Math.max(-70, Math.min(70, v));
+            }
+            function masukGulir(x, y) {
+                modeGulir = true;
+                gulirX = x; gulirY = y;
+                gulirOffset = 0;
+                gulirKecepatan = 0;
+                kursor.className = ""; // bersihkan wa/besar/mengetik
+                kursor.classList.add("tampil", "gulir");
+                // Jangkar ikon tetap di titik klik.
+                kursor.style.transform = "translate(" + x + "px," + y + "px)";
+                gulirRAF = requestAnimationFrame(loopGulir);
+                // Kunci pointer agar kursor tak keluar jendela (seperti autoscroll asli).
+                if (document.body.requestPointerLock) document.body.requestPointerLock();
+            }
+            function keluarGulir() {
+                modeGulir = false;
+                gulirKecepatan = 0;
+                if (gulirRAF) { cancelAnimationFrame(gulirRAF); gulirRAF = null; }
+                kursor.classList.remove("gulir");
+                if (document.pointerLockElement) document.exitPointerLock();
+            }
+            // Jika pointer lock dilepas (mis. tekan Esc), keluar dari mode geser.
+            document.addEventListener("pointerlockchange", function () {
+                if (modeGulir && !document.pointerLockElement) keluarGulir();
             });
 
+            // Titik kustom mengikuti mouse (atau atur kecepatan saat mode geser).
+            document.addEventListener("mousemove", function (e) {
+                if (modeGulir) {
+                    // Saat terkunci pakai delta gerak; jika gagal kunci, pakai posisi.
+                    if (document.pointerLockElement) gulirOffset += e.movementY;
+                    else gulirOffset = e.clientY - gulirY;
+                    gulirKecepatan = hitungKecepatan(gulirOffset);
+                    return; // ikon tetap di jangkar
+                }
+                kursor.style.transform =
+                    "translate(" + e.clientX + "px," + e.clientY + "px)";
+                kursor.classList.add("tampil");
+            });
+            document.addEventListener("mouseleave", function () {
+                if (!modeGulir) kursor.classList.remove("tampil");
+            });
+
+            // Elemen WhatsApp -> logo WA; elemen interaktif lain -> titik membesar.
+            var waSel = ".tombol-wa, a[href*='wa.me'], a[href*='whatsapp']";
             var interaktif =
                 "a, button, .tombol, .homestay-card, .ulasan-card, .produk-item, .galeri-item, .potensi-ikon, figure";
+            var bisaKetik = "input, textarea, [contenteditable='true']";
             document.addEventListener("mouseover", function (e) {
-                if (e.target.closest && e.target.closest(interaktif)) {
-                    kursor.classList.add("besar");
+                if (modeGulir || !e.target.closest) return;
+                if (e.target.closest(interaktif)) {
+                    kursor.classList.add(
+                        e.target.closest(waSel) ? "wa" : "besar"
+                    );
                 }
+                if (e.target.closest(bisaKetik)) kursor.classList.add("mengetik");
             });
             document.addEventListener("mouseout", function (e) {
-                if (e.target.closest && e.target.closest(interaktif)) {
-                    kursor.classList.remove("besar");
+                if (!e.target.closest) return;
+                if (e.target.closest(interaktif)) {
+                    kursor.classList.remove("wa", "besar");
                 }
+                if (e.target.closest(bisaKetik)) kursor.classList.remove("mengetik");
+            });
+
+            // Klik tengah: matikan autoscroll bawaan, pakai mode geser kustom.
+            document.addEventListener("mousedown", function (e) {
+                if (e.button === 1) {
+                    e.preventDefault(); // cegah cursor/anchor autoscroll bawaan
+                    if (modeGulir) keluarGulir();
+                    else masukGulir(e.clientX, e.clientY);
+                } else if (modeGulir) {
+                    // Klik kiri/kanan mengakhiri mode geser.
+                    keluarGulir();
+                }
+            });
+            // Putar roda atau ganti fokus jendela juga mengakhiri mode geser.
+            document.addEventListener("wheel", function () {
+                if (modeGulir) keluarGulir();
+            }, { passive: true });
+            window.addEventListener("blur", function () {
+                if (modeGulir) keluarGulir();
             });
         }
 

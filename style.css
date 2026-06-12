@@ -505,30 +505,64 @@ section.cta-band {
   position: fixed;
   top: 0;
   left: 0;
-  width: 24px;
-  height: 24px;
-  margin: -12px 0 0 -12px;
-  border: 2px solid rgba(180, 68, 70, 0.85);
+  /* Bentuk dasar: titik kecil beraksen merah, selalu tampil. */
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border: 2px solid rgba(200, 107, 133, 0.9);
   border-radius: 50%;
+  background: transparent center / contain no-repeat;
   pointer-events: none;
   z-index: 9999;
   opacity: 0;
-  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease,
-    background-color 0.25s ease, opacity 0.25s ease;
+  transition: width 0.18s ease, height 0.18s ease, margin 0.18s ease,
+    opacity 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
   will-change: transform;
 }
-#kursor.aktif { opacity: 1; }
+/* Tampil setelah mouse pertama bergerak (hindari kedip di pojok 0,0). */
+#kursor.tampil { opacity: 1; }
+/* Hover elemen interaktif biasa: titik membesar & terisi. */
 #kursor.besar {
-  width: 48px;
-  height: 48px;
-  margin: -24px 0 0 -24px;
-  background-color: rgba(180, 68, 70, 0.18);
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  background-color: rgba(200, 107, 133, 0.18);
 }
-/* Saat kursor kustom aktif, sembunyikan kursor bawaan (kelas diaktifkan oleh JS). */
-html.kursor-on,
+/* Hover elemen WhatsApp: berubah jadi logo WhatsApp. */
+#kursor.wa {
+  width: 30px;
+  height: 30px;
+  margin: -15px 0 0 -15px;
+  border-color: transparent;
+  background-image: url("asset/whatsapp.svg");
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+/* Mode geser (klik tengah / autoscroll): ikon panah atas-bawah. */
+#kursor.gulir {
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-color: transparent;
+  background-image: url("asset/scroll.svg");
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+/* Di atas kolom isian: sembunyikan titik & pakai kursor teks. */
+#kursor.mengetik { opacity: 0; }
+/* Kursor kustom aktif: sembunyikan kursor bawaan di seluruh halaman. */
+html.kursor-on { cursor: none; }
 html.kursor-on a,
 html.kursor-on button,
-html.kursor-on .tombol { cursor: none; }
+html.kursor-on .tombol,
+html.kursor-on .homestay-card,
+html.kursor-on .ulasan-card,
+html.kursor-on .produk-item,
+html.kursor-on .galeri-item,
+html.kursor-on .potensi-ikon,
+html.kursor-on figure { cursor: none; }
+/* Pada kolom isian: tampilkan kursor teks agar bisa mengetik. */
+html.kursor-on input,
+html.kursor-on textarea,
+html.kursor-on [contenteditable="true"] { cursor: text; }
 /* Tidak ada kursor kustom di perangkat sentuh. */
 .is-touch #kursor { display: none !important; }
 
