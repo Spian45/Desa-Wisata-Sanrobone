@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // Elemen WhatsApp -> logo WA; elemen interaktif lain -> titik membesar.
-            var waSel = ".tombol-wa, a[href*='wa.me'], a[href*='whatsapp']";
+            var waSel = ".tombol-wa";
             var interaktif =
                 "a, button, .tombol, .homestay-card, .ulasan-card, .produk-item, .galeri-item, .potensi-ikon, figure";
             var bisaKetik = "input, textarea, [contenteditable='true']";
