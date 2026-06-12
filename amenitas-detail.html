@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Detail Amenitas - Sanrobone</title>
+    
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .logo .hitam { display: none !important; }
+      .logo .putih { display: inline-block !important; }
+      nav.putih .logo .putih { display: none !important; }
+      nav.putih .logo .hitam { display: inline-block !important; }
+      nav .menu { max-width: 850px !important; }
+      nav ul li a { padding: 0px 10px !important; font-size: 13.5px !important; }
+      
+      header video { width: 100% !important; height: 100% !important; object-fit: cover !important; }
+      header .intro { max-width: 800px; margin: 0 auto; transform: translateY(-50%); padding: 0 20px; }
+      header .intro h3 { line-height: 1.3 !important; margin-bottom: 15px !important; }
+      
+      /* Gaya Artikel */
+      .artikel-detail { 
+        max-width: 850px; 
+        margin: 0 auto; 
+        line-height: 1.8; 
+        font-size: 16px; 
+        color: #444; 
+        text-align: justify;
+      }
+      .artikel-detail p { margin-bottom: 20px; }
+      .artikel-detail h4 { color: #c86b85; font-size: 22px; margin-top: 40px; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+      
+      /* Galeri Foto - Grid 4 Kolom */
+      .galeri-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+      }
+      .galeri-grid img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="layar-dalam">
+        <div class="logo">
+          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sanrobone</a>
+          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sanrobone</a>
+        </div>
+        <div class="menu">
+          <a href="#" class="tombol-menu"><span class="garis"></span><span class="garis"></span><span class="garis"></span></a>
+          <ul>
+            <li><a href="index.html#profil">Profil</a></li>
+            <li><a href="index.html#sejarah">Sejarah</a></li>
+            <li><a href="index.html#potensi">Potensi Wisata</a></li>
+            <li><a href="index.html#akses">Aksesibilitas</a></li>
+            <li><a href="index.html#akomodasi">Akomodasi</a></li>
+            <li><a href="index.html#amenitas">Amenitas</a></li>
+            <li><a href="index.html#souvenir">Souvenir</a></li>
+            <li><a href="index.html#reservasi">Reservasi</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="layar-penuh">
+      <header>
+        <div class="overlay"></div>
+        <video autoplay muted loop>
+          <source src="asset/video-indonesia.mp4" type="video/mp4" />
+        </video>
+        <div class="intro">
+          <h3>Fasilitas dan Amenitas Desa</h3>
+          <p>Memahami sarana pendukung kenyamanan wisatawan sebagai faktor penentu kepuasan pengunjung di destinasi wisata.</p>
+          <p><a href="index.html" class="tombol" style="background-color: transparent; border: 2px solid #fff; margin-top: 10px;">KEMBALI KE BERANDA</a></p>
+        </div>
+      </header>
+      
+      <main>
+        <section style="padding: 60px 0;">
+          <div class="layar-dalam artikel-detail">
+            <p>Fasilitas dan amenitas merupakan salah satu komponen penting dalam mendukung pengembangan suatu destinasi wisata. Keberadaan fasilitas dan amenitas tidak hanya berfungsi untuk memenuhi kebutuhan dasar wisatawan, tetapi juga menjadi faktor penentu dalam menciptakan kenyamanan, keamanan, serta kepuasan pengunjung selama berada di suatu destinasi. Dalam perspektif pengembangan pariwisata, fasilitas dan amenitas mencakup berbagai sarana seperti tempat makan, akomodasi, akses keuangan, layanan kesehatan, sarana ibadah, serta fasilitas umum lainnya yang secara langsung maupun tidak langsung mendukung aktivitas wisata.</p>
+
+            <div class="galeri-grid">
+              <img src="asset/puskesmas.jpg" alt="Puskesmas Sanrobone">
+              <img src="asset/jalan.jpg" alt="Akses Jalan Desa">
+              <img src="asset/puskesmas-interior.jpg" alt="Layanan Kesehatan">
+              <img src="asset/warung.jpg" alt="Warung Makan Desa">
+            </div>
+
+            <p>Berdasarkan hasil observasi lapangan, Desa Sanrobone telah memiliki sejumlah fasilitas yang menunjang kebutuhan masyarakat lokal maupun wisatawan, meskipun masih dalam kategori sederhana dan terbatas. Keberadaan fasilitas ini menunjukkan potensi besar untuk berkembang sebagai destinasi berbasis masyarakat (*Community Based Tourism*) apabila didukung dengan pengelolaan yang lebih optimal.</p>
+
+            <h4>Sektor Konsumsi dan Kebutuhan Harian</h4>
+            <p>Dari segi konsumsi, terdapat beberapa warung makan dan kios kecil yang menyediakan makanan serta minuman ringan bagi pengunjung. Keberadaan warung ini tidak hanya memenuhi kebutuhan wisatawan, tetapi juga menjadi sumber pendapatan tambahan bagi masyarakat setempat. Selain itu, tersedia pula toko kelontong yang menyediakan kebutuhan sehari-hari untuk memudahkan wisatawan.</p>
+
+            <h4>Akomodasi Berbasis Masyarakat</h4>
+            <p>Desa Sanrobone menyediakan homestay yang dikelola langsung oleh masyarakat. Ini merupakan bentuk partisipasi aktif warga dalam pengembangan pariwisata sekaligus memberikan pengalaman autentik bagi wisatawan untuk merasakan kehidupan sosial masyarakat lokal.</p>
+
+            <h4>Pelayanan Kesehatan dan Keuangan</h4>
+            <p>Tersedia Puskesmas yang dapat dimanfaatkan oleh masyarakat maupun wisatawan untuk layanan kesehatan dasar, yang menjadi indikator penting dalam menunjang keamanan. Selain itu, fasilitas keuangan berupa mesin ATM juga telah tersedia dan berlokasi di samping puskesmas, sehingga memudahkan wisatawan melakukan transaksi keuangan tanpa harus keluar dari wilayah desa.</p>
+
+            <h4>Sarana Ibadah dan Fasilitas Umum</h4>
+            <p>Masjid tersedia dan dapat diakses dengan mudah bagi wisatawan yang membutuhkan tempat ibadah. Fasilitas umum seperti toilet (WC umum) juga telah tersedia di dekat kantor pelayanan desa. Namun, kondisi fasilitas tersebut masih memerlukan perhatian lebih, khususnya dalam hal kebersihan, perawatan, dan pengelolaan agar memberikan kenyamanan optimal bagi pengguna.</p>
+
+            <h4>Aksesibilitas</h4>
+            <p>Aksesibilitas menuju Desa Sanrobone sudah cukup baik, di mana jalan dapat dilalui oleh kendaraan roda dua maupun roda empat. Namun, penataan fasilitas pendukung seperti area parkir masih perlu ditingkatkan agar lebih tertib dan terorganisir.</p>
+            
+            <p>Secara keseluruhan, fasilitas yang tersedia sudah mampu mendukung aktivitas dasar wisatawan, meskipun masih terdapat keterbatasan baik dari segi jumlah maupun kualitas. Oleh karena itu, diperlukan upaya pengembangan yang terencana dan berkelanjutan, baik melalui peningkatan kualitas fasilitas yang sudah ada maupun penambahan amenitas baru.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact" style="background-color: #343a40; color: #fff; padding: 40px 0;">
+        <div class="layar-dalam text-center" style="text-align: center;">
+          <p>&copy; 2026 Desa Wisata Sanrobone | Kabupaten Takalar, Sulawesi Selatan</p>
+        </div>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="javascript.js"></script>
+  </body>
+</html>
