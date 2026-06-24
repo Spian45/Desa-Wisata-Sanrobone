@@ -13,7 +13,7 @@ img, video {
   max-width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", "Plus Jakarta Sans", Arial, sans-serif;
+  font-family: "DM Serif Display", "Plus Jakarta Sans", Arial, sans-serif;
   letter-spacing: -0.3px;
 }
 html {
@@ -119,24 +119,26 @@ header .intro h3 {
   padding: 0;
 }
 .tombol {
-  background-color: #b44446;
-  height: 40px;
-  line-height: 42px;
+  background-color: #B5482C;
+  min-height: 40px;
+  line-height: 1.3;
   color: #fff;
   text-decoration: none;
   display: inline-block;
-  padding: 0px 26px;
+  text-align: center;
+  white-space: nowrap;
+  padding: 9px 26px;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.5px;
   border-radius: 30px;
-  box-shadow: 0 6px 16px rgba(180, 68, 70, 0.3);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  box-shadow: 0 6px 16px rgba(181, 72, 44, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease;
 }
 .tombol:hover {
-  background-color: #93383a;
+  background-color: #9B3B22;
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(180, 68, 70, 0.42);
+  box-shadow: 0 10px 22px rgba(181, 72, 44, 0.42);
 }
 header .overlay {
   position: absolute;
@@ -148,7 +150,7 @@ header .overlay {
     180deg,
     rgba(20, 12, 16, 0.55) 0%,
     rgba(20, 12, 16, 0.35) 45%,
-    rgba(100, 36, 47, 0.55) 100%
+    rgba(90, 34, 48, 0.55) 100%
   );
   z-index: -1;
 }
@@ -176,7 +178,7 @@ section h3::after {
   content: "";
   height: 4px;
   width: 60px;
-  background: linear-gradient(90deg, #b44446, #fc8f8f);
+  background: linear-gradient(90deg, #B5482C, #D9AE55);
   border-radius: 3px;
   display: block;
   margin: 18px auto;
@@ -184,22 +186,22 @@ section h3::after {
 section p.ringkasan {
   font-style: italic;
   font-size: 18px;
-  color: #ababab;
+  color: #9A887A;
 }
 section .konten-isi p {
   font-style: normal;
 }
 nav.putih .tombol-menu .garis {
-  background-color: #333;
+  background-color: #2A1B14;
 }
 nav.putih ul li a {
-  color: #333;
+  color: #2A1B14;
 }
 nav .logo img.hitam {
   display: none;
 }
 section.abuabu {
-  background-color: #dfd9d8;
+  background-color: #F3ECDF;
 }
 .support,
 .tim {
@@ -243,12 +245,12 @@ section#gallery div img:hover {
 }
 .tim img {
   width: 100%;
-  box-shadow: 0px -10px 30px #ccc;
+  box-shadow: 0px -10px 30px #D2BFA3;
   border-radius: 5px;
 }
 footer {
   padding: 50px 0px 50px 0px;
-  background-color: #3d1a20;
+  background-color: #34121B;
   color: #fff;
 }
 footer .layar-dalam {
@@ -268,7 +270,7 @@ footer .layar-dalam .copyright {
   width: 100%;
   margin-top: 30px;
   padding-top: 30px;
-  border-top: 1px solid #666;
+  border-top: 1px solid #6E5A4D;
   text-align: center;
 }
 @media screen and (max-width: 1199.98px) {
@@ -312,8 +314,8 @@ footer .layar-dalam .copyright {
   }
   nav .menu ul li a:hover,
   nav .menu ul li a:active {
-    background-color: rgba(180, 68, 70, 0.22);
-    border-left-color: #b44446;
+    background-color: rgba(181, 72, 44, 0.22);
+    border-left-color: #B5482C;
     padding-left: 34px !important;
     text-decoration: none;
   }
@@ -323,10 +325,10 @@ footer .layar-dalam .copyright {
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   }
-  nav.putih .menu ul li a { color: #333 !important; }
+  nav.putih .menu ul li a { color: #2A1B14 !important; }
   nav.putih .menu ul li a:hover,
   nav.putih .menu ul li a:active {
-    background-color: rgba(180, 68, 70, 0.14);
+    background-color: rgba(181, 72, 44, 0.14);
   }
   .tombol-menu {
     display: flex;
@@ -390,7 +392,7 @@ header .scroll-indikator {
   left: 0;
   height: 4px;
   width: 0;
-  background: linear-gradient(90deg, #b44446, #fc8f8f);
+  background: linear-gradient(90deg, #B5482C, #D9AE55);
   z-index: 300;
   transition: width 0.1s ease-out;
 }
@@ -405,7 +407,7 @@ header .scroll-indikator {
   height: 48px;
   border: none;
   border-radius: 50%;
-  background: #b44446;
+  background: #B5482C;
   color: #fff;
   font-size: 22px;
   line-height: 48px;
@@ -418,11 +420,11 @@ header .scroll-indikator {
   transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 #ke-atas.tampil { opacity: 1; visibility: visible; transform: translateY(0); }
-#ke-atas:hover { background: #93383a; transform: translateY(-3px); }
+#ke-atas:hover { background: #9B3B22; transform: translateY(-3px); }
 
 /* Band statistik dengan angka beranimasi */
 section.statistik {
-  background: linear-gradient(135deg, #b44446 0%, #64242f 100%);
+  background: linear-gradient(135deg, #B5482C 0%, #5A2230 100%);
   color: #fff;
   padding: 55px 0;
 }
@@ -436,7 +438,7 @@ section.statistik h3 { display: none; }
 }
 .statistik .stat { flex: 1; min-width: 140px; }
 .statistik .angka {
-  font-family: "Poppins", sans-serif;
+  font-family: "DM Serif Display", sans-serif;
   font-size: 54px;
   font-weight: 700;
   line-height: 1;
@@ -456,7 +458,7 @@ section.statistik h3 { display: none; }
 
 /* Band ajakan (call-to-action) di akhir halaman */
 section.cta-band {
-  background: linear-gradient(135deg, #b44446 0%, #64242f 100%);
+  background: linear-gradient(135deg, #B5482C 0%, #5A2230 100%);
   color: #fff;
   text-align: center;
   padding: 60px 20px;
@@ -471,11 +473,11 @@ section.cta-band {
 }
 .cta-band .tombol {
   background-color: #fff;
-  color: #64242f;
+  color: #5A2230;
 }
 .cta-band .tombol:hover {
   background-color: #fff;
-  color: #4a1a22;
+  color: #421810;
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
 }
 
@@ -509,7 +511,7 @@ section.cta-band {
   width: 14px;
   height: 14px;
   margin: -7px 0 0 -7px;
-  border: 2px solid rgba(200, 107, 133, 0.9);
+  border: 2px solid rgba(181, 72, 44, 0.9);
   border-radius: 50%;
   background: transparent center / contain no-repeat;
   pointer-events: none;
@@ -526,7 +528,7 @@ section.cta-band {
   width: 26px;
   height: 26px;
   margin: -13px 0 0 -13px;
-  background-color: rgba(200, 107, 133, 0.18);
+  background-color: rgba(181, 72, 44, 0.18);
 }
 /* Hover elemen WhatsApp: berubah jadi logo WhatsApp. */
 #kursor.wa {
@@ -587,7 +589,7 @@ html.kursor-on [contenteditable="true"] { cursor: text; }
   border-radius: 8px;
   box-shadow: 0 12px 44px rgba(0, 0, 0, 0.55);
 }
-#lightbox .lb-cap { color: #eee; margin-top: 14px; font-size: 14px; }
+#lightbox .lb-cap { color: #EDE3D2; margin-top: 14px; font-size: 14px; }
 #lightbox .lb-close {
   position: absolute;
   top: 16px;
@@ -638,9 +640,9 @@ html.kursor-on [contenteditable="true"] { cursor: text; }
   cursor: pointer;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
-.lang-toggle:hover { background: #b44446; border-color: #b44446; color: #fff; }
-nav.putih .lang-toggle { color: #333; border-color: rgba(0, 0, 0, 0.4); }
-nav.putih .lang-toggle:hover { color: #fff; border-color: #b44446; }
+.lang-toggle:hover { background: #B5482C; border-color: #B5482C; color: #fff; }
+nav.putih .lang-toggle { color: #2A1B14; border-color: rgba(0, 0, 0, 0.4); }
+nav.putih .lang-toggle:hover { color: #fff; border-color: #B5482C; }
 @media screen and (max-width: 1199.98px) {
   .lang-li { padding: 12px 26px; }
 }
@@ -682,7 +684,7 @@ body nav ul li a {
   left: 50%;
   bottom: 30px;
   transform: translateX(-50%) translateY(20px);
-  background: linear-gradient(135deg, #b44446, #64242f);
+  background: linear-gradient(135deg, #B5482C, #5A2230);
   color: #fff;
   padding: 14px 26px;
   border-radius: 30px;
@@ -739,11 +741,11 @@ body nav ul li a {
 }
 
 /* ====== Scroll-spy: sorot tab section yang sedang aktif ====== */
-nav .menu ul li a.aktif { color: #b44446 !important; font-weight: 700; }
+nav .menu ul li a.aktif { color: #B5482C !important; font-weight: 700; }
 @media screen and (max-width: 1199.98px) {
   nav .menu ul li a.aktif {
-    border-left-color: #b44446;
-    background-color: rgba(180, 68, 70, 0.12);
+    border-left-color: #B5482C;
+    background-color: rgba(181, 72, 44, 0.12);
   }
 }
 
@@ -760,3 +762,257 @@ nav .menu ul li a.aktif { color: #b44446 !important; font-weight: 700; }
 @keyframes riakAnim {
   to { transform: scale(4); opacity: 0; }
 }
+
+/* =====================================================================
+   Sanrobone Design System — editorial type & surface system (v2)
+   Four voices for clear hierarchy & variety:
+     DM Serif Display  → display headlines, section & card titles
+     Lora              → long-form narrative / article body (editorial serif)
+     Plus Jakarta Sans → UI: nav, buttons, eyebrows, labels, captions
+     Noto Sans Buginese→ Lontara cultural micro-accents
+   ===================================================================== */
+:root {
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-serif:   "Lora", Georgia, "Times New Roman", serif;
+  --font-sans:    "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-script:  "Noto Sans Buginese", "Plus Jakarta Sans", sans-serif;
+  --c-terracotta: #B5482C;
+  --c-gold:       #C49A45;
+  --c-maroon:     #5A2230;
+  --c-sand:       #FAF6EF;
+  --c-ink:        #2A1B14;
+  --c-ink-soft:   #4A372C;
+}
+
+body {
+  background-color: var(--c-sand);     /* warm paper */
+  color: var(--c-ink-soft);
+  font-family: var(--font-sans);
+}
+
+/* Heritage serif wordmark */
+nav .logo a {
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.4px;
+}
+
+/* ---- Display headings ---- */
+section h3,
+header .intro h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+section h3 { font-size: 34px; color: var(--c-ink); }
+
+/* Quieter, more editorial section rule (replaces the heavy gradient bar) */
+section h3::after {
+  height: 2px;
+  width: 46px;
+  background: var(--c-gold);
+  margin: 16px auto 6px;
+}
+
+/* Eyebrow kicker — small uppercase tracked sans above a title.
+   Add <span class="eyebrow">LABEL <i class="lontara">ᨔ</i></span> before an h3. */
+.eyebrow {
+  display: block;
+  text-align: center;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-terracotta);
+  margin-bottom: 10px;
+}
+.eyebrow .lontara {
+  font-family: var(--font-script);
+  font-style: normal;
+  letter-spacing: 0;
+  margin-left: 8px;
+  color: var(--c-gold);
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+/* ---- Narrative body set in editorial serif (Lora) ---- */
+.profil-teks p, .sejarah-teks p, .religi-teks p,
+.artikel-detail, .artikel-detail p, .konten-isi p,
+.situs-desc, .ulasan-teks, .akses-anak p,
+.foto-narasi figcaption, .kondisi-media figcaption,
+.reservasi-info > p, .form-reservasi .form-intro {
+  font-family: var(--font-serif);
+}
+.profil-teks p, .sejarah-teks p, .religi-teks p,
+.artikel-detail, .artikel-detail p {
+  font-size: 16.5px;
+  line-height: 1.9;
+}
+section p.ringkasan {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--c-ink-soft);
+}
+
+/* ---- UI elements stay crisp sans ---- */
+.tombol, .lang-toggle, nav, nav ul li a,
+.paket-durasi, .kontak-list strong, .amenitas-logo span,
+.titik-lokasi strong, .sosmed-bar a, .qr-sosmed a,
+.kamar-kartu .harga, .statistik .stat p, .form-reservasi label {
+  font-family: var(--font-sans);
+}
+
+/* Card titles in serif display for elegance */
+.situs-kartu h6, .kamar-kartu h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.2px;
+}
+
+/* ---- Cleaner surfaces: softer shadow + warm hairline border ---- */
+.situs-kartu, .kamar-kartu, .paket-kartu, .ulasan-card,
+.amenitas-logo, .foto-narasi, .form-reservasi, .akses-anak {
+  border: 1px solid #EAE0CF;
+  box-shadow: 0 4px 18px rgba(90, 34, 48, 0.06);
+}
+.situs-kartu:hover, .kamar-kartu:hover, .paket-kartu:hover,
+.ulasan-card:hover, .amenitas-logo:hover {
+  box-shadow: 0 14px 30px rgba(90, 34, 48, 0.13);
+}
+
+section.abuabu { background-color: #F3ECDF; }  /* alternating warm band */
+
+.tombol:focus-visible {
+  outline: 3px solid rgba(196, 154, 69, 0.55);
+  outline-offset: 2px;
+}
+
+/* ---- Outline button (replaces inline white/border styling) ---- */
+.tombol-garis {
+  background-color: #fff;
+  color: #B5482C;
+  border: 2px solid #B5482C;
+  box-shadow: none;
+}
+.tombol-garis:hover {
+  background-color: #B5482C;
+  color: #fff;
+  box-shadow: 0 10px 22px rgba(181, 72, 44, 0.35);
+}
+
+/* ---- Language switcher: clear separation from nav links ---- */
+nav .layar-dalam { max-width: 1400px; }
+body nav ul li a { padding: 0 6px !important; }
+.lang-li {
+  margin-left: 10px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+nav.putih .lang-li { border-left-color: rgba(0, 0, 0, 0.15); }
+@media screen and (max-width: 1199.98px) {
+  /* In the mobile dropdown the divider/side-margin look wrong — reset */
+  .lang-li { margin-left: 0; padding-left: 26px; border-left: none; }
+}
+
+/* =====================================================================
+   Sanrobone Design System — logo & brand integration (v3)
+   ===================================================================== */
+
+/* ---- Nav brand lockup: mark + wordmark + tagline ---- */
+nav .logo { float: left; line-height: normal; }
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  height: 60px;
+  text-decoration: none;
+}
+.brand-mark { width: 36px; height: 36px; display: block; flex: none; }
+nav .logo .brand-mark { width: 36px; height: 36px; }   /* beat legacy nav .logo img{width:120px} */
+.brand-mark--dark { display: none; }          /* shown only when scrolled */
+.brand-text { display: flex; flex-direction: column; line-height: 1; text-align: left; }
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 25px;
+  letter-spacing: 0.2px;
+  color: #fff;                                  /* over hero video */
+  transition: color 0.4s ease;
+}
+.brand-sub {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 9.5px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  margin-top: 3px;
+  color: #E8C879;                               /* gold */
+  transition: color 0.4s ease;
+}
+/* Scrolled state — nav turns to warm paper */
+nav.putih .brand-mark--light { display: none; }
+nav.putih .brand-mark--dark  { display: block; }
+nav.putih .brand-name { color: var(--c-maroon); }
+nav.putih .brand-sub  { color: var(--c-terracotta); }
+
+/* ---- Hero brand badge above the headline ---- */
+header#beranda .intro .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 10px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  background: rgba(42, 27, 20, 0.28);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+header#beranda .intro .hero-badge img { width: 26px; height: 26px; display: block; }
+header#beranda .intro .hero-badge span {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #FAF6EF;
+}
+
+/* ---- Footer brand block ---- */
+footer .layar-dalam { flex-wrap: wrap; }
+.footer-brand { width: 100% !important; margin-bottom: 26px; }
+.footer-brand .footer-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.footer-brand .footer-lockup img { width: 52px; height: 52px; display: block; }
+.footer-brand .footer-wordmark {
+  font-family: var(--font-display);
+  font-size: 30px;
+  color: #FAF6EF;
+  line-height: 1;
+}
+.footer-brand .footer-tagline {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #E8C879;
+  margin-top: 5px;
+}
+.footer-brand p {
+  max-width: 360px;
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: rgba(250, 246, 239, 0.75);
+  margin: 0;
+}
+
+/* ---- Review cards: drop the (missing) top photo, lead with the quote ---- */
+.ulasan-foto { display: none !important; }

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sanrobone mark">
+  
+  <g fill="none" stroke="#B5482C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    
+    <path d="M9 26 L32 9 L55 26"></path>
+    
+    <path d="M22 20 L32 13 L42 20" stroke="#C49A45"></path>
+    
+    <path d="M15 26 V44 H49 V26"></path>
+    
+    <path d="M27 44 V33 H37 V44"></path>
+    
+    <path d="M19 44 V53 M45 44 V53"></path>
+    
+    <path d="M12 53 H52" stroke-width="3.2"></path>
+  </g>
+  
+  <circle cx="32" cy="7" r="2.4" fill="#C49A45"></circle>
+</svg>

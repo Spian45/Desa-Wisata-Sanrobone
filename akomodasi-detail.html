@@ -8,13 +8,13 @@
       name="description"
       content="Akomodasi homestay berbasis masyarakat di Desa Wisata Sanrobone, Kabupaten Takalar — pengalaman menginap autentik dengan nuansa budaya dan sejarah Kerajaan Sanrobone."
     />
-    <meta name="theme-color" content="#b44446" />
+    <meta name="theme-color" content="#B5482C" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="manifest.json" />
     <link rel="canonical" href="https://spian45.github.io/Desa-Wisata-Sanrobone/akomodasi-detail.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Sans+Buginese&display=swap" rel="stylesheet" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Desa Wisata Sanrobone" />
@@ -56,7 +56,7 @@
       .konten-isi p {
         margin-bottom: 16px;
         line-height: 1.85;
-        color: #444;
+        color: #4A372C;
         text-align: justify;
       }
 
@@ -66,7 +66,7 @@
       }
       .tombol:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 18px rgba(180, 68, 70, 0.35);
+        box-shadow: 0 8px 18px rgba(181, 72, 44, 0.35);
       }
 
       /* Kartu Homestay */
@@ -95,7 +95,7 @@
       }
       .homestay-card .info { padding: 18px; text-align: center; }
       .homestay-card h6 { margin: 0 0 6px; font-size: 16px; font-weight: bold; }
-      .homestay-card .harga { color: #b44446; font-weight: bold; }
+      .homestay-card .harga { color: #B5482C; font-weight: bold; }
 
       /* Daftar Fasilitas */
       .fasilitas-grid {
@@ -120,7 +120,7 @@
         width: 26px;
         height: 26px;
         border-radius: 50%;
-        background: #b44446;
+        background: #B5482C;
         color: #fff;
         display: inline-flex;
         align-items: center;
@@ -136,23 +136,23 @@
         margin: 0 auto;
         padding: 40px 36px;
         border-radius: 12px;
-        border-top: 5px solid #b44446;
+        border-top: 5px solid #B5482C;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
         text-align: center;
       }
-      .skor-angka { font-size: 56px; font-weight: bold; color: #b44446; line-height: 1; }
-      .skor-angka small { font-size: 24px; color: #999; }
+      .skor-angka { font-size: 56px; font-weight: bold; color: #B5482C; line-height: 1; }
+      .skor-angka small { font-size: 24px; color: #9A887A; }
       .skor-label {
         display: inline-block;
         margin-top: 12px;
         padding: 6px 18px;
-        background: #b44446;
+        background: #B5482C;
         color: #fff;
         border-radius: 20px;
         font-weight: bold;
         font-size: 14px;
       }
-      .skor-box p { margin-top: 22px; color: #444; line-height: 1.8; }
+      .skor-box p { margin-top: 22px; color: #4A372C; line-height: 1.8; }
 
       /* Kotak kontak reservasi */
       .kontak-box {
@@ -221,15 +221,21 @@
     <nav>
       <div class="layar-dalam">
         <div class="logo">
-          <a href="index.html" class="putih" style="text-decoration: none; font-size: 28px; font-weight: bold; color: white; line-height: 60px;">Sanrobone</a>
-          <a href="index.html" class="hitam" style="text-decoration: none; font-size: 28px; font-weight: bold; color: black; line-height: 60px;">Sanrobone</a>
+          <a href="index.html" class="brand-lockup" aria-label="Sanrobone — Desa Wisata">
+            <img class="brand-mark brand-mark--light" src="asset/sanrobone-mark-light.svg" alt="" width="36" height="36" />
+            <img class="brand-mark brand-mark--dark" src="asset/sanrobone-mark.svg" alt="" width="36" height="36" />
+            <span class="brand-text">
+              <span class="brand-name">Sanrobone</span>
+              <span class="brand-sub" data-en="TOURISM VILLAGE">DESA WISATA</span>
+            </span>
+          </a>
         </div>
         <div class="menu">
           <a href="#" class="tombol-menu"><span class="garis"></span><span class="garis"></span><span class="garis"></span></a>
           <ul>
             <li><a href="index.html#profil" data-en="Profile">Profil</a></li>
             <li><a href="index.html#sejarah" data-en="History">Sejarah</a></li>
-            <li><a href="index.html#potensi" data-en="Tourism Potential">Potensi Wisata</a></li>
+            <li><a href="index.html#potensi-wisata" data-en="Tourism Potential">Potensi Wisata</a></li>
             <li><a href="index.html#akses" data-en="Accessibility">Aksesibilitas</a></li>
             <li><a href="index.html#akomodasi" data-en="Accommodation">Akomodasi</a></li>
             <li><a href="index.html#amenitas" data-en="Amenities">Amenitas</a></li>
@@ -257,6 +263,18 @@
       </header>
 
       <main>
+        <!-- Banner Harga -->
+        <section class="abuabu" style="padding: 36px 0;">
+          <div class="layar-dalam text-center" style="text-align: center;">
+            <div style="background:#fff; max-width:640px; margin:0 auto; padding:28px 30px; border-radius:14px; border-top:5px solid #B5482C; box-shadow:0 6px 20px rgba(0,0,0,.08);">
+              <p style="margin:0 0 6px; color:#6E5A4D; font-size:14px;" data-en="Community-based homestay rate">Tarif homestay berbasis masyarakat</p>
+              <p style="margin:0; font-family:'Poppins',sans-serif; font-weight:700; color:#B5482C; font-size:34px; line-height:1.2;">Mulai Rp 200.000 <small style="font-weight:600; color:#9A887A; font-size:18px;">/ malam</small></p>
+              <p style="margin:14px 0 0; color:#4A372C; font-size:14px;" data-en="Price varies by homestay type. Includes breakfast & shared facilities.">Harga bervariasi menurut tipe homestay. Termasuk sarapan &amp; fasilitas bersama.</p>
+              <a href="#reservasi" class="tombol" style="margin-top:18px;" data-en="RESERVE NOW">RESERVASI SEKARANG</a>
+            </div>
+          </div>
+        </section>
+
         <!-- Pengantar -->
         <section>
           <div class="layar-dalam text-center" style="text-align: center;">
@@ -439,16 +457,35 @@
           <div class="layar-dalam text-center" style="text-align: center;">
             <h3 data-en="Homestay Reservation">Reservasi Homestay</h3>
             <p class="ringkasan" data-en="Contact the official line to book a homestay and check availability.">Hubungi kontak resmi untuk memesan homestay dan mengecek ketersediaan.</p>
-            <div class="kontak-box">
-              <p style="font-size: 26px; font-weight: bold; color: #b44446; margin: 0 0 10px;">082347764426</p>
-              <p style="margin: 0 0 18px;">Email: desasanrobone22@gmail.com</p>
-              <a href="index.html#reservasi" class="tombol" data-en="VIEW RESERVATION QR CODE">LIHAT QR CODE RESERVASI</a>
+            <div class="kontak-box" style="max-width: 620px;">
+              <p style="margin: 0 0 4px; color:#6E5A4D; font-size:14px;" data-en="Managed by">Dikelola oleh</p>
+              <p style="margin: 0 0 14px; font-weight:700; font-size:18px;">Pokdarwis Desa Wisata Sanrobone</p>
+              <p style="font-size: 26px; font-weight: bold; color: #B5482C; margin: 0 0 6px;"><a href="https://wa.me/6282347764426" target="_blank" rel="noopener" style="color:#B5482C; text-decoration:none;">082347764426</a></p>
+              <p style="margin: 0 0 16px;">Email: desasanrobone22@gmail.com</p>
+
+              <div style="text-align:left; border-top:1px solid #EDE3D2; padding-top:16px; margin-top:4px;">
+                <p style="margin:0 0 8px; font-weight:700;" data-en="Address &amp; Location Points">Alamat &amp; Titik Lokasi</p>
+                <p style="margin:0 0 12px; color:#4A372C; font-size:14px; line-height:1.7;" data-en="Sanrobone Hamlet, Sanrobone Village, Sanrobone District, Takalar Regency, South Sulawesi.">Dusun Sanrobone, Desa Sanrobone, Kec. Sanrobone, Kab. Takalar, Sulawesi Selatan.</p>
+                <div style="border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.12); line-height:0; margin-bottom:12px;">
+                  <iframe src="https://maps.google.com/maps?q=-5.428844,119.390850&z=17&hl=id&output=embed" style="width:100%; height:240px; border:0; display:block;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta lokasi Desa Wisata Sanrobone" allowfullscreen></iframe>
+                </div>
+                <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                  <a href="https://maps.app.goo.gl/79TrFN75xjvYPjj87" target="_blank" rel="noopener" class="tombol" style="background:#fff; color:#B5482C; border:2px solid #B5482C; box-shadow:none; padding:8px 14px; font-size:13px;" data-en="Tourism Area Location">📍 Lokasi Kawasan Wisata</a>
+                  <a href="https://maps.app.goo.gl/gwz5W3p1fz4S3aeH9" target="_blank" rel="noopener" class="tombol" style="background:#fff; color:#B5482C; border:2px solid #B5482C; box-shadow:none; padding:8px 14px; font-size:13px;" data-en="Homestay Location">📍 Lokasi Homestay</a>
+                </div>
+              </div>
+
+              <div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:18px;">
+                <a href="https://www.instagram.com/pokdarwis_sanrobone" target="_blank" rel="noopener" class="tombol" style="background:#fff; color:#B5482C; border:2px solid #B5482C; box-shadow:none; padding:8px 14px; font-size:13px;">Instagram</a>
+                <a href="https://www.facebook.com/share/g/1BWYiw9pRa/" target="_blank" rel="noopener" class="tombol" style="background:#fff; color:#B5482C; border:2px solid #B5482C; box-shadow:none; padding:8px 14px; font-size:13px;">Facebook</a>
+                <a href="index.html#reservasi" class="tombol" data-en="VIEW RESERVATION QR CODE" style="padding:8px 14px; font-size:13px;">LIHAT QR CODE RESERVASI</a>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
-      <footer id="contact" style="background-color: #3d1a20; color: #fff; padding: 40px 0;">
+      <footer id="contact" style="background-color: #34121B; color: #fff; padding: 40px 0;">
         <div class="layar-dalam text-center" style="text-align: center;">
           <p>&copy; 2026 Desa Wisata Sanrobone | Kabupaten Takalar, Sulawesi Selatan</p>
         </div>
