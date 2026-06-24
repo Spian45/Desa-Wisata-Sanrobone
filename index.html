@@ -65,6 +65,17 @@
         object-fit: cover !important;
       }
 
+      /* Tombol peta ganda + peta interaktif (embed) di bagian Profil */
+      .lok-tombol { display: flex; gap: 10px; flex-wrap: wrap; }
+      .peta-embed {
+        margin-top: 18px;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+      }
+      .peta-embed iframe { display: block; width: 100%; height: 340px; border: 0; }
+
       header .intro {
         max-width: 800px;
         margin: 0 auto;
@@ -951,9 +962,9 @@
             <img src="asset/sanrobone-mark-light.svg" alt="" width="26" height="26" />
             <span data-en="Takalar · South Sulawesi">Takalar · Sulawesi Selatan</span>
           </div>
-          <h3 data-en="Welcome to Sanrobone Village">Selamat Datang di Desa Sanrobone</h3>
-          <p data-en="Sanrobone Tourism Village is one of the cultural and historical tourism destinations located in Takalar Regency, South Sulawesi.">
-            Desa Wisata Sanrobone merupakan salah satu destinasi wisata budaya dan sejarah yang berada di Kabupaten Takalar, Sulawesi Selatan.
+          <h3 data-en="Welcome to Sanrobone Tourism Village">Selamat Datang di Desa Wisata Sanrobone</h3>
+          <p data-en="“Discover cultural, historical, and religious beauty within a single destination”">
+            “Temukan keindahan berbudaya, bersejarah, dan religius berada di dalam satu destinasi”
           </p>
           <p>
             <a href="#profil" class="tombol" style="margin-top: 15px;" data-en="EXPLORE MORE">JELAJAHI LEBIH LANJUT</a>
@@ -997,7 +1008,14 @@
                   <span>Dusun Sanrobone, Desa Sanrobone, Kec. Sanrobone, Kab. Takalar, Sulawesi Selatan</span>
                 </div>
               </div>
-              <a href="https://www.google.com/maps/search/?api=1&query=Desa+Wisata+Sanrobone+Takalar" target="_blank" rel="noopener" class="tombol" data-en="OPEN ON MAPS">BUKA DI PETA</a>
+              <div class="lok-tombol">
+                <a href="https://www.google.com/maps/search/?api=1&query=-5.431640,119.390453" target="_blank" rel="noopener" class="tombol" data-en="OPEN IN GOOGLE MAPS">BUKA DI GOOGLE MAPS</a>
+                <a href="https://maps.apple/p/E2sN2cI6kCXura" target="_blank" rel="noopener" class="tombol tombol-garis" data-en="OPEN IN APPLE MAPS">BUKA DI APPLE MAPS</a>
+              </div>
+            </div>
+
+            <div class="peta-embed">
+              <iframe title="Peta Desa Wisata Sanrobone" src="https://www.google.com/maps?q=-5.431640,119.390453&z=15&hl=id&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
             </div>
           </div>
         </section>
@@ -1057,10 +1075,10 @@
                 </a>
               </div>
               <div class="situs-kartu">
-                <div class="foto-frame" data-label="Foto: Aktivitas Wisata">
-                  <img src="asset/maulid-nabi.jpg" alt="Aktivitas Wisata Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                <div class="foto-frame" data-label="Foto: Aktivitas Budaya & Tradisi">
+                  <img src="asset/maulid-nabi.jpg" alt="Aktivitas Budaya & Tradisi Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
                 </div>
-                <h6 data-en="Tourism Activities">Aktivitas Wisata</h6>
+                <h6 data-en="Cultural Activities &amp; Traditions">Aktivitas Budaya & Tradisi</h6>
                 <a class="maps-link" href="#aktivitas">
                   <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
                   <span data-en="Learn more">Selengkapnya</span>
@@ -1169,7 +1187,7 @@
         <section id="aktivitas">
           <div class="layar-dalam text-center">
             <span class="eyebrow" data-en="LIVING TRADITIONS <i class='lontara'>ᨑ</i>">TRADISI YANG HIDUP <i class="lontara">ᨑ</i></span>
-            <h3 data-en="Tourism Activities">Aktivitas Wisata</h3>
+            <h3 data-en="Cultural Activities &amp; Traditions">Aktivitas Budaya & Tradisi</h3>
             <p class="ringkasan" data-en="Living cultural and religious traditions that visitors can witness firsthand in Sanrobone.">Tradisi budaya dan religi yang masih hidup dan dapat disaksikan langsung oleh pengunjung di Sanrobone.</p>
             <div class="kondisi-media" style="margin-top: 24px;">
               <figure style="margin: 0;">
@@ -1389,7 +1407,6 @@
 
             <div style="margin-top: 40px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
               <a href="amenitas-detail.html" class="tombol tombol-garis" data-en="LEARN AMENITY DETAILS">PELAJARI DETAIL AMENITAS</a>
-              <a href="#reservasi" class="tombol" data-en="RESERVE NOW">RESERVASI SEKARANG</a>
             </div>
           </div>
         </section>
@@ -1476,50 +1493,6 @@
                 <span data-en="Scan the barcode to reserve">Scan barcode untuk reservasi</span>
               </div>
             </div>
-
-            <form class="form-reservasi" id="form-reservasi">
-              <h4 data-en="Sanrobone Tourism Village Reservation">Reservasi Desa Wisata Sanrobone</h4>
-              <p class="form-intro" data-en="Information required for a reservation includes:">Data yang diperlukan dalam reservasi meliputi:</p>
-
-              <div class="baris">
-                <label for="r-nama" data-en="Booker Name">Nama Pemesan</label>
-                <input type="text" id="r-nama" placeholder="Nama lengkap Anda" data-en-ph="Your full name" required />
-              </div>
-              <div class="baris">
-                <label for="r-telepon" data-en="Phone / WhatsApp Number">Nomor Telepon/WhatsApp</label>
-                <input type="tel" id="r-telepon" placeholder="08xxxxxxxxxx" data-en-ph="08xxxxxxxxxx" required />
-              </div>
-              <div class="baris">
-                <label for="r-asal" data-en="Region / Institution of Origin">Asal Daerah/Instansi</label>
-                <input type="text" id="r-asal" placeholder="Kota, sekolah, atau instansi Anda" data-en-ph="Your city, school, or institution" />
-              </div>
-              <div class="baris dua">
-                <div>
-                  <label for="r-tanggal" data-en="Visit Date">Tanggal Kunjungan</label>
-                  <input type="date" id="r-tanggal" />
-                </div>
-                <div>
-                  <label for="r-peserta" data-en="Number of Participants">Jumlah Peserta</label>
-                  <input type="number" id="r-peserta" min="1" value="1" />
-                </div>
-              </div>
-              <div class="baris">
-                <label for="r-tujuan" data-en="Purpose of Visit">Tujuan Kunjungan</label>
-                <select id="r-tujuan">
-                  <option data-en="Tourism / Holiday">Wisata / Liburan</option>
-                  <option data-en="Education / Study">Edukasi / Studi</option>
-                  <option data-en="Research">Penelitian</option>
-                  <option data-en="Event / Activity">Acara / Kegiatan</option>
-                  <option data-en="Other">Lainnya</option>
-                </select>
-              </div>
-              <div class="baris">
-                <label for="r-layanan" data-en="Additional Service Needs">Kebutuhan Layanan Tambahan</label>
-                <textarea id="r-layanan" rows="2" placeholder="Homestay, pemandu wisata, paket kuliner, souvenir, dll." data-en-ph="Homestay, tour guide, culinary package, souvenirs, etc."></textarea>
-              </div>
-              <button type="submit" class="tombol tombol-wa" data-en="SEND VIA WHATSAPP">KIRIM VIA WHATSAPP</button>
-              <button type="button" class="tombol tombol-email" id="kirim-email" data-en="OR SEND VIA EMAIL">ATAU KIRIM VIA EMAIL</button>
-            </form>
 
             <p class="ringkasan" style="margin-top: 50px;" data-en="Follow us on social media">Ikuti kami di media sosial</p>
             <div class="sosmed-bar">
