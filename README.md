@@ -42,7 +42,7 @@ lets them reserve a visit.
 
 Plain **HTML + CSS + vanilla JavaScript** — no framework and no build step.
 Shared styles in `style.css`, shared scripts in `javascript.js`, images and the
-hero video in `asset/`. Hosted on **GitHub Pages**.
+hero video in `asset/`. Source on **GitHub**, hosted on **InfinityFree**.
 
 ## Run locally
 

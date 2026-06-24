@@ -339,6 +339,44 @@
       .paket-harga { font-size: 13px; color: #9A887A; font-style: italic; margin-bottom: 16px; }
       .paket-kartu .tombol { text-align: center; }
 
+      /* ====== Paket Promo: Liburan Berkesan ====== */
+      .paket-promo {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        max-width: 940px;
+        margin: 42px auto 0;
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #EAE0CF;
+        box-shadow: 0 18px 44px rgba(90, 34, 48, .14);
+        text-align: left;
+      }
+      .paket-promo .promo-foto { position: relative; min-height: 360px; }
+      .paket-promo .promo-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+      .paket-promo .promo-isi { padding: 44px 42px; display: flex; flex-direction: column; justify-content: center; }
+      .paket-promo .promo-eyebrow { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C49A45; margin-bottom: 12px; }
+      .paket-promo h4 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 42px; line-height: 1.0; margin: 0; color: #B5482C; }
+      .paket-promo .promo-sub { font-family: "DM Serif Display", serif; font-style: italic; font-size: 21px; color: #5A2230; margin: 8px 0 24px; }
+      .paket-promo .promo-tag { font-family: "DM Serif Display", serif; font-style: italic; font-size: 17px; color: #6E5A4D; margin: 0 0 22px; }
+      .paket-promo .promo-meta { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; margin-bottom: 22px; }
+      .paket-promo .promo-durasi { font-family: "DM Serif Display", serif; font-size: 25px; color: #2A1B14; }
+      .paket-promo .promo-harga small { font-family: "Plus Jakarta Sans", sans-serif; font-size: 13px; color: #9A887A; font-weight: 600; display: block; }
+      .paket-promo .promo-harga b { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 34px; color: #B5482C; }
+      .paket-promo ul { list-style: none; padding: 0; margin: 0 0 26px; display: grid; grid-template-columns: 1fr 1fr; gap: 9px 18px; }
+      .paket-promo li { position: relative; padding-left: 24px; color: #4A372C; font-size: 14px; line-height: 1.4; }
+      .paket-promo li::before { content: "\2713"; position: absolute; left: 0; color: #C49A45; font-weight: bold; }
+      .paket-promo .promo-aksi { display: flex; flex-wrap: wrap; gap: 14px 18px; align-items: center; }
+      .paket-promo .promo-telp { display: inline-flex; align-items: center; gap: 8px; font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; color: #5A2230; font-size: 15px; }
+      .paket-promo .promo-telp svg { width: 18px; height: 18px; stroke: #25a35a; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+      @media screen and (max-width: 760px) {
+        .paket-promo { grid-template-columns: 1fr; }
+        .paket-promo .promo-foto { min-height: 220px; }
+        .paket-promo .promo-isi { padding: 32px 26px; }
+        .paket-promo h4 { font-size: 34px; }
+        .paket-promo ul { grid-template-columns: 1fr; }
+      }
+
       /* ====== Kartu Reservasi ====== */
       .reservasi-kartu {
         display: grid;
@@ -684,14 +722,70 @@
 
       /* ---- Amenitas: kartu foto per fasilitas ---- */
       .amenitas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px; margin-top: 40px; }
-      .amenitas-kartu { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #EAE0CF; box-shadow: 0 4px 18px rgba(90, 34, 48, .06); transition: transform .3s ease, box-shadow .3s ease; text-align: left; }
+      .amenitas-kartu { display: block; text-decoration: none; color: inherit; position: relative; background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid #EAE0CF; box-shadow: 0 4px 18px rgba(90, 34, 48, .06); transition: transform .3s ease, box-shadow .3s ease; text-align: left; }
       .amenitas-kartu:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgba(90, 34, 48, .14); }
       .amenitas-kartu .media { aspect-ratio: 4 / 3; overflow: hidden; }
       .amenitas-kartu .media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
       .amenitas-kartu:hover .media img { transform: scale(1.05); }
       .amenitas-kartu .media.ikon { background: linear-gradient(135deg, #B5482C 0%, #5A2230 100%); display: flex; align-items: center; justify-content: center; }
       .amenitas-kartu .media.ikon svg { width: 50px; height: 50px; stroke: #fff; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-      .amenitas-kartu .nama { padding: 14px 16px; font-family: "DM Serif Display", serif; font-size: 17px; color: #2A1B14; }
+      .amenitas-kartu .nama { padding: 14px 16px; font-family: "DM Serif Display", serif; font-size: 17px; color: #2A1B14; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+      .amenitas-kartu .nama svg { width: 18px; height: 18px; stroke: #B5482C; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; opacity: .55; flex: 0 0 auto; transition: opacity .25s ease; }
+      .amenitas-kartu:hover .nama svg { opacity: 1; }
+
+      /* ---- Aksesibilitas (rich layout) ---- */
+      .akses-chips { display: flex; flex-wrap: wrap; gap: 14px; margin: 24px 0 4px; }
+      .akses-chip { display: inline-flex; align-items: center; gap: 13px; background: #fff; border: 1px solid #EAE0CF; border-radius: 14px; padding: 13px 20px; box-shadow: 0 4px 14px rgba(90, 34, 48, .05); }
+      .akses-chip > svg { width: 26px; height: 26px; stroke: #B5482C; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+      .akses-chip b { display: block; font-family: "DM Serif Display", serif; font-weight: 400; font-size: 16px; color: #2A1B14; }
+      .akses-chip span > span { font-size: 12.5px; color: #6E5A4D; }
+
+      .akses-stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); margin: 26px 0; background: #fff; border: 1px solid #EAE0CF; border-radius: 18px; box-shadow: 0 10px 30px rgba(90, 34, 48, .08); overflow: hidden; }
+      .akses-stat { padding: 26px 24px; display: flex; flex-direction: column; gap: 3px; border-left: 1px solid #F0E7D8; }
+      .akses-stat:first-child { border-left: none; }
+      .akses-stat > svg { width: 38px; height: 38px; stroke: #B5482C; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 8px; }
+      .akses-stat .lbl { font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: #C49A45; }
+      .akses-stat .val { font-family: "DM Serif Display", serif; font-size: 24px; color: #2A1B14; }
+      .akses-stat .desc { font-size: 13px; color: #6E5A4D; line-height: 1.5; }
+
+      .akses-kolom { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 20px; margin-top: 4px; align-items: start; }
+      .akses-panel { background: #fff; border: 1px solid #EAE0CF; border-radius: 18px; padding: 26px 24px; box-shadow: 0 6px 20px rgba(90, 34, 48, .06); text-align: left; }
+      .akses-panel-judul { display: flex; align-items: center; gap: 10px; font-family: "Plus Jakarta Sans", sans-serif; font-weight: 800; font-size: 13px; letter-spacing: .07em; text-transform: uppercase; color: #5A2230; margin-bottom: 20px; }
+      .akses-panel-judul svg { width: 20px; height: 20px; stroke: #B5482C; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+
+      .rute-stepper { display: flex; flex-direction: column; }
+      .rute-step { display: flex; align-items: center; gap: 14px; }
+      .rute-step .bulat { width: 46px; height: 46px; border-radius: 50%; background: #FBEDE7; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+      .rute-step:last-child .bulat { background: linear-gradient(135deg, #B5482C, #5A2230); }
+      .rute-step .bulat svg { width: 22px; height: 22px; stroke: #B5482C; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+      .rute-step:last-child .bulat svg { stroke: #fff; }
+      .rute-step .nama { font-family: "DM Serif Display", serif; font-size: 16px; color: #2A1B14; }
+      .rute-garis { width: 2px; height: 16px; background: #E4D6C0; margin-left: 22px; }
+
+      .transport-card { border: 1px solid #EAE0CF; border-radius: 14px; overflow: hidden; margin-bottom: 16px; }
+      .transport-card:last-child { margin-bottom: 0; }
+      .transport-card .foto { position: relative; aspect-ratio: 16 / 9; }
+      .transport-card .foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .transport-card .tag { position: absolute; top: 10px; right: 10px; background: #B5482C; color: #fff; font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700; font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; padding: 5px 11px; border-radius: 20px; }
+      .transport-card .isi { padding: 16px 18px; }
+      .transport-card h5 { font-family: "DM Serif Display", serif; font-weight: 400; font-size: 18px; margin: 0 0 10px; color: #2A1B14; }
+      .transport-card ul { list-style: none; margin: 0; padding: 0; }
+      .transport-card li { position: relative; padding-left: 22px; margin-bottom: 8px; font-size: 13px; color: #4A372C; line-height: 1.45; }
+      .transport-card li::before { content: "\2713"; position: absolute; left: 0; color: #C49A45; font-weight: bold; }
+
+      .penunjang-list { list-style: none; margin: 0; padding: 0; }
+      .penunjang-item { display: flex; gap: 14px; margin-bottom: 20px; }
+      .penunjang-item:last-child { margin-bottom: 0; }
+      .penunjang-ikon { width: 42px; height: 42px; border-radius: 11px; background: #FBEDE7; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+      .penunjang-ikon svg { width: 22px; height: 22px; stroke: #B5482C; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+      .penunjang-item p { margin: 0; font-size: 13.5px; color: #4A372C; line-height: 1.6; }
+
+      .akses-quote { display: flex; align-items: center; gap: 22px; background: #fff; border: 1px solid #EAE0CF; border-radius: 18px; padding: 24px 28px; margin-top: 24px; box-shadow: 0 6px 20px rgba(90, 34, 48, .06); text-align: left; }
+      .akses-quote .q-foto { width: 130px; height: 92px; border-radius: 12px; object-fit: cover; flex: 0 0 auto; }
+      .akses-quote p { margin: 0; font-family: "Lora", serif; font-size: 14.5px; line-height: 1.7; color: #4A372C; }
+      .akses-quote .q-aksi { margin-left: auto; flex: 0 0 auto; white-space: nowrap; }
+      @media screen and (max-width: 980px) { .akses-kolom { grid-template-columns: 1fr; } }
+      @media screen and (max-width: 620px) { .akses-quote { flex-direction: column; align-items: flex-start; } .akses-quote .q-aksi { margin-left: 0; } .akses-quote .q-foto { width: 100%; height: 180px; } }
 
       /* ---- Akomodasi: Pilih Kamar + Fasilitas ---- */
       .kamar-grid {
@@ -985,7 +1079,7 @@
             <div class="situs-grid">
               <div class="situs-kartu">
                 <div class="foto-frame" data-label="Foto: Balla Lompoa">
-                  <img src="asset/pintu-masuk.png" alt="Balla Lompoa Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                  <img src="asset/img8.jpg" alt="Balla Lompoa Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
                 </div>
                 <h6>Balla Lompoa</h6>
                 <p class="situs-desc" data-en="A traditional house built in 2016 by Dr. Ir. H. Ali Malombassi, M.T. Daeng Nyengka as a place to preserve history and customs. It keeps the genealogy of the kings and hosts customary and religious activities such as Maulid Nabi.">Rumah adat yang dibangun pada 2016 oleh Dr. Ir. H. Ali Malombassi, M.T. Daeng Nyengka sebagai tempat pelestarian sejarah dan adat istiadat. Menyimpan silsilah keturunan raja-raja dan menjadi tempat kegiatan adat serta keagamaan seperti peringatan Maulid Nabi.</p>
@@ -996,7 +1090,7 @@
               </div>
               <div class="situs-kartu">
                 <div class="foto-frame" data-label="Foto: Benteng Sanrobone">
-                  <img src="asset/benteng.png" alt="Benteng Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                  <img src="asset/img18.jpg" alt="Benteng Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
                 </div>
                 <h6>Benteng Sanrobone</h6>
                 <p class="situs-desc" data-en="A fort from the Kingdom of Sanrobone built around 1515 AD. It is a symbol of the kingdom's history and former glory, designated a cultural heritage site of South Sulawesi.">Benteng peninggalan Kerajaan Sanrobone yang dibangun sekitar tahun 1515 M. Menjadi simbol sejarah dan kejayaan kerajaan masa lalu serta ditetapkan sebagai situs cagar budaya Sulawesi Selatan.</p>
@@ -1007,7 +1101,7 @@
               </div>
               <div class="situs-kartu">
                 <div class="foto-frame" data-label="Foto: Makam Raja-Raja (Kabbanga)">
-                  <img src="asset/sejarah-meriam.jpg" alt="Makam Raja-Raja Sanrobone (Kabbanga)" loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                  <img src="asset/img25.jpg" alt="Makam Raja-Raja Sanrobone (Kabbanga)" loading="lazy" decoding="async" onerror="this.style.display='none'" />
                 </div>
                 <h6 data-en="Royal Tombs (Kabbanga)">Makam Raja-Raja (Kabbanga)</h6>
                 <p class="situs-desc" data-en="The burial complex of the kings and nobles of the Kingdom of Sanrobone from the 16th–17th centuries. Shaped like a stepped pyramid built from sandstone and river stone, it is one of the important historical relics in the Sanrobone Fort area.">Kompleks pemakaman raja dan bangsawan Kerajaan Sanrobone dari abad ke-16 hingga ke-17. Berbentuk piramida berundak yang tersusun dari batu padas dan batu sungai, menjadi salah satu peninggalan sejarah penting di kawasan Benteng Sanrobone.</p>
@@ -1018,7 +1112,7 @@
               </div>
               <div class="situs-kartu">
                 <div class="foto-frame" data-label="Foto: Masjid Tua Baitul Maqdis">
-                  <img src="asset/masjid.jpg" alt="Masjid Tua Baitul Maqdis" loading="lazy" decoding="async" onerror="this.style.display='none'" />
+                  <img src="asset/img32.jpg" alt="Masjid Tua Baitul Maqdis" loading="lazy" decoding="async" onerror="this.style.display='none'" />
                 </div>
                 <h6 data-en="Baitul Maqdis Old Mosque">Masjid Tua Baitul Maqdis</h6>
                 <p class="situs-desc" data-en="Evidence of the early arrival of Islam in Sanrobone, brought by Arab traders/scholars, which gradually shifted the influence of the older Hindu-Buddhist teachings.">Bukti awal masuknya Islam di Sanrobone yang dibawa para pedagang/ulama Arab, yang perlahan menggeser pengaruh ajaran Hindu-Buddha kuno.</p>
@@ -1101,43 +1195,83 @@
           <div class="layar-dalam">
             <span class="eyebrow" data-en="GETTING HERE <i class='lontara'>ᨑ</i>">MENUJU LOKASI <i class="lontara">ᨑ</i></span>
             <h3 data-en="Accessibility">Aksesibilitas</h3>
+            <p class="ringkasan" data-en="Easily reached from Makassar via the Galesong – Takalar route.">Mudah dijangkau dari Makassar melalui jalur Galesong – Takalar.</p>
 
-            <div class="akses-anak">
-              <h4>
-                <svg viewBox="0 0 24 24"><path d="M3 17h2l1-5h12l1 5h2"/><path d="M5 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M15 17a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/><path d="M6 12V7a2 2 0 0 1 2-2h6l3 4"/></svg>
-                <span data-en="Transportation &amp; Directions">Transportasi &amp; Petunjuk Arah</span>
-              </h4>
-              <p data-en="The road to Sanrobone Village is in fairly good condition and can be reached by both two-wheeled and four-wheeled vehicles, supporting smooth tourist mobility. From Takalar town centre, head toward Sanrobone District and follow the signs to the village core area.">Jalan menuju Desa Sanrobone dalam kondisi cukup baik dan dapat dijangkau oleh kendaraan roda dua maupun roda empat, sehingga mendukung kelancaran mobilitas wisatawan. Dari pusat kota Takalar, arahkan kendaraan menuju Kecamatan Sanrobone lalu ikuti penunjuk arah ke kawasan inti desa.</p>
-              <div class="kendaraan">
-                <span class="chip"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17h6l4-7h3"/><path d="M9 17l3-7"/><path d="M14 6h3"/></svg><b data-en="Motorcycle (2 wheels)">Motor (roda dua)</b></span>
-                <span class="chip"><svg viewBox="0 0 24 24"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.4L19 11"/><path d="M3 16v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1h-1.5"/><path d="M5.5 17H4"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg><b data-en="Car (4 wheels)">Mobil (roda empat)</b></span>
-                <span class="chip"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="11" rx="2"/><path d="M17 8h2.4L21 12v4h-4"/><path d="M3 12h14"/><circle cx="7" cy="18" r="1.6"/><circle cx="16" cy="18" r="1.6"/></svg><b data-en="Public transport (pete-pete)">Angkutan umum (pete-pete)</b></span>
-              </div>
-              <div class="kondisi-media" style="margin-bottom: 20px;">
-                <div class="foto-frame" data-label="Foto: Pete-pete">
-                  <img src="asset/petepete.jpg" alt="Pete-pete, angkutan umum menuju Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
-                </div>
-                <div class="foto-frame" data-label="Foto: Transportasi Umum">
-                  <img src="asset/transportasi-umum.jpg" alt="Transportasi umum menuju Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
-                </div>
-              </div>
-              <a href="https://www.google.com/maps/dir/?api=1&destination=Desa+Wisata+Sanrobone,+Takalar,+Sulawesi+Selatan" target="_blank" rel="noopener" class="tombol" data-en="OPEN DIRECTIONS ON MAPS">BUKA PETUNJUK ARAH DI PETA</a>
+            <div class="akses-chips">
+              <span class="akses-chip"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>1 – 1,5 Jam</b><span data-en="Travel from Makassar">Perjalanan dari Makassar</span></span></span>
+              <span class="akses-chip"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span><b>Kecamatan Sanrobone</b><span data-en="Takalar Regency">Kabupaten Takalar</span></span></span>
             </div>
 
-            <div class="akses-anak">
-              <h4>
-                <svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M4 19 9 5h6l5 14"/><path d="M10 9h4"/><path d="M9 13h6"/></svg>
-                <span data-en="Road Condition">Kondisi Jalan</span>
-              </h4>
-              <p data-en="The main access road is mostly paved and passable in all weather. Below is documentation of the current road condition toward the village.">Jalan akses utama sebagian besar sudah beraspal dan dapat dilalui dalam segala cuaca. Berikut dokumentasi kondisi jalan terkini menuju desa.</p>
-              <div class="kondisi-media">
-                <div class="foto-frame" data-label="Foto: Kondisi Jalan">
-                  <img src="asset/jalan.jpg" alt="Kondisi jalan menuju Desa Sanrobone" loading="lazy" decoding="async" onerror="this.style.display='none'" />
+            <div class="akses-stat-grid">
+              <div class="akses-stat"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16"/><path d="M7 17v2"/><path d="M17 17v2"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg><span class="lbl">Trans Sulsel</span><span class="val">Rp 4.500</span><span class="desc" data-en="Panakukang Square – Galesong Port">Panakukang Square – Pelabuhan Galesong</span></div>
+              <div class="akses-stat"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="10" rx="2"/><path d="M16 9h2.5L21 12v4h-5"/><path d="M3 12h13"/><circle cx="7" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg><span class="lbl">Pete-pete</span><span class="val">Rp 8.000</span><span class="desc" data-en="Local transport to Sanrobone">Transportasi lokal menuju Dusun Sanrobone</span></div>
+              <div class="akses-stat"><svg viewBox="0 0 24 24"><circle cx="5.5" cy="17" r="3.5"/><circle cx="18.5" cy="17" r="3.5"/><path d="M5.5 17h6l4-7h3"/><path d="M9 17l3-7"/><path d="M14 6h3"/></svg><span class="lbl">Ojek</span><span class="val">± Rp 10.000</span><span class="desc" data-en="Conventional or app-based ojek">Ojek konvensional atau berbasis aplikasi</span></div>
+              <div class="akses-stat"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="lbl" data-en="Travel Time">Waktu Tempuh</span><span class="val">1 – 1,5 Jam</span><span class="desc" data-en="From Makassar city to Sanrobone">Dari Kota Makassar ke Dusun Sanrobone</span></div>
+            </div>
+
+            <div class="akses-kolom">
+              <div class="akses-panel">
+                <div class="akses-panel-judul"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-en="Travel Route">Rute Perjalanan</span></div>
+                <div class="rute-stepper">
+                  <div class="rute-step"><span class="bulat"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V8l5-3v16"/><path d="M14 21V11l5 3v7"/><path d="M8 9v0M8 13v0M8 17v0"/></svg></span><span class="nama">Makassar</span></div>
+                  <div class="rute-garis"></div>
+                  <div class="rute-step"><span class="bulat"><svg viewBox="0 0 24 24"><path d="M3 18h18"/><path d="M3 12c4 0 4 6 9 6s5-6 9-6"/><path d="M3 12V9M21 12V9"/></svg></span><span class="nama">Galesong</span></div>
+                  <div class="rute-garis"></div>
+                  <div class="rute-step"><span class="bulat"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-5h6v5"/></svg></span><span class="nama" data-en="Sanrobone District">Kecamatan Sanrobone</span></div>
+                  <div class="rute-garis"></div>
+                  <div class="rute-step"><span class="bulat"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v11h14V10"/><path d="M9 21v-6h6v6"/></svg></span><span class="nama" data-en="Sanrobone Village">Desa Sanrobone</span></div>
+                  <div class="rute-garis"></div>
+                  <div class="rute-step"><span class="bulat"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span class="nama">Dusun Sanrobone</span></div>
                 </div>
-                <video controls preload="none" poster="asset/jalan.jpg">
-                  <source src="asset/kondisi-jalan.mp4" type="video/mp4" />
-                </video>
               </div>
+
+              <div class="akses-panel">
+                <div class="akses-panel-judul"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16"/><path d="M7 17v2"/><path d="M17 17v2"/><circle cx="8" cy="14" r="1"/><circle cx="16" cy="14" r="1"/></svg><span data-en="Transport to the Location">Transportasi Menuju Lokasi</span></div>
+                <div class="transport-card">
+                  <div class="foto"><img src="asset/transportasi-umum.jpg" alt="Trans Sulsel" loading="lazy" decoding="async" /><span class="tag" data-en="Main Transport">Transportasi Utama</span></div>
+                  <div class="isi">
+                    <h5>Trans Sulsel</h5>
+                    <ul>
+                      <li data-en="Route: Panakukang Square – Galesong Port">Rute: Panakukang Square – Pelabuhan Galesong</li>
+                      <li data-en="Fare: Rp 4,500">Tarif: Rp 4.500</li>
+                      <li data-en="From Galesong, continue with local transport (pete-pete/ojek) to Sanrobone.">Setelah sampai di Galesong, dilanjutkan dengan transportasi lokal (pete-pete/ojek) menuju Dusun Sanrobone.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="transport-card">
+                  <div class="foto"><img src="asset/petepete.jpg" alt="Pete-pete" loading="lazy" decoding="async" /><span class="tag" data-en="Local Transport">Transportasi Lokal</span></div>
+                  <div class="isi">
+                    <h5 data-en="Pete-pete (Public Transport)">Pete-pete (Angkutan Umum)</h5>
+                    <ul>
+                      <li data-en="Local route from the district/village centre to Sanrobone">Trayek lokal dari pusat kecamatan/desa menuju Dusun Sanrobone</li>
+                      <li data-en="Fare: Rp 8,000">Tarif: Rp 8.000</li>
+                      <li data-en="Reaches neighbourhood roads &amp; residential areas">Menjangkau jalan lingkungan dan area permukiman</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="akses-panel">
+                <div class="akses-panel-judul"><svg viewBox="0 0 24 24"><path d="M6 21 9 3"/><path d="M18 21 15 3"/><path d="M12 5v3M12 11v3M12 17v3"/></svg><span data-en="Accessibility Support">Penunjang Aksesibilitas</span></div>
+                <ul class="penunjang-list">
+                  <li class="penunjang-item"><span class="penunjang-ikon"><svg viewBox="0 0 24 24"><path d="M6 21 9 3"/><path d="M18 21 15 3"/><path d="M12 5v3M12 11v3M12 17v3"/></svg></span><p data-en="A village road network connects settlements, farmland, and public facilities.">Tersedia jaringan jalan desa yang menghubungkan permukiman, area pertanian, dan fasilitas umum.</p></li>
+                  <li class="penunjang-item"><span class="penunjang-ikon"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 17V8h4a2.5 2.5 0 0 1 0 5H9"/></svg></span><p data-en="Informal parking areas are available near activity spots and tourist objects.">Terdapat area parkir informal yang dapat dimanfaatkan pengunjung di sekitar lokasi kegiatan masyarakat atau objek wisata.</p></li>
+                  <li class="penunjang-item"><span class="penunjang-ikon"><svg viewBox="0 0 24 24"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8 15.5a6 6 0 0 1 8 0"/><path d="M11 18.5a1.5 1.5 0 0 1 2 0"/></svg></span><p data-en="Telecommunication and internet networks are available, though signal quality may vary in some spots.">Jaringan telekomunikasi dan internet telah tersedia meskipun kualitas sinyal dapat berbeda pada beberapa titik.</p></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="akses-quote">
+              <img class="q-foto" src="asset/homestay-bersejarah.jpg" alt="Desa Wisata Sanrobone" loading="lazy" decoding="async" />
+              <p data-en="Sanrobone can be reached in about 1–1.5 hours from Makassar via the Galesong–Takalar route. The access road is mostly paved and passable by both two- and four-wheeled vehicles, so it is easy to reach for tourism, education, and cultural visits.">Dusun Sanrobone dapat ditempuh sekitar 1–1,5 jam dari Kota Makassar melalui jalur Galesong–Takalar. Akses jalan menuju lokasi umumnya sudah beraspal dan dapat dilalui kendaraan roda dua maupun roda empat — menjadikannya mudah dijangkau untuk kegiatan wisata, edukasi, maupun kunjungan budaya.</p>
+              <a class="q-aksi tombol" href="#peta-akses" data-en="VIEW LOCATION MAP">LIHAT PETA LOKASI</a>
+            </div>
+
+            <div id="peta-akses" class="peta-wrap">
+              <iframe src="https://www.google.com/maps?q=Desa%20Wisata%20Sanrobone%2C%20Takalar%2C%20Sulawesi%20Selatan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta Desa Wisata Sanrobone" allowfullscreen></iframe>
+            </div>
+            <div class="peta-aksi">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=Desa+Wisata+Sanrobone,+Takalar,+Sulawesi+Selatan" target="_blank" rel="noopener" class="tombol tombol-garis" data-en="OPEN DIRECTIONS ON MAPS">BUKA PETUNJUK ARAH DI PETA</a>
             </div>
           </div>
         </section>
@@ -1180,6 +1314,8 @@
                 <div class="galeri-item"><img src="asset/homestay-09.jpg" alt="Fasilitas homestay 4" loading="lazy" decoding="async" /></div>
                 <div class="galeri-item"><img src="asset/homestay-10.jpg" alt="Fasilitas homestay 5" loading="lazy" decoding="async" /></div>
                 <div class="galeri-item"><img src="asset/homestay-12.jpg" alt="Fasilitas homestay 6" loading="lazy" decoding="async" /></div>
+                <div class="galeri-item"><img src="asset/homestay-13.jpg" alt="Homestay bersejarah Sanrobone — tampak depan" loading="lazy" decoding="async" /></div>
+                <div class="galeri-item"><img src="asset/homestay-14.jpg" alt="Homestay bersejarah Sanrobone — tampak samping" loading="lazy" decoding="async" /></div>
               </div>
             </div>
 
@@ -1204,41 +1340,50 @@
             <span class="eyebrow" data-en="FACILITIES <i class='lontara'>ᨑ</i>">FASILITAS UMUM <i class="lontara">ᨑ</i></span>
             <h3 data-en="Amenities">Amenitas</h3>
             <div class="amenitas-grid">
-              <div class="amenitas-kartu">
+              <a class="amenitas-kartu" href="https://www.google.com/maps/search/?api=1&query=Warung+Makan+Sanrobone+Takalar" target="_blank" rel="noopener">
                 <div class="media"><img src="asset/warung.jpg" alt="Warung makan" loading="lazy" decoding="async" /></div>
-                <div class="nama" data-en="Food Stall">Warung Makan</div>
-              </div>
-              <div class="amenitas-kartu">
+                <div class="nama"><span data-en="Food Stall">Warung Makan</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://www.google.com/maps/search/?api=1&query=Toko+Kelontong+Sanrobone+Takalar" target="_blank" rel="noopener">
                 <div class="media ikon"><svg viewBox="0 0 24 24"><path d="M3 9 4 4h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg></div>
-                <div class="nama" data-en="Grocery Shop">Toko Kelontong</div>
-              </div>
-              <div class="amenitas-kartu">
+                <div class="nama"><span data-en="Grocery Shop">Toko Kelontong</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://www.google.com/maps/search/?api=1&query=Puskesmas+Sanrobone+Takalar" target="_blank" rel="noopener">
                 <div class="media"><img src="asset/puskesmas.jpg" alt="Puskesmas" loading="lazy" decoding="async" /></div>
-                <div class="nama" data-en="Health Center">Puskesmas</div>
-              </div>
-              <div class="amenitas-kartu">
-                <div class="media ikon"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M9 16h6"/></svg></div>
-                <div class="nama" data-en="Sulselbar ATM">ATM Sulselbar</div>
-              </div>
-              <div class="amenitas-kartu">
+                <div class="nama"><span data-en="Health Center">Puskesmas</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://www.google.com/maps/search/?api=1&query=ATM+Bank+Sulselbar+Sanrobone+Takalar" target="_blank" rel="noopener">
+                <div class="media"><img src="asset/atm-sulselbar.jpg" alt="ATM Bank Sulselbar Sanrobone" loading="lazy" decoding="async" /></div>
+                <div class="nama"><span data-en="Sulselbar ATM">ATM Sulselbar</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://maps.app.goo.gl/79TrFN75xjvYPjj87?g_st=ac" target="_blank" rel="noopener">
                 <div class="media"><img src="asset/masjid-amenitas.jpg" alt="Masjid" loading="lazy" decoding="async" /></div>
-                <div class="nama" data-en="Mosque">Masjid</div>
-              </div>
-              <div class="amenitas-kartu">
+                <div class="nama"><span data-en="Mosque">Masjid</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://maps.app.goo.gl/KJg95m2qRj9qKWT97?g_st=ac" target="_blank" rel="noopener">
                 <div class="media"><img src="asset/kantor-desa.jpg" alt="Kantor Desa" loading="lazy" decoding="async" /></div>
-                <div class="nama" data-en="Village Office">Kantor Desa</div>
-              </div>
-              <div class="amenitas-kartu">
-                <div class="media ikon"><svg viewBox="0 0 24 24"><path d="M3 9 4 4h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 14h6v6H9z"/></svg></div>
-                <div class="nama" data-en="BUMDes Stall">Saung BUMDes</div>
-              </div>
-              <div class="amenitas-kartu">
+                <div class="nama"><span data-en="Village Office">Kantor Desa</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://maps.app.goo.gl/gwz5W3p1fz4S3aeH9?g_st=ac" target="_blank" rel="noopener">
+                <div class="media"><img src="asset/poindes-digital.jpg" alt="Saung BUMDes — POINDES Sanrobone" loading="lazy" decoding="async" /></div>
+                <div class="nama"><span data-en="BUMDes Stall">Saung BUMDes</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://www.google.com/maps/search/?api=1&query=Aula+Balai+Desa+Sanrobone+Takalar" target="_blank" rel="noopener">
                 <div class="media"><img src="asset/aula-balai-desa.jpg" alt="Aula Balai Desa" loading="lazy" decoding="async" /></div>
-                <div class="nama" data-en="Village Hall">Aula Balai Desa</div>
-              </div>
-              <div class="amenitas-kartu">
+                <div class="nama"><span data-en="Village Hall">Aula Balai Desa</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+              <a class="amenitas-kartu" href="https://www.google.com/maps/search/?api=1&query=Bakso+Mie+Pangsit+Sanrobone+Takalar" target="_blank" rel="noopener">
                 <div class="media"><img src="asset/warung-bakso.jpg" alt="Bakso & Mie Pangsit" loading="lazy" decoding="async" /></div>
-                <div class="nama" data-en="Meatball &amp; Noodle Stall">Bakso & Mie Pangsit</div>
+                <div class="nama"><span data-en="Meatball &amp; Noodle Stall">Bakso & Mie Pangsit</span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              </a>
+            </div>
+
+            <div class="anak-blok">
+              <h4 data-en="Services &amp; Culinary Gallery">Galeri Layanan &amp; Kuliner</h4>
+              <div class="galeri-grid">
+                <div class="galeri-item"><img src="asset/pelayanan-desa.jpg" alt="Pelayanan administrasi warga di kantor desa" loading="lazy" decoding="async" data-cap="Pelayanan administrasi warga di kantor desa" /></div>
+                <div class="galeri-item"><img src="asset/coto-bumdes.jpg" alt="Coto BUMDes Sanrobone" loading="lazy" decoding="async" data-cap="Coto BUMDes Sanrobone" /></div>
+                <div class="galeri-item"><img src="asset/coto-makassar.jpg" alt="Semangkuk Coto Makassar khas Sanrobone" loading="lazy" decoding="async" data-cap="Semangkuk Coto Makassar khas Sanrobone" /></div>
               </div>
             </div>
 
@@ -1271,45 +1416,30 @@
           <div class="layar-dalam text-center">
             <span class="eyebrow" data-en="PLAN YOUR VISIT <i class='lontara'>ᨑ</i>">RENCANA KUNJUNGAN <i class="lontara">ᨑ</i></span>
             <h3 data-en="Tour Packages">Paket Wisata</h3>
-            <p class="ringkasan" data-en="Suggested itineraries to explore Sanrobone — choose what fits your time.">Rekomendasi rangkaian kunjungan untuk menjelajahi Sanrobone — pilih sesuai waktu Anda.</p>
-            <div class="paket-grid">
-              <div class="paket-kartu">
-                <h4 data-en="Heritage Half-Day">Jelajah Setengah Hari</h4>
-                <div class="paket-durasi" data-en="Approx. 3–4 hours">Sekitar 3–4 jam</div>
-                <ul>
-                  <li data-en="Balla Lompoa (royal traditional house)">Balla Lompoa (rumah adat kerajaan)</li>
-                  <li data-en="Pyramid-shaped royal tombs">Makam kerajaan berbentuk piramida</li>
-                  <li data-en="Baitul Maqdis Old Mosque">Masjid Tua Baitul Maqdis</li>
-                  <li data-en="Local guide from the community">Pemandu dari masyarakat lokal</li>
-                </ul>
-                <div class="paket-harga" data-en="Contact us for package pricing">Hubungi kami untuk harga paket</div>
-                <a href="#reservasi" class="tombol" data-en="BOOK THIS PACKAGE">PESAN PAKET</a>
+            <p class="ringkasan" data-en="A memorable stay at the historic Sanrobone homestay — let your mind relax.">Menginap berkesan di homestay bersejarah Sanrobone — mari rileksasi pikiranmu.</p>
+            <div class="paket-promo">
+              <div class="promo-foto">
+                <img src="asset/homestay-bersejarah.jpg" alt="Homestay bersejarah Sanrobone" loading="lazy" decoding="async" />
               </div>
-
-              <div class="paket-kartu">
-                <h4 data-en="Full-Day Culture">Budaya Sehari Penuh</h4>
-                <div class="paket-durasi" data-en="About 1 day (07.00–17.00)">Sekitar 1 hari (07.00–17.00)</div>
+              <div class="promo-isi">
+                <span class="promo-eyebrow" data-en="STAY PACKAGE">PAKET MENGINAP</span>
+                <h4 data-en="Memorable Getaway">Liburan Berkesan</h4>
+                <div class="promo-sub" data-en="Historic Homestay Sanrobone">Homestay Bersejarah Sanrobone</div>
+                <div class="promo-meta">
+                  <span class="promo-durasi" data-en="3 Days 2 Nights">3 Hari 2 Malam</span>
+                  <span class="promo-harga"><small data-en="Only">Hanya</small><b>Rp 200.000</b></span>
+                </div>
+                <div class="promo-tag" data-en="Let your mind relax!">Mari rileksasi pikiranmu!</div>
                 <ul>
-                  <li data-en="All heritage &amp; religious sites">Seluruh situs sejarah &amp; religi</li>
-                  <li data-en="Kanrejawa Turiolo culinary tasting">Cicip kuliner Kanrejawa Turiolo</li>
-                  <li data-en="Souvenir shopping (Pokdarwis)">Belanja souvenir khas (Pokdarwis)</li>
-                  <li data-en="Interaction with the local community">Interaksi dengan masyarakat lokal</li>
+                  <li data-en="Stay at a historic homestay">Menginap di homestay bersejarah</li>
+                  <li data-en="Morning breakfast">Sarapan pagi</li>
+                  <li data-en="Local community guide">Pemandu masyarakat lokal</li>
+                  <li data-en="Explore heritage sites">Jelajah situs sejarah</li>
                 </ul>
-                <div class="paket-harga" data-en="Contact us for package pricing">Hubungi kami untuk harga paket</div>
-                <a href="#reservasi" class="tombol" data-en="BOOK THIS PACKAGE">PESAN PAKET</a>
-              </div>
-
-              <div class="paket-kartu">
-                <h4 data-en="Homestay Overnight">Menginap di Homestay</h4>
-                <div class="paket-durasi" data-en="2 days 1 night">2 hari 1 malam</div>
-                <ul>
-                  <li data-en="Everything in the Full-Day Culture package">Semua isi paket Sehari Penuh</li>
-                  <li data-en="Overnight stay at a community homestay">Menginap di homestay masyarakat</li>
-                  <li data-en="Breakfast &amp; the village morning atmosphere">Sarapan &amp; suasana pagi desa</li>
-                  <li data-en="Authentic life with the community">Pengalaman hidup autentik bersama warga</li>
-                </ul>
-                <div class="paket-harga" data-en="Homestay from Rp 200,000/night + package price">Homestay mulai Rp 200.000/malam + harga paket</div>
-                <a href="#reservasi" class="tombol" data-en="BOOK THIS PACKAGE">PESAN PAKET</a>
+                <div class="promo-aksi">
+                  <a href="https://wa.me/6282347764426?text=Halo%20Desa%20Wisata%20Sanrobone%2C%20saya%20ingin%20reservasi%20paket%20Liburan%20Berkesan%20(3%20Hari%202%20Malam)." target="_blank" rel="noopener" class="tombol" data-en="RESERVE NOW">RESERVASI SEKARANG</a>
+                  <span class="promo-telp"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.7 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.27a2 2 0 0 1 2.11-.45c.74.34 1.53.57 2.34.7A2 2 0 0 1 22 16.92z"/></svg>+62 823-4776-4426</span>
+                </div>
               </div>
             </div>
           </div>

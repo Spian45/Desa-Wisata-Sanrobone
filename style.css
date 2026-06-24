@@ -1016,3 +1016,23 @@ footer .layar-dalam { flex-wrap: wrap; }
 
 /* ---- Review cards: drop the (missing) top photo, lead with the quote ---- */
 .ulasan-foto { display: none !important; }
+
+/* =====================================================================
+   Mobile fixes — appended LAST so they win over the non-media
+   design-system rules above (section h3 34px, .tombol padding, etc.)
+   ===================================================================== */
+@media screen and (max-width: 768px) {
+  section h3 { font-size: 26px; }
+  .tombol { padding: 9px 22px; }
+  .brand-name { font-size: 22px; }
+  .brand-sub { font-size: 9px; letter-spacing: 0.2em; }
+  .paket-promo h4 { font-size: 32px; }
+  .akses-chip { width: 100%; }
+}
+@media screen and (max-width: 600px) {
+  section h3 { font-size: 23px; }
+  .akses-stat { border-left: none; border-top: 1px solid #F0E7D8; }
+  .akses-stat:first-child { border-top: none; }
+  .akses-panel { padding: 22px 18px; }
+  .akses-stat .val { font-size: 22px; }
+}
