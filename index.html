@@ -667,7 +667,7 @@
       /* ---- Sejarah Wisata Religi ---- */
       .religi-wrap {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 40px;
         align-items: center;
         margin-top: 30px;
@@ -676,8 +676,10 @@
       .religi-teks p { margin-bottom: 14px; text-align: justify; line-height: 1.85; }
       .religi-pintu .foto-frame { aspect-ratio: 3 / 4; border-radius: 14px; cursor: zoom-in; }
       .religi-pintu figcaption { text-align: center; color: var(--pink-coklat-tua); margin-top: 12px; font-size: 13.5px; font-family: "Plus Jakarta Sans", sans-serif; }
-      .religi-galeri { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+      .religi-galeri { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 14px; }
       .religi-galeri .foto-frame { aspect-ratio: 1 / 1; border-radius: 10px; cursor: zoom-in; }
+      .religi-galeri figure { display: flex; flex-direction: column; }
+      .religi-galeri figcaption { min-height: 2.8em; display: flex; align-items: flex-end; }
 
       /* ---- Galeri dokumentasi budaya ---- */
       .galeri-grid {
